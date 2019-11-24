@@ -86,11 +86,6 @@ export default class Home extends Component {
                       <Grid.Row centered >
                         <Image src={Logo} size='massive'/>
                       </Grid.Row>
-                      {/* <Grid.Row centered>
-                        <Grid.Column textAlign='center' width={16}>
-                          Personalized ACT/SAT Tutoring
-                        </Grid.Column>
-                      </Grid.Row> */}
                       <Grid.Row centered>
                         <div style={{ paddingTop: '5%' }}>
                           <Button color='blue' size='large' content='BOOK AN APPOINTMENT' />

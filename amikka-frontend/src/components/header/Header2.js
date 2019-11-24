@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Menu, Grid, Image } from 'semantic-ui-react'
+import { Link, animateScroll as scroll } from 'react-scroll'
 import Home from '../../pages/home/Home.js'
 import Logo from '../../images/logo3.svg'
 
@@ -11,7 +12,12 @@ export default class Header2 extends Component {
     }
   }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+  handleItemClick = (e, { name }) => {
+    const { activeItem } = this.state;
+    activeItem === name ? this.scrollToTop() : this.setState({ activeItem: name })
+  }
+
+  scrollToTop = () => scroll.scrollToTop();
 
   render() {
     const { activeItem } = this.state;
@@ -19,21 +25,16 @@ export default class Header2 extends Component {
     return (
       <Grid centered>
         <Grid.Row textAlign='center'>
-
             <Image src={Logo} />
-
         </Grid.Row>
         <Grid.Row style={{ height: '55px' }}>
           <Grid.Column width={16}>
             <Menu text widths={1}>
-              <Grid centered>
-                <Grid.Row>
+              <Grid centered padded='horizontally' stackable>
+                <Grid.Row columns={5} centered>
                   <Grid.Column width={3}>
-                    <Menu.Item
-                      name='HOME'
-                      active={activeItem === 'HOME'}
-                      onClick={this.handleItemClick}
-                    />
+                    <Menu.Item name='HOME' link={true} active={activeItem === 'HOME'} onClick={this.handleItemClick}>
+                    </Menu.Item>
                   </Grid.Column>
                   <Grid.Column width={3}>
                     <Menu.Item
@@ -69,7 +70,6 @@ export default class Header2 extends Component {
                 </Grid.Row>
               </Grid>
             </Menu>
-            {/* <Divider /> */}
           </Grid.Column>
         </Grid.Row>
 
