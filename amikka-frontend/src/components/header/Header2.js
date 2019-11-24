@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Menu, Grid, Image } from 'semantic-ui-react'
 import { Link, animateScroll as scroll } from 'react-scroll'
 import Home from '../../pages/home/Home.js'
+import About from '../../pages/about/About.js'
 import Logo from '../../images/logo3.svg'
 
 export default class Header2 extends Component {
@@ -90,7 +91,7 @@ const RenderedMenuItem = ({ menuItemName }) => {
     return <Home />
   }
   if (menuItemName === 'ABOUT') {
-    return <div><h1>ABOUT</h1></div>
+    return <About />
   }
   if (menuItemName === 'SERVICES') {
     return <div><h1>SERVICES</h1></div>

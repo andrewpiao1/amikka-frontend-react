@@ -143,7 +143,6 @@ export default class Home extends Component {
                       Weekly adjustments are made to ensure goals are met on time with personalized study guides based on error patterns
                   </Header>
                   </Grid.Column>
-
                 </Grid.Row>
               </Grid>
             </Grid.Column>
@@ -164,7 +163,6 @@ export default class Home extends Component {
                       Our instructors go through a rigorous interview process with extensive training to provide a 100% tutor satisfaction guarantee
                     </Header>
                   </Grid.Column>
-
                 </Grid.Row>
               </Grid>
             </Grid.Column>
