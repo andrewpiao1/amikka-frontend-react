@@ -11,18 +11,21 @@ import './about.css'
 const headerStyles = {
   fontFamily: 'raleway',
   fontSize: '30px',
+  fontWeight: 'bold',
 }
 
 const cardHeaderStyles = {
   fontFamily: 'raleway',
   fontSize: '25px',
   color: 'white',
-  paddingTop: '3%'
+  paddingTop: '3%',
+  fontWeight: 'bold',
 }
 
 const desccriptionHeaderStyles = {
   fontFamily: 'raleway',
   fontSize: '20px',
+  fontWeight: 'bold',
 }
 
 const descriptionStyles = {
@@ -124,7 +127,6 @@ export default class About extends Component {
                 <div style={{ height: 500, background: 'rgba(0, 0, 0, 0.3)' }}>
                   <div style={insideStyles3}>
                     <Grid stackable>
-
                       <Grid.Row>
                         <Grid.Column textAlign='center'>
                           <div style={headerStyles}>
@@ -140,8 +142,6 @@ export default class About extends Component {
                           </div>
                         </Grid.Column>
                       </Grid.Row>
-
-
                     </Grid>
                   </div>
                 </div>
@@ -163,11 +163,11 @@ export default class About extends Component {
                     <Card.Content>
                       <div style={cardHeaderStyles}>
                         EDUCATION
-                                  </div>
+                      </div>
                     </Card.Content>
                     <Card.Description style={cardStyles}>
                       The Amikka Program focuses on progress through the lens of time management, content, and strategy to maximize the rate of improvement for students on the SAT/ACT exam.
-                                </Card.Description>
+                    </Card.Description>
                   </Card>
                 </Grid.Row>
               </Grid>
@@ -273,7 +273,7 @@ export default class About extends Component {
           <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column>
               <Parallax bgImage={Company3} strength={450} blur={3}>
-                <div style={{ height: 650, background: 'rgba(0, 0, 0, 0.6)' }}>
+                <div style={{ height: 600, background: 'rgba(0, 0, 0, 0.6)' }}>
                   <div style={insideStyles}>
                     <Grid stackable>
 
@@ -335,7 +335,7 @@ export default class About extends Component {
 
           <Grid.Row centered>
             <div style={{ paddingTop: '7%', paddingBottom: '5%' }}>
-              <Button color='blue' size='large' content='LEARN MORE' />
+              <Button color='blue' size='huge' content='LEARN MORE' />
             </div>
           </Grid.Row>
         </Grid>

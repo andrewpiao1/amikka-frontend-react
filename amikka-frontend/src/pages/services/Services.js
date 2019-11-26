@@ -12,6 +12,7 @@ import Tutor1 from '../../images/tutor_4.jpg'
 const headerStyles = {
 	fontFamily: 'raleway',
 	fontSize: '30px',
+	fontWeight: 'bold',
 }
 
 const headerStyles2 = {
@@ -27,21 +28,9 @@ const cardHeaderStyles = {
 	lineHeight: 1,
 }
 
-const desccriptionHeaderStyles = {
-	fontFamily: 'raleway',
-	fontSize: '20px',
-}
-
 const descriptionStyles = {
 	fontFamily: 'raleway',
 	fontSize: '15px',
-}
-
-const descriptionStyles2 = {
-	fontFamily: 'raleway',
-	fontSize: '15px',
-	paddingTop: '3%',
-	color: 'black',
 }
 
 const descriptionStyles3 = {
@@ -49,14 +38,6 @@ const descriptionStyles3 = {
 	fontSize: '15px',
 	paddingTop: '3%',
 	color: 'white',
-}
-
-const cardStyles = {
-	fontFamily: 'raleway',
-	fontSize: '13px',
-	paddingBottom: '8%',
-	paddingLeft: '5%',
-	paddingRight: '5%',
 }
 
 const insideStyles = {
@@ -69,27 +50,6 @@ const insideStyles = {
 	top: "50%",
 	left: "50%",
 	transform: "translate(-50%,-50%)"
-}
-
-const insideStyles2 = {
-	textAlign: 'center',
-	fontFamily: 'raleway',
-	fontSize: '15px',
-	position: "absolute",
-	top: "50%",
-	left: "50%",
-	transform: "translate(-50%,-50%)",
-}
-
-const insideStyles3 = {
-	fontFamily: 'raleway',
-	color: 'white',
-	fontSize: '28px',
-	width: '100%',
-	position: 'absolute',
-	top: '50%',
-	left: "50%",
-	transform: 'translate(-50%, -50%)'
 }
 
 export default class Services extends Component {
@@ -140,7 +100,7 @@ export default class Services extends Component {
 						<Grid.Column width={10} textAlign='center' >
 							<div style={headerStyles2}>
 								GROUP SESSIONS (SAT/ACT)
-              </div>
+              				</div>
 							<div style={descriptionStyles3}>
 								After each student takes the diagnostic, we create a personalized plan to help them achieve their desired score and place them in a group with student starting at a similar level. Each plan includes multiple review sections, full-timed practice tests, and supplemental study guides.
 							</div>
@@ -152,7 +112,7 @@ export default class Services extends Component {
 						<Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
 							<div style={headerStyles}>
 								K-12 tutoring
-              </div>
+              				</div>
 						</Grid.Column>
 					</Grid.Row>
 
@@ -176,63 +136,39 @@ export default class Services extends Component {
 											<Grid.Row centered>
 												<div style={headerStyles}>
 													DEVELOPMENT COURSES
-                        </div>
+                        						</div>
 											</Grid.Row>
 
 											<Grid.Row centered style={{ paddingTop: '3%' }} columns={6}>
 												<Grid.Column textAlign='center'>
-													<Grid padded relaxed stackable>
-														<Grid.Row centered>
-															<div style={cardHeaderStyles}>
-																College Admissions
-															</div>
-														</Grid.Row>
-													</Grid>
+													<div style={cardHeaderStyles}>
+														College Admissions
+													</div>
 												</Grid.Column>
 												<Grid.Column textAlign='center'>
-													<Grid padded relaxed stackable>
-														<Grid.Row centered>
-															<div style={cardHeaderStyles}>
-																Resume Building
-															</div>
-														</Grid.Row>
-													</Grid>
+													<div style={cardHeaderStyles}>
+														Resume Building
+													</div>
 												</Grid.Column>
 												<Grid.Column textAlign='center'>
-													<Grid padded relaxed stackable>
-														<Grid.Row centered>
-															<div style={cardHeaderStyles}>
-																Job Applications
-															</div>
-														</Grid.Row>
-													</Grid>
+													<div style={cardHeaderStyles}>
+														Job Applications
+													</div>
 												</Grid.Column>
 												<Grid.Column textAlign='center'>
-													<Grid padded relaxed stackable>
-														<Grid.Row centered>
-															<div style={cardHeaderStyles}>
-																LinkedIn Optimization
-															</div>
-														</Grid.Row>
-													</Grid>
+													<div style={cardHeaderStyles}>
+														LinkedIn Optimization
+													</div>
 												</Grid.Column>
 												<Grid.Column textAlign='center'>
-													<Grid padded relaxed stackable>
-														<Grid.Row centered>
-															<div style={cardHeaderStyles}>
-																Internship Opportunities
-															</div>
-														</Grid.Row>
-													</Grid>
+													<div style={cardHeaderStyles}>
+														Internship Opportunities
+													</div>
 												</Grid.Column>
 												<Grid.Column textAlign='center'>
-													<Grid padded relaxed stackable>
-														<Grid.Row centered>
-															<div style={cardHeaderStyles}>
-																Professional Development
-															</div>
-														</Grid.Row>
-													</Grid>
+													<div style={cardHeaderStyles}>
+														Professional Development
+													</div>
 												</Grid.Column>
 											</Grid.Row>
 										</Grid>

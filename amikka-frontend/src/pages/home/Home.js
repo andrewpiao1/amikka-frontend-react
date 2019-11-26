@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Header, Button, Icon, Card, Image } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+import { animateScroll as scroll } from 'react-scroll'
 import { Parallax } from 'react-parallax'
 import YouTube from 'react-youtube'
 
@@ -29,7 +31,8 @@ const cardHeaderStyles = {
   fontFamily: 'raleway',
   fontSize: '25px',
   color: 'white',
-  lineHeight: 1,
+  lineHeight: 1.3,
+  fontWeight: 'bold',
 }
 
 const descriptionHeaderStyles = {
@@ -41,6 +44,7 @@ const descriptionHeaderStyles = {
 const descriptionStyles = {
   fontFamily: 'raleway',
   fontSize: '15px',
+  lineHeight: 1.8,
 }
 
 const parallaxStyles = {
@@ -56,6 +60,7 @@ const cardStyles = {
   paddingBottom: '8%',
   paddingLeft: '5%',
   paddingRight: '5%',
+  color: 'white'
 }
 
 const insideStyles = {
@@ -104,6 +109,8 @@ export default class Home extends Component {
 
   onReady = (event) => event.target.pauseVideo();
 
+  scrollToTop = () => scroll.scrollToTop();
+
   render() {
 
     return (
@@ -122,7 +129,7 @@ export default class Home extends Component {
                       </Grid.Row>
                       <Grid.Row centered>
                         <div style={{ paddingTop: '5%' }}>
-                          <Button color='blue' size='large' content='BOOK AN APPOINTMENT' />
+                          <Button color='blue' size='huge' content='BOOK AN APPOINTMENT' />
                         </div>
                       </Grid.Row>
                     </Grid>
@@ -161,7 +168,7 @@ export default class Home extends Component {
           {/* LAYER FOUR */}
           <Grid.Row>
             <Grid.Column>
-              <div style={{ paddingTop: '5%' }}>
+              <div style={{ paddingTop: '3%' }}>
                 <Parallax bgImage={Study2Img} strength={450}>
                   <div style={{ height: 600, background: 'rgba(0, 0, 0, 0.5)' }}>
                     <div style={insideStyles2}>
@@ -190,9 +197,10 @@ export default class Home extends Component {
 
                         <Grid.Row centered>
                           <div style={{ paddingTop: '5%' }}>
-                            <Button color='blue' size='large' content='LEARN MORE' />
+                            <Button color='blue' size='huge' content='LEARN MORE' as={Link} to='/services' />
                           </div>
                         </Grid.Row>
+
                       </Grid>
                     </div>
                   </div>
@@ -201,184 +209,185 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER TWO */}
-          <Grid.Row>
-            <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
+          <Grid.Row style={{ paddingTop: '5%' }}>
+            <Grid.Column textAlign='center' width={16}>
               <div style={headerStyles}>
-                WHAT
+                OUR PROCESS
               </div>
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER THREE */}
-          <Grid.Row style={{ paddingTop: '5%' }} columns={3} divided>
-            <Grid.Column textAlign='center' width={4}>
+          <Grid.Row centered style={{ paddingTop: '2%' }}>
+            <Grid.Column textAlign='center' width={3}>
               <Grid padded relaxed stackable>
                 <Grid.Row centered>
-                  <Icon name='book' size='big' color='blue'></Icon>
-                </Grid.Row>
-                <Grid.Row centered>
-                  <div style={descriptionHeaderStyles}>
-                    FLEXIBLE, ONLINE, PRIVATE COACHING
-                  </div>
-                </Grid.Row>
-                <Grid.Row centered>
-                  <Grid.Column width={13} textAlign='center'>
-                    <div style={descriptionStyles}>
-                      Amikka offers a multitude of tutoring options such as interactive whiteboarding, video chat, and instructional videos
-                    </div>
-                  </Grid.Column>
+                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
+                    <Card.Content>
+                      <div style={cardHeaderStyles}>
+                        EDUCATION
+                      </div>
+                    </Card.Content>
+                    <Card.Description style={cardStyles}>
+                      DIAGNOSTIC TEST ON TIME MANAGEMENT, CONTENT, AND STRATEGY
+                    </Card.Description>
+                  </Card>
                 </Grid.Row>
               </Grid>
             </Grid.Column>
 
-            <Grid.Column textAlign='center' width={4}>
+            <Grid.Column textAlign='center' width={3}>
               <Grid centered padded stackable>
                 <Grid.Row centered>
-                  <Icon name='tasks' size='big' color='blue'></Icon>
-                </Grid.Row>
-                <Grid.Row centered>
-                  <div style={descriptionHeaderStyles}>
-                    CUSTOMIZED SAT/ACT PROGRAMS
-                  </div>
-                </Grid.Row>
-                <Grid.Row centered>
-                  <Grid.Column width={13} textAlign='center'>
-                    <div style={descriptionStyles}>
-                      Weekly adjustments are made to ensure goals are met on time with personalized study guides based on error patterns
-                    </div>
-                  </Grid.Column>
+                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
+                    <Card.Content>
+                      <div style={cardHeaderStyles}>
+                        TUTOR MATCHING
+                      </div>
+                    </Card.Content>
+                    <Card.Description style={cardStyles}>
+                      PAIRING WITH EXPERT TUTOR BASED ON AVAILABILITY AND LEARNING STYLE
+                      </Card.Description>
+                  </Card>
                 </Grid.Row>
               </Grid>
             </Grid.Column>
 
-            <Grid.Column textAlign='center' width={4}>
+            <Grid.Column textAlign='center' width={3}>
               <Grid centered padded stackable>
                 <Grid.Row centered>
-                  <Icon name='users' size='big' color='blue'></Icon>
+                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
+                    <Card.Content>
+                      <div style={cardHeaderStyles}>
+                        PERSONALIZED PROGRAM
+                      </div>
+                    </Card.Content>
+                    <Card.Description style={cardStyles}>
+                      EACH STUDENT GIVEN PERSONALIZED PROGRAM BASED ON LEARNING STYLE AND GOALS
+                    </Card.Description>
+                  </Card>
                 </Grid.Row>
-                <Grid.Row centered>
-                  <div style={descriptionHeaderStyles}>
-                    HIGHLY QUALIFIED INSTRUCTORS
-                  </div>
-                </Grid.Row>
-                <Grid.Row centered>
-                  <Grid.Column width={13} textAlign='center'>
-                    <div style={descriptionStyles}>
-                      Our instructors go through a rigorous interview process with extensive training to provide a 100% tutor satisfaction guarantee
-                    </div>
+              </Grid>
+            </Grid.Column>
 
-                  </Grid.Column>
+            <Grid.Column textAlign='center' width={3}>
+              <Grid centered padded stackable>
+                <Grid.Row centered>
+                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
+                    <Card.Content>
+                      <div style={cardHeaderStyles}>
+                        TRACKING
+                      </div>
+                    </Card.Content>
+                    <Card.Description style={cardStyles}>
+                      MONITOR EXAM PROGRESS TO CREATE PROGRESS TRAJECTORY TO ENSURE POSITIVE RESULTS
+                    </Card.Description>
+                  </Card>
+                </Grid.Row>
+              </Grid>
+            </Grid.Column>
+
+            <Grid.Column textAlign='center' width={3}>
+              <Grid centered padded stackable>
+                <Grid.Row centered>
+                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
+                    <Card.Content>
+                      <div style={cardHeaderStyles}>
+                        SUPPORT
+                      </div>
+                    </Card.Content>
+                    <Card.Description style={cardStyles}>
+                      GUIDANCE THROUGH COLLEGE ADMISSIONS PROCESS AND PROFESSIONAL DEVELOPMENT
+                    </Card.Description>
+                  </Card>
                 </Grid.Row>
               </Grid>
             </Grid.Column>
           </Grid.Row>
 
+          <Grid.Row centered>
+            <div style={{ paddingTop: '4%' }}>
+              <Button inverted color='blue' size='huge' content='BOOK AN APPOINTMENT' />
+            </div>
+          </Grid.Row>
+
           {/* LAYER SEVEN */}
-          <Grid.Row style={{ paddingTop: '10%' }}>
+          <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column width={16}>
               <Parallax bgImage={Study3Img} strength={450} blue={8}>
                 <div style={{ height: 600, background: 'rgba(0, 0, 0, 0.5)' }}>
                   <div style={insideStyles3}>
                     <Grid stackable>
 
-                      <Grid.Row centered>
-                        <Grid.Column textAlign='center' width={16}>
-                          OUR PROCESS
+                      <Grid.Row >
+                        <Grid.Column textAlign='center'>
+                          <div style={headerStyles}>
+                            WHAT
+                          </div>
                         </Grid.Column>
                       </Grid.Row>
 
-                      <Grid.Row centered style={{ paddingTop: '2%' }}>
-                        <Grid.Column textAlign='center' width={3}>
+                      {/* LAYER THREE */}
+                      <Grid.Row style={{ paddingTop: '3%' }} columns={3} divided>
+
+                        <Grid.Column textAlign='center'>
                           <Grid padded relaxed stackable>
                             <Grid.Row centered>
-                              <Card link style={{ background: 'rgba(0, 0, 0, 0.6)' }}>
-                                <Card.Content>
-                                  <div style={cardHeaderStyles}>
-                                    EDUCATION
-                                  </div>
-                                </Card.Content>
-                                <Card.Description style={cardStyles}>
-                                  DIAGNOSTIC TEST ON TIME MANAGEMENT, CONTENT, AND STRATEGY
-                                </Card.Description>
-                              </Card>
+                              <Icon name='book' size='small' color='blue'></Icon>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                              <div style={descriptionHeaderStyles}>
+                                FLEXIBLE, ONLINE, PRIVATE COACHING
+                              </div>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                              <Grid.Column width={10} textAlign='center'>
+                                <div style={descriptionStyles}>
+                                  Amikka offers a multitude of tutoring options such as interactive whiteboarding, video chat, and instructional videos
+                                </div>
+                              </Grid.Column>
                             </Grid.Row>
                           </Grid>
                         </Grid.Column>
 
-                        <Grid.Column textAlign='center' width={3}>
+                        <Grid.Column textAlign='center'>
                           <Grid centered padded stackable>
                             <Grid.Row centered>
-                              <Card link style={{ background: 'rgba(0, 0, 0, 0.6)' }}>
-                                <Card.Content>
-                                  <div style={cardHeaderStyles}>
-                                    TUTOR MATCHING
-                                  </div>
-                                </Card.Content>
-                                <Card.Description style={cardStyles}>
-                                  PAIRING WITH EXPERT TUTOR BASED ON AVAILABILITY AND LEARNING STYLE
-                                </Card.Description>
-                              </Card>
+                              <Icon name='tasks' size='small' color='blue'></Icon>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                              <div style={descriptionHeaderStyles}>
+                                CUSTOMIZED SAT/ACT PROGRAMS
+                              </div>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                              <Grid.Column width={10} textAlign='center'>
+                                <div style={descriptionStyles}>
+                                  Weekly adjustments are made to ensure goals are met on time with personalized study guides based on error patterns
+                                </div>
+                              </Grid.Column>
                             </Grid.Row>
                           </Grid>
                         </Grid.Column>
 
-                        <Grid.Column textAlign='center' width={3}>
+                        <Grid.Column textAlign='center' >
                           <Grid centered padded stackable>
                             <Grid.Row centered>
-                              <Card link style={{ background: 'rgba(0, 0, 0, 0.6)' }}>
-                                <Card.Content>
-                                  <div style={cardHeaderStyles}>
-                                    PERSONALIZED PROGRAM
-                                  </div>
-                                </Card.Content>
-                                <Card.Description style={cardStyles}>
-                                  EACH STUDENT GIVEN PERSONALIZED PROGRAM BASED ON LEARNING STYLE AND GOALS
-                                </Card.Description>
-                              </Card>
+                              <Icon name='users' size='small' color='blue'></Icon>
                             </Grid.Row>
-                          </Grid>
-                        </Grid.Column>
-
-                        <Grid.Column textAlign='center' width={3}>
-                          <Grid centered padded stackable>
                             <Grid.Row centered>
-                              <Card link style={{ background: 'rgba(0, 0, 0, 0.6)' }}>
-                                <Card.Content>
-                                  <div style={cardHeaderStyles}>
-                                    TRACKING
-                                  </div>
-                                </Card.Content>
-                                <Card.Description style={cardStyles}>
-                                  MONITOR EXAM PROGRESS TO CREATE PROGRESS TRAJECTORY TO ENSURE POSITIVE RESULTS
-                                </Card.Description>
-                              </Card>
+                              <div style={descriptionHeaderStyles}>
+                                HIGHLY QUALIFIED INSTRUCTORS
+                              </div>
                             </Grid.Row>
-                          </Grid>
-                        </Grid.Column>
-
-                        <Grid.Column textAlign='center' width={3}>
-                          <Grid centered padded stackable>
                             <Grid.Row centered>
-                              <Card link style={{ background: 'rgba(0, 0, 0, 0.6)' }}>
-                                <Card.Content>
-                                  <div style={cardHeaderStyles}>
-                                    SUPPORT
-                                  </div>
-                                </Card.Content>
-                                <Card.Description style={cardStyles}>
-                                  GUIDANCE THROUGH COLLEGE ADMISSIONS PROCESS AND PROFESSIONAL DEVELOPMENT
-                                </Card.Description>
-                              </Card>
+                              <Grid.Column width={10} textAlign='center'>
+                                <div style={descriptionStyles}>
+                                  Our instructors go through a rigorous interview process with extensive training to provide a 100% tutor satisfaction guarantee
+                                </div>
+                              </Grid.Column>
                             </Grid.Row>
                           </Grid>
                         </Grid.Column>
-                      </Grid.Row>
-
-                      <Grid.Row centered>
-                        <div style={{ paddingTop: '4%' }}>
-                          <Button color='blue' size='large' content='BOOK AN APPOINTMENT' />
-                        </div>
                       </Grid.Row>
                     </Grid>
                   </div>
@@ -428,8 +437,8 @@ export default class Home extends Component {
           </Grid.Row >
 
           {/* LAYER TEN */}
-          <Grid.Row style={{ paddingTop: '5%' }}>
-            <Button color='blue' inverted size='large' content='BACK TO TOP' />
+          <Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%' }}>
+            <Button color='blue' inverted size='huge' content='BACK TO TOP' onClick={this.scrollToTop}/>
           </Grid.Row>
 
         </Grid>

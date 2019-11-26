@@ -10,7 +10,14 @@ import {
 import Home from '../../pages/home/Home.js'
 import About from '../../pages/about/About.js'
 import Services from '../../pages/services/Services.js'
+import Contact from '../../pages/contact/Contact.js'
 import Logo from '../../images/logo3.svg'
+
+const menuStyles = {
+  fontFamily: 'raleway',
+  fontSize: '18px',
+  fontWeight: 'bold',
+}
 
 export default class Header2 extends Component {
   constructor(props) {
@@ -20,11 +27,6 @@ export default class Header2 extends Component {
     }
   }
 
-  handleItemClick = (e, { name }) => {
-    const { activeItem } = this.state;
-    activeItem === name ? this.scrollToTop() : this.setState({ activeItem: name })
-  }
-
   render() {
     const { activeItem } = this.state;
 
@@ -32,77 +34,68 @@ export default class Header2 extends Component {
       <div className='Header'>
         <Router>
           <Grid centered>
+
             <Grid.Row textAlign='center'>
               <Image src={Logo} />
             </Grid.Row>
-            <Grid.Row style={{ height: '55px' }}>
-              <Grid.Column width={16}>
 
-                <Menu text widths={1}>
-                  <Grid centered padded='horizontally' stackable>
+
+            <Grid.Row style={{ height: '70px' }} columns={5}>
+              <Menu text>
+                <Grid.Column width={16} textAlign='center'>
+
+                  <Grid centered relaxed stackable>
                     <Grid.Row columns={5} centered>
-                      <Grid.Column width={3}>
-                        <Menu.Item
-                          as={Link}
-                          to='/'
-                          name='HOME'
-                          link={true}
-                        // active={activeItem === 'HOME'}
-                        // onClick={this.handleItemClick}
-                        >
+
+                      <Grid.Column textAlign='center' width={3}>
+                        <Menu.Item as={Link} to='/' >
+                          <div style={menuStyles}>
+                            HOME
+                          </div>
                         </Menu.Item>
                       </Grid.Column>
-                      <Grid.Column width={3}>
-                        <Menu.Item
-                          as={Link}
-                          to='/about'
-                          name='ABOUT'
-                        // active={activeItem === 'ABOUT'}
-                        // onClick={this.handleItemClick}
-                        />
+
+                      <Grid.Column textAlign='center' width={3}>
+                        <Menu.Item as={Link} to='/about'>
+                          <div style={menuStyles}>
+                            ABOUT
+                          </div>
+                        </Menu.Item>
                       </Grid.Column>
 
-                      <Grid.Column width={3}>
-                        <Menu.Item
-                          as={Link}
-                          to='/services'
-                          name='SERVICES'
-                        // active={activeItem === 'SERVICES'}
-                        // onClick={this.handleItemClick}
-                        />
+                      <Grid.Column textAlign='center' width={3} style={{paddingRight: '18%' }}>
+                        <Menu.Item as={Link} to='/services'>
+                          <div style={menuStyles}>
+                            SERVICES
+                          </div>
+                        </Menu.Item>
                       </Grid.Column>
 
-                      <Grid.Column width={3}>
-                        <Menu.Item
-                          as={Link}
-                          to='/contact'
-                          name='CONTACT'
-                        // active={activeItem === 'CONTACT'}
-                        // onClick={this.handleItemClick}
-                        />
+                      <Grid.Column textAlign='center' width={3} style={{paddingRight: '18%' }}>
+                        <Menu.Item as={Link} to='/contact'>
+                          <div style={menuStyles}>
+                            CONTACT
+                          </div>
+                        </Menu.Item>
                       </Grid.Column>
 
-                      <Grid.Column width={3}>
-                        <Menu.Item
-                          as={Link}
-                          to='portal'
-                          name='PORTAL'
-                        // active={activeItem === 'PORTAL'}
-                        // onClick={this.handleItemClick}
-                        />
+                      <Grid.Column textAlign='center' width={3}>
+                        <Menu.Item as={Link} to='portal'>
+                          <div style={menuStyles}>
+                            PORTAL
+                          </div>
+                        </Menu.Item>
                       </Grid.Column>
+
                     </Grid.Row>
                   </Grid>
-                </Menu>
-
-              </Grid.Column>
+                </Grid.Column>
+              </Menu>
             </Grid.Row>
+
 
             <Grid.Row centered>
               <Grid.Column centered textAlign='center'>
-                {/* <div style={{ paddingBottom: '20%' }}>
-              <RenderedMenuItem menuItemName={activeItem} />
-            </div> */}
                 <Switch>
                   <Route exact path='/'>
                     <Home />
@@ -113,37 +106,18 @@ export default class Header2 extends Component {
                   <Route exact path='/services'>
                     <Services />
                   </Route>
-                  {/* <Route exact path='/contact'>
-                    <Home />
+                  <Route exact path='/contact'>
+                    <Contact />
                   </Route>
-                  <Route exact path='/portal'>
+                  {/* <Route exact path='/portal'>
                     <Home />
                   </Route> */}
                 </Switch>
               </Grid.Column>
             </Grid.Row>
-
           </Grid>
         </Router>
       </div>
     )
-  }
-}
-
-const RenderedMenuItem = ({ menuItemName }) => {
-  if (menuItemName === 'HOME') {
-    return <Home />
-  }
-  if (menuItemName === 'ABOUT') {
-    return <About />
-  }
-  if (menuItemName === 'SERVICES') {
-    return <div><h1>SERVICES</h1></div>
-  }
-  if (menuItemName === 'CONTACT') {
-    return <div><h1>CONTACT</h1></div>
-  }
-  if (menuItemName === 'PORTAL') {
-    return <div><h1>PORTAL</h1></div>
   }
 }
