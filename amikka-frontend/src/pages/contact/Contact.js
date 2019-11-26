@@ -68,20 +68,26 @@ export default class Contact extends Component {
 
 	sendMessage = (event) => {
 		const { firstName, lastName, phoneNumber, email, message, } = this.state
-		var templateParams = {
-			from_name: firstName + lastName + '(' + email + ')',
-			from_phoneNumber: phoneNumber,
-			message_html: message
+
+		var template_params = {
+			"from_name": firstName + lastName + '(' + email + ')',
+			"from_phoneNumber": phoneNumber,
+			"message_html": message
 		}
 
-		emailjs.send('gmail', 'template_xO4nDxoK', templateParams, 'user_Xy6ZBBg6ox7fzwqRfI5lN')
-			.then(function (response) {
-				toastr.success('Message sent successfully')
-				console.log('SUCCESS!', response.status, response.text)
-			}, function (err) {
-				toastr.error(err)
-				console.log(err)
-			})
+		var service_id = "default_service";
+		var template_id = "template_xO4nDxoK";
+
+		emailjs.send(service_id, template_id, template_params, 'user_Xy6ZBBg6ox7fzwqRfI5lN');
+
+		// emailjs.send('gmail', 'template_xO4nDxoK', template_params, 'user_Xy6ZBBg6ox7fzwqRfI5lN')
+		// 	.then(function (response) {
+		// 		toastr.success('Message sent successfully')
+		// 		console.log('SUCCESS!', response.status, response.text)
+		// 	}, function (err) {
+		// 		toastr.error(err)
+		// 		console.log(err)
+		// 	})
 
 		this.setState({
 			firstName: '',
