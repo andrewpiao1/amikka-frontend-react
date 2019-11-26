@@ -5,7 +5,7 @@ export default class Footer extends Component {
 
     render() {
         return (
-            <footer style={{ paddingTop: '10%'}}>
+            <footer style={{ paddingTop: '4%'}}>
                 <Grid centered relaxed fluid >
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>

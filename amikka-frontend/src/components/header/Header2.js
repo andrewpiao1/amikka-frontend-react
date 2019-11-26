@@ -9,6 +9,7 @@ import {
 
 import Home from '../../pages/home/Home.js'
 import About from '../../pages/about/About.js'
+import Services from '../../pages/services/Services.js'
 import Logo from '../../images/logo3.svg'
 
 export default class Header2 extends Component {
@@ -109,15 +110,15 @@ export default class Header2 extends Component {
                   <Route exact path='/about'>
                     <About />
                   </Route>
-                  {/* <Route exact path='/services'>
-                <Home />
-              </Route>
-              <Route exact path='/contact'>
-                <Home />
-              </Route>
-              <Route exact path='/portal'>
-                <Home />
-              </Route> */}
+                  <Route exact path='/services'>
+                    <Services />
+                  </Route>
+                  {/* <Route exact path='/contact'>
+                    <Home />
+                  </Route>
+                  <Route exact path='/portal'>
+                    <Home />
+                  </Route> */}
                 </Switch>
               </Grid.Column>
             </Grid.Row>
