@@ -18,12 +18,28 @@ import Harvard from '../../images/harvard.png'
 import Michigan from '../../images/michigan.jpg'
 import Penn from '../../images/penn.jpg'
 import Logo from '../../images/logo2.svg'
+import Stock1 from '../../images/stock_1.png'
+import Diagram from '../../images/diagram.jpg'
+
+import Checklist from '../../images/check-list.svg'
+import Tutor from '../../images/tutor.svg'
+import Report from '../../images/report.svg'
+import Diagram2 from '../../images/diagram.svg'
+import Service from '../../images/customer-service.svg'
 
 import './home.css'
 
 const headerStyles = {
   fontFamily: 'raleway',
+  fontSize: '38px',
+  fontWeight: 'bold',
+}
+
+const headerStyles2 = {
+  fontFamily: 'raleway',
   fontSize: '30px',
+  color: 'white',
+  paddingBottom: '3%',
   fontWeight: 'bold',
 }
 
@@ -47,12 +63,36 @@ const descriptionStyles = {
   lineHeight: 1.8,
 }
 
+const descriptionStyles2 = {
+  color: 'white',
+  fontFamily: 'raleway',
+  fontSize: '22px',
+  lineHeight: 1.8,
+}
+
+const descriptionStyles3 = {
+  fontFamily: 'raleway',
+  fontSize: '18px',
+  paddingTop: '3%',
+  lineHeight: 1.8,
+}
+
+const descriptionStyles4 = {
+  fontFamily: 'raleway',
+  fontSize: '16px',
+  paddingTop: '3%',
+  lineHeight: 1.8,
+  color: 'white',
+  fontWeight: 'bold',
+}
+
 const parallaxStyles = {
   fontFamily: 'raleway',
   fontSize: '20px',
   color: 'white',
   lineHeight: 1.3,
 }
+
 
 const cardStyles = {
   fontFamily: 'raleway',
@@ -67,11 +107,12 @@ const insideStyles = {
   color: 'white',
   fontFamily: 'raleway',
   textAlign: 'center',
-  fontSize: '22px',
+  fontSize: '28px',
   position: "absolute",
   top: "50%",
   left: "50%",
-  transform: "translate(-50%,-50%)"
+  transform: "translate(-50%,-50%)",
+  lineHeight: 1.3,
 }
 
 const insideStyles2 = {
@@ -82,7 +123,8 @@ const insideStyles2 = {
   position: "absolute",
   top: "50%",
   left: "50%",
-  transform: "translate(-50%,-50%)"
+  transform: "translate(-50%,-50%)",
+  paddingTop: '5%'
 }
 
 const insideStyles3 = {
@@ -93,7 +135,8 @@ const insideStyles3 = {
   position: 'absolute',
   top: '50%',
   left: "50%",
-  transform: 'translate(-50%, -50%)'
+  transform: 'translate(-50%, -50%)',
+
 }
 
 const youtubeOpts = {
@@ -119,19 +162,26 @@ export default class Home extends Component {
 
           {/* LAYER ONE */}
           <Grid.Row>
-            <Grid.Column>
+            <Grid.Column width={16}>
               <Parallax bgImage={StudyImg} strength={450} blur={3}>
-                <div style={{ height: 650 }}>
+                <div style={{ height: 550 }}>
                   <div style={insideStyles}>
                     <Grid stackable>
-                      <Grid.Row centered >
-                        <Image src={Logo} size='massive' />
+
+                      <Grid.Row>
+                        <Grid.Column textAlign='center'>
+                          <div style={headerStyles}>
+                            Join us and become 1 of 500+ success stories
+                          </div>
+                        </Grid.Column>
                       </Grid.Row>
-                      <Grid.Row centered>
+
+                      <Grid.Row centered style={{ paddingTop: '5%' }} >
                         <div style={{ paddingTop: '5%' }}>
-                          <Button color='blue' size='huge' content='BOOK AN APPOINTMENT' />
+                          <Button color='blue' size='huge' content='BOOK AN APPOINTMENT' as={Link} to='/contact' />
                         </div>
                       </Grid.Row>
+
                     </Grid>
                   </div>
                 </div>
@@ -165,149 +215,27 @@ export default class Home extends Component {
             </div>
           </Grid.Row>
 
-          {/* LAYER FOUR */}
-          <Grid.Row>
-            <Grid.Column>
-              <div style={{ paddingTop: '3%' }}>
-                <Parallax bgImage={Study2Img} strength={450}>
-                  <div style={{ height: 600, background: 'rgba(0, 0, 0, 0.5)' }}>
-                    <div style={insideStyles2}>
-                      <Grid stackable>
-                        <Grid.Row centered>
-                          <div style={headerStyles}>
-                            WHO
-                          </div>
-                        </Grid.Row>
+          {/* LAYER THREE */}
+          <Grid.Row centered style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186, 0.6)' }}>
+            <Grid.Column width={11} textAlign='center'>
+              <div style={headerStyles2}>
+                WHO
+              </div>
+              <div style={descriptionStyles2}>
+                Amikka Tutoring is an online platform that provides students with the tools necessary for success on the SAT/ACT exam through private coaching.
+							</div>
+            </Grid.Column>
+          </Grid.Row>
 
-                        <Grid.Row centered>
-                          <Grid.Column width={13} textAlign='center' style={{ paddingTop: '4%' }}>
-                            <div style={parallaxStyles}>
-                              Amikka Tutoring is an online platform that provides students with the tools necessary for success on the SAT/ACT exam through private coaching.
-                            </div>
-                          </Grid.Column>
-                        </Grid.Row>
-
-                        <Grid.Row centered>
-                          <Grid.Column width={15} textAlign='center' style={{ paddingTop: '2%' }}>
-                            <div style={parallaxStyles}>
-                              Our SAT/ACT programs focus on the synergies between time management, strategy, and content. Students' scores increase on average ~220 points for the SAT and ~5 points on the ACT
-                            </div>
-                          </Grid.Column>
-                        </Grid.Row>
-
-                        <Grid.Row centered>
-                          <div style={{ paddingTop: '5%' }}>
-                            <Button color='blue' size='huge' content='LEARN MORE' as={Link} to='/services' />
-                          </div>
-                        </Grid.Row>
-
-                      </Grid>
-                    </div>
-                  </div>
-                </Parallax>
+          <Grid.Row centered columns={2} style={{ paddingTop: '3%' }} verticalAlign='middle' >
+            <Grid.Column width={6} textAlign='center'>
+              <div style={descriptionStyles3}>
+                Our SAT/ACT programs focus on the synergies between time management, strategy, and content. Students' scores increase on average ~220 points for the SAT and ~5 points on the ACT
               </div>
             </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row style={{ paddingTop: '5%' }}>
-            <Grid.Column textAlign='center' width={16}>
-              <div style={headerStyles}>
-                OUR PROCESS
-              </div>
+            <Grid.Column width={5} textAlign='center'>
+              <Image src={Diagram} />
             </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row centered style={{ paddingTop: '2%' }}>
-            <Grid.Column textAlign='center' width={3}>
-              <Grid padded relaxed stackable>
-                <Grid.Row centered>
-                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
-                    <Card.Content>
-                      <div style={cardHeaderStyles}>
-                        EDUCATION
-                      </div>
-                    </Card.Content>
-                    <Card.Description style={cardStyles}>
-                      DIAGNOSTIC TEST ON TIME MANAGEMENT, CONTENT, AND STRATEGY
-                    </Card.Description>
-                  </Card>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-
-            <Grid.Column textAlign='center' width={3}>
-              <Grid centered padded stackable>
-                <Grid.Row centered>
-                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
-                    <Card.Content>
-                      <div style={cardHeaderStyles}>
-                        TUTOR MATCHING
-                      </div>
-                    </Card.Content>
-                    <Card.Description style={cardStyles}>
-                      PAIRING WITH EXPERT TUTOR BASED ON AVAILABILITY AND LEARNING STYLE
-                      </Card.Description>
-                  </Card>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-
-            <Grid.Column textAlign='center' width={3}>
-              <Grid centered padded stackable>
-                <Grid.Row centered>
-                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
-                    <Card.Content>
-                      <div style={cardHeaderStyles}>
-                        PERSONALIZED PROGRAM
-                      </div>
-                    </Card.Content>
-                    <Card.Description style={cardStyles}>
-                      EACH STUDENT GIVEN PERSONALIZED PROGRAM BASED ON LEARNING STYLE AND GOALS
-                    </Card.Description>
-                  </Card>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-
-            <Grid.Column textAlign='center' width={3}>
-              <Grid centered padded stackable>
-                <Grid.Row centered>
-                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
-                    <Card.Content>
-                      <div style={cardHeaderStyles}>
-                        TRACKING
-                      </div>
-                    </Card.Content>
-                    <Card.Description style={cardStyles}>
-                      MONITOR EXAM PROGRESS TO CREATE PROGRESS TRAJECTORY TO ENSURE POSITIVE RESULTS
-                    </Card.Description>
-                  </Card>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-
-            <Grid.Column textAlign='center' width={3}>
-              <Grid centered padded stackable>
-                <Grid.Row centered>
-                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
-                    <Card.Content>
-                      <div style={cardHeaderStyles}>
-                        SUPPORT
-                      </div>
-                    </Card.Content>
-                    <Card.Description style={cardStyles}>
-                      GUIDANCE THROUGH COLLEGE ADMISSIONS PROCESS AND PROFESSIONAL DEVELOPMENT
-                    </Card.Description>
-                  </Card>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row centered>
-            <div style={{ paddingTop: '4%' }}>
-              <Button inverted color='blue' size='huge' content='BOOK AN APPOINTMENT' />
-            </div>
           </Grid.Row>
 
           {/* LAYER SEVEN */}
@@ -326,9 +254,7 @@ export default class Home extends Component {
                         </Grid.Column>
                       </Grid.Row>
 
-                      {/* LAYER THREE */}
                       <Grid.Row style={{ paddingTop: '3%' }} columns={3} divided>
-
                         <Grid.Column textAlign='center'>
                           <Grid padded relaxed stackable>
                             <Grid.Row centered>
@@ -396,11 +322,100 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
+          <Grid.Row style={{ paddingTop: '7%' }}>
+            <Grid.Column textAlign='center' width={16}>
+              <div style={headerStyles}>
+                OUR PROCESS
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row centered style={{ paddingTop: '5%' }} verticalAlign='middle'>
+            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.2)' }}>
+              <div style={headerStyles2}>
+                INITIAL EVALUATION
+              </div>
+              <div style={descriptionStyles4}>
+                Diagnostic test on Time Management, Content, and Strategy
+              </div>
+            </Grid.Column>
+
+            <Grid.Column width={4}>
+              <Image src={Checklist} centered size='tiny' />
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row centered verticalAlign='middle'>
+            <Grid.Column width={4} textAlign='center'>
+              <Image src={Tutor} centered size='tiny' />
+            </Grid.Column>
+
+            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.4)' }}>
+              <div style={headerStyles2}>
+                TUTOR MATCHING
+              </div>
+              <div style={descriptionStyles4}>
+                Pairing with expert tutor based on students' availability and learning style
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row centered verticalAlign='middle'>
+            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.6)' }}>
+              <div style={headerStyles2}>
+                PERSONALIZED PROGRAM
+              </div>
+              <div style={descriptionStyles4}>
+                Each student is given a personalized program based on learning style and goals
+              </div>
+            </Grid.Column>
+
+            <Grid.Column width={4} textAlign='center'>
+              <Image src={Report} centered size='tiny' />
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row centered verticalAlign='middle'>
+            <Grid.Column width={4} textAlign='center'>
+              <Image src={Diagram2} centered size='tiny' />
+            </Grid.Column>
+
+            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.8)' }}>
+              <div style={headerStyles2}>
+                TRACKING
+              </div>
+              <div style={descriptionStyles4}>
+                Monitor exam progresss to create progress trajectory to ensure positive results
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row centered verticalAlign='middle'>
+            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186)' }}>
+              <div style={headerStyles2}>
+                SUPPORT
+              </div>
+              <div style={descriptionStyles4}>
+                Guidance through college admissions process and professional development
+              </div>
+            </Grid.Column>
+
+            <Grid.Column width={4} textAlign='center'>
+              <Image src={Service} centered size='tiny' />
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row centered>
+            <div style={{ paddingTop: '4%' }}>
+              <Button inverted color='blue' size='huge' content='BOOK AN APPOINTMENT' as={Link} to='/contact' />
+            </div>
+          </Grid.Row>
+
           {/* LAYER EIGHT */}
           <Grid.Row centered textAlign='center' style={{ paddingTop: '2%' }}>
             <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
               <div style={headerStyles}>
-                RELATED UNIVERSITIES
+                TESTIMONIALS
               </div>
             </Grid.Column>
           </Grid.Row>
@@ -438,7 +453,7 @@ export default class Home extends Component {
 
           {/* LAYER TEN */}
           <Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%' }}>
-            <Button color='blue' inverted size='huge' content='BACK TO TOP' onClick={this.scrollToTop}/>
+            <Button color='blue' inverted size='huge' content='BACK TO TOP' onClick={this.scrollToTop} />
           </Grid.Row>
 
         </Grid>

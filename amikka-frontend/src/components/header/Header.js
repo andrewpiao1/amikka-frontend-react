@@ -1,76 +1,125 @@
 import React, { Component } from 'react'
-import { Grid, Menu, Image } from 'semantic-ui-react'
-import { Link, animateScroll as scroll } from 'react-scroll'
-import Logo from '../../images/logo.svg'
-import './header.css'
+import { Menu, Grid, Image } from 'semantic-ui-react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-export default class Header extends Component {
+import Home from '../../pages/home/Home.js'
+import About from '../../pages/about/About.js'
+import Services from '../../pages/services/Services.js'
+import Contact from '../../pages/contact/Contact.js'
+import Logo from '../../images/logo4.svg'
 
-  scrollToTop = () => scroll.scrollToTop();
+const menuStyles = {
+  fontFamily: 'raleway',
+  fontSize: '18px',
+  fontWeight: 'bold',
+}
+
+export default class Header2 extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: 'HOME',
+    }
+  }
 
   render() {
+    const { activeItem } = this.state;
+
     return (
-      <Grid className='headerBar' inverted padded>
-        <Grid.Row centered>
-          <Grid.Column centered>
-            <Menu size='massive' secondary>
-              {/* <Menu.Item onClick={this.scrollToTop}>
-                <Image src={Logo} style={{ height: '250px' }}/>
-              </Menu.Item> */}
+      <div className='Header'>
+        <Router>
+          <Grid centered>
 
-              <Menu.Menu>
-                <Menu.Item name='home' link={true} onClick={this.scrollToTop}>
-                  <Link activeClass='active'
-                    to='home'
-                    spy={true}
-                    smooth={true}
-                    duration={750}
-                  ><div style={{ color: 'black' }}>HOME</div></Link>
-                </Menu.Item>
+            <Grid.Row textAlign='center' >
+              <Grid.Column width={4}>
+                  <Image src={Logo} />
+              </Grid.Column>
+            </Grid.Row>
 
-                <Menu.Item name='about' link={true}>
-                  <Link activeClass='active'
-                    to='about'
-                    spy={true}
-                    smooth={true}
-                    duration={750}
-                    offset={-75}
-                  ><div style={{ color: 'black' }}>ABOUT</div></Link>
-                </Menu.Item>
 
-                <Menu.Item name='services' link={true}>
-                  <Link activeClass='active'
-                    to='services'
-                    spy={true}
-                    smooth={true}
-                    duration={750}
-                  ><div style={{ color: 'black' }}>SERVICES</div></Link>
-                </Menu.Item>
+            <Grid.Row style={{ height: '70px' }} columns={5}>
+              <Menu text>
+                <Grid.Column width={16} textAlign='center'>
 
-                <Menu.Item name='contact' link={true}>
-                  <Link activeClass='active'
-                    to='contact'
-                    spy={true}
-                    smooth={true}
-                    duration={750}
-                  ><div style={{ color: 'black' }}>CONTACT</div></Link>
-                </Menu.Item>
+                  <Grid centered relaxed>
+                    <Grid.Row columns={5} centered>
 
-                <Menu.Item name='portal' link={true}>
-                  <Link activeClass='active'
-                    to='portal'
-                    spy={true}
-                    smooth={true}
-                    duration={750}
-                    offset={-85}
-                  ><div style={{ color: 'black' }}>PORTAL</div></Link>
-                </Menu.Item>
-              </Menu.Menu>
+                      <Grid.Column textAlign='center' width={3}>
+                        <Menu.Item as={Link} to='/' >
+                          <div style={menuStyles}>
+                            HOME
+                          </div>
+                        </Menu.Item>
+                      </Grid.Column>
 
-            </Menu>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+                      <Grid.Column textAlign='center' width={3}>
+                        <Menu.Item as={Link} to='/about'>
+                          <div style={menuStyles}>
+                            ABOUT
+                          </div>
+                        </Menu.Item>
+                      </Grid.Column>
+
+                      <Grid.Column textAlign='center' width={3} style={{ paddingRight: '18%' }}>
+                        <Menu.Item as={Link} to='/services'>
+                          <div style={menuStyles}>
+                            SERVICES
+                          </div>
+                        </Menu.Item>
+                      </Grid.Column>
+
+                      <Grid.Column textAlign='center' width={3} style={{ paddingRight: '18%' }}>
+                        <Menu.Item as={Link} to='/contact'>
+                          <div style={menuStyles}>
+                            CONTACT
+                          </div>
+                        </Menu.Item>
+                      </Grid.Column>
+
+                      <Grid.Column textAlign='center' width={3}>
+                        <Menu.Item as={Link} to='portal'>
+                          <div style={menuStyles}>
+                            PORTAL
+                          </div>
+                        </Menu.Item>
+                      </Grid.Column>
+
+                    </Grid.Row>
+                  </Grid>
+                </Grid.Column>
+              </Menu>
+            </Grid.Row>
+
+
+            <Grid.Row centered>
+              <Grid.Column centered textAlign='center'>
+                <Switch>
+                  <Route exact path='/'>
+                    <Home />
+                  </Route>
+                  <Route exact path='/about'>
+                    <About />
+                  </Route>
+                  <Route exact path='/services'>
+                    <Services />
+                  </Route>
+                  <Route exact path='/contact'>
+                    <Contact />
+                  </Route>
+                  {/* <Route exact path='/portal'>
+                    <Home />
+                  </Route> */}
+                </Switch>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Router>
+      </div>
     )
   }
 }

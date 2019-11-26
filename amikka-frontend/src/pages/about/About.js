@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Header, Button, Icon, Card } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import { Parallax } from 'react-parallax'
 
 import Company1 from '../../images/company_1.jpg'
@@ -265,7 +266,7 @@ export default class About extends Component {
 
           <Grid.Row centered>
             <div style={{ paddingTop: '2%' }}>
-              <Button inverted color='blue' size='large' content='LEARN MORE' />
+              <Button inverted color='blue' size='large' content='LEARN MORE' as={Link} to='/contact'/>
             </div>
           </Grid.Row>
 
@@ -335,7 +336,7 @@ export default class About extends Component {
 
           <Grid.Row centered>
             <div style={{ paddingTop: '7%', paddingBottom: '5%' }}>
-              <Button color='blue' size='huge' content='LEARN MORE' />
+              <Button color='blue' size='huge' content='LEARN MORE' as={Link} to='/contact'/>
             </div>
           </Grid.Row>
         </Grid>

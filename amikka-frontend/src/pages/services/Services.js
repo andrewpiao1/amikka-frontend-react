@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Header, Button, Icon, Card } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import { Parallax } from 'react-parallax'
 
 import Amikka1 from '../../images/amikka_1.jpeg'
@@ -181,7 +182,7 @@ export default class Services extends Component {
 					{/* LAYER THREE */}
 					<Grid.Row centered style={{ paddingBottom: '5%' }}>
 						<div style={{ paddingTop: '5%' }}>
-							<Button inverted color='blue' size='huge' content='LEARN MORE' />
+							<Button inverted color='blue' size='huge' content='LEARN MORE' as={Link} to='/contact'/>
 						</div>
 					</Grid.Row>
 
