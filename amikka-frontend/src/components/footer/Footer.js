@@ -5,19 +5,16 @@ export default class Footer extends Component {
 
     render() {
         return (
-            <footer style={{ marginTop: '-15%' }}>
+            <footer style={{ paddingTop: '10%'}}>
                 <Grid centered relaxed fluid >
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
                     <Grid.Row centered color='blue' columns={3} divided>
-                        <Grid.Column width={7} textAlign='center' color='blue'>
+                        <Grid.Column width={16} textAlign='center' color='blue'>
                             Copyright © 2019 Amikka Tutoring
                         </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
-                    <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
-                    <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>

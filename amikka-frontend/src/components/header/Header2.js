@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import { Menu, Grid, Image } from 'semantic-ui-react'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import Home from '../../pages/home/Home.js'
 import About from '../../pages/about/About.js'
 import Logo from '../../images/logo3.svg'
@@ -18,70 +24,107 @@ export default class Header2 extends Component {
     activeItem === name ? this.scrollToTop() : this.setState({ activeItem: name })
   }
 
-  scrollToTop = () => scroll.scrollToTop();
-
   render() {
     const { activeItem } = this.state;
 
     return (
-      <Grid centered>
-        <Grid.Row textAlign='center'>
-            <Image src={Logo} />
-        </Grid.Row>
-        <Grid.Row style={{ height: '55px' }}>
-          <Grid.Column width={16}>
-            <Menu text widths={1}>
-              <Grid centered padded='horizontally' stackable>
-                <Grid.Row columns={5} centered>
-                  <Grid.Column width={3}>
-                    <Menu.Item name='HOME' link={true} active={activeItem === 'HOME'} onClick={this.handleItemClick}>
-                    </Menu.Item>
-                  </Grid.Column>
-                  <Grid.Column width={3}>
-                    <Menu.Item
-                      name='ABOUT'
-                      active={activeItem === 'ABOUT'}
-                      onClick={this.handleItemClick}
-                    />
-                  </Grid.Column>
+      <div className='Header'>
+        <Router>
+          <Grid centered>
+            <Grid.Row textAlign='center'>
+              <Image src={Logo} />
+            </Grid.Row>
+            <Grid.Row style={{ height: '55px' }}>
+              <Grid.Column width={16}>
 
-                  <Grid.Column width={3}>
-                    <Menu.Item
-                      name='SERVICES'
-                      active={activeItem === 'SERVICES'}
-                      onClick={this.handleItemClick}
-                    />
-                  </Grid.Column>
+                <Menu text widths={1}>
+                  <Grid centered padded='horizontally' stackable>
+                    <Grid.Row columns={5} centered>
+                      <Grid.Column width={3}>
+                        <Menu.Item
+                          as={Link}
+                          to='/'
+                          name='HOME'
+                          link={true}
+                        // active={activeItem === 'HOME'}
+                        // onClick={this.handleItemClick}
+                        >
+                        </Menu.Item>
+                      </Grid.Column>
+                      <Grid.Column width={3}>
+                        <Menu.Item
+                          as={Link}
+                          to='/about'
+                          name='ABOUT'
+                        // active={activeItem === 'ABOUT'}
+                        // onClick={this.handleItemClick}
+                        />
+                      </Grid.Column>
 
-                  <Grid.Column width={3}>
-                    <Menu.Item
-                      name='CONTACT'
-                      active={activeItem === 'CONTACT'}
-                      onClick={this.handleItemClick}
-                    />
-                  </Grid.Column>
+                      <Grid.Column width={3}>
+                        <Menu.Item
+                          as={Link}
+                          to='/services'
+                          name='SERVICES'
+                        // active={activeItem === 'SERVICES'}
+                        // onClick={this.handleItemClick}
+                        />
+                      </Grid.Column>
 
-                  <Grid.Column width={3}>
-                    <Menu.Item
-                      name='PORTAL'
-                      active={activeItem === 'PORTAL'}
-                      onClick={this.handleItemClick}
-                    />
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </Menu>
-          </Grid.Column>
-        </Grid.Row>
+                      <Grid.Column width={3}>
+                        <Menu.Item
+                          as={Link}
+                          to='/contact'
+                          name='CONTACT'
+                        // active={activeItem === 'CONTACT'}
+                        // onClick={this.handleItemClick}
+                        />
+                      </Grid.Column>
 
-        <Grid.Row centered>
-          <Grid.Column centered textAlign='center'>
-            <div style={{ paddingBottom: '20%' }}>
+                      <Grid.Column width={3}>
+                        <Menu.Item
+                          as={Link}
+                          to='portal'
+                          name='PORTAL'
+                        // active={activeItem === 'PORTAL'}
+                        // onClick={this.handleItemClick}
+                        />
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Grid>
+                </Menu>
+
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row centered>
+              <Grid.Column centered textAlign='center'>
+                {/* <div style={{ paddingBottom: '20%' }}>
               <RenderedMenuItem menuItemName={activeItem} />
-            </div>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+            </div> */}
+                <Switch>
+                  <Route exact path='/'>
+                    <Home />
+                  </Route>
+                  <Route exact path='/about'>
+                    <About />
+                  </Route>
+                  {/* <Route exact path='/services'>
+                <Home />
+              </Route>
+              <Route exact path='/contact'>
+                <Home />
+              </Route>
+              <Route exact path='/portal'>
+                <Home />
+              </Route> */}
+                </Switch>
+              </Grid.Column>
+            </Grid.Row>
+
+          </Grid>
+        </Router>
+      </div>
     )
   }
 }

@@ -1,0 +1,7 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@headerFont        : 'Raleway', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : 'Raleway', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@googleFontFamily  : 'Open+Sans:400italic,400|Raleway:400,700';
