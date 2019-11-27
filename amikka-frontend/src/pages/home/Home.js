@@ -1,33 +1,27 @@
 import React, { Component } from 'react'
-import { Grid, Header, Button, Icon, Card, Image } from 'semantic-ui-react'
+import { Grid, Button, Icon, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { animateScroll as scroll } from 'react-scroll'
 import { Parallax } from 'react-parallax'
 import YouTube from 'react-youtube'
-
-import Footer from '../../components/footer/Footer'
-
-import StudyImg from '../../images/study.jpg'
-import Study2Img from '../../images/study2.jpg'
-import Study3Img from '../../images/chalkboard.jpg'
-import Chicago from '../../images/chicago.jpg'
-import Columbia from '../../images/columbia.jpg'
-import Cornell from '../../images/cornell.jpg'
-import Duke from '../../images/duke.jpeg'
-import Harvard from '../../images/harvard.png'
-import Michigan from '../../images/michigan.jpg'
-import Penn from '../../images/penn.jpg'
-import Logo from '../../images/logo2.svg'
-import Stock1 from '../../images/stock_1.png'
-import Diagram from '../../images/diagram.jpg'
-
-import Checklist from '../../images/check-list.svg'
-import Tutor from '../../images/tutor.svg'
-import Report from '../../images/report.svg'
-import Diagram2 from '../../images/diagram.svg'
-import Service from '../../images/customer-service.svg'
-
-import './home.css'
+// Image imports
+import Study3Img from '../../images/misc/chalkboard.jpg'
+import Chicago from '../../images/colleges/chicago.jpg'
+import Columbia from '../../images/colleges/columbia.jpg'
+import Cornell from '../../images/colleges/cornell.jpg'
+import Duke from '../../images/colleges/duke.jpeg'
+import Harvard from '../../images/colleges/harvard.png'
+import Michigan from '../../images/colleges/michigan.jpg'
+import Penn from '../../images/colleges/penn.jpg'
+import Diagram from '../../images/amikka/triangle.png'
+// Amikka image imports
+import Amikka from '../../images/amikka/amikka_tutor_1.png'
+// Icon imports
+import Checklist from '../../images/icons/check-list.svg'
+import Tutor from '../../images/icons/tutor.svg'
+import Report from '../../images/icons/report.svg'
+import Diagram2 from '../../images/icons/diagram.svg'
+import Service from '../../images/icons/customer-service.svg'
 
 const headerStyles = {
   fontFamily: 'raleway',
@@ -116,34 +110,22 @@ export default class Home extends Component {
   scrollToTop = () => scroll.scrollToTop();
 
   render() {
-
-
     return (
       <div>
         <Grid centered relaxed stackable>
 
-          {/* LAYER ONE */}
+          {/* LAYER 1 */}
           <Grid.Row>
             <Grid.Column width={16}>
-              <Parallax bgImage={StudyImg} strength={450} blur={3}>
+              <Parallax bgImage={Amikka} strength={300}>
                 <div style={{ height: 550 }}>
                   <div style={insideStyles}>
                     <Grid stackable>
-
                       <Grid.Row>
-                        <Grid.Column textAlign='center'>
-                          <div style={headerStyles}>
-                            Join us and become 1 of 500+ success stories
-                          </div>
+                        <Grid.Column>
+                          <YouTube videoId='2dYCCfhiiHg' opts={youtubeOpts} onReady={this.onReady} />
                         </Grid.Column>
                       </Grid.Row>
-
-                      <Grid.Row centered style={{ paddingTop: '5%' }} >
-                        <div style={{ paddingTop: '5%' }}>
-                          <Button color='blue' size='huge' content='BOOK AN APPOINTMENT' as={Link} to='/contact' />
-                        </div>
-                      </Grid.Row>
-
                     </Grid>
                   </div>
                 </div>
@@ -151,12 +133,21 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER FIVE */}
-          <Grid.Row style={{ paddingTop: '5%', paddingBottom: '6%' }}>
-            <YouTube videoId='2dYCCfhiiHg' opts={youtubeOpts} onReady={this.onReady} />
+          {/* LAYER 2 */}
+          <Grid.Row style={{ paddingTop: '5%' }}>
+            <Grid.Column textAlign='center'>
+              <div style={headerStyles}>
+                Join us and become 1 of 500+ success stories
+              </div>
+            </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER THREE */}
+          {/* LAYER 3 */}
+          <Grid.Row centered style={{ paddingTop: '5%', paddingBottom: '5%' }} >
+            <Button color='blue' size='huge' content='BOOK AN APPOINTMENT' as={Link} to='/contact' />
+          </Grid.Row>
+
+          {/* LAYER 4 */}
           <Grid.Row centered style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186, 0.6)' }}>
             <Grid.Column width={11} textAlign='center'>
               <div style={headerStyles2}>
@@ -168,6 +159,7 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
+          {/* LAYER 5 */}
           <Grid.Row centered columns={2} style={{ paddingTop: '3%' }} verticalAlign='middle' >
             <Grid.Column width={6} textAlign='center'>
               <div style={descriptionStyles3}>
@@ -179,7 +171,7 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER SEVEN */}
+          {/* LAYER 6 */}
           <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column width={16}>
               <Parallax bgImage={Study3Img} strength={450} blue={8}>
@@ -263,6 +255,7 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
+          {/* LAYER 7 : OUR PROCESS */}
           <Grid.Row style={{ paddingTop: '7%' }}>
             <Grid.Column textAlign='center' width={16}>
               <div style={headerStyles}>
@@ -271,6 +264,7 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
+          {/* LAYER 8 : INITIAL EVALUATION */}
           <Grid.Row centered style={{ paddingTop: '5%' }} verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.2)' }}>
               <div style={headerStyles2}>
@@ -280,17 +274,16 @@ export default class Home extends Component {
                 Diagnostic test on Time Management, Content, and Strategy
               </div>
             </Grid.Column>
-
             <Grid.Column width={4}>
               <Image src={Checklist} centered size='tiny' />
             </Grid.Column>
           </Grid.Row>
 
+          {/* LAYER 9 : TUTOR MATCHING */}
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={4} textAlign='center'>
               <Image src={Tutor} centered size='tiny' />
             </Grid.Column>
-
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.4)' }}>
               <div style={headerStyles2}>
                 TUTOR MATCHING
@@ -301,6 +294,7 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
+          {/* LAYER 10 : PERSONALIZED PROGRAM */}
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.6)' }}>
               <div style={headerStyles2}>
@@ -310,17 +304,16 @@ export default class Home extends Component {
                 Each student is given a personalized program based on learning style and goals
               </div>
             </Grid.Column>
-
             <Grid.Column width={4} textAlign='center'>
               <Image src={Report} centered size='tiny' />
             </Grid.Column>
           </Grid.Row>
 
+          {/* LAYER 11 : TRACKING */}
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={4} textAlign='center'>
               <Image src={Diagram2} centered size='tiny' />
             </Grid.Column>
-
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.8)' }}>
               <div style={headerStyles2}>
                 TRACKING
@@ -331,6 +324,7 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
+          {/* LAYER 12 */}
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186)' }}>
               <div style={headerStyles2}>
@@ -340,19 +334,19 @@ export default class Home extends Component {
                 Guidance through college admissions process and professional development
               </div>
             </Grid.Column>
-
             <Grid.Column width={4} textAlign='center'>
               <Image src={Service} centered size='tiny' />
             </Grid.Column>
           </Grid.Row>
 
+          {/* LAYER 13 */}
           <Grid.Row centered>
             <div style={{ paddingTop: '4%' }}>
               <Button inverted color='blue' size='huge' content='BOOK AN APPOINTMENT' as={Link} to='/contact' />
             </div>
           </Grid.Row>
 
-          {/* LAYER EIGHT */}
+          {/* LAYER 14 */}
           <Grid.Row centered textAlign='center' style={{ paddingTop: '2%' }}>
             <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
               <div style={headerStyles}>
@@ -361,14 +355,14 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER EIGHT */}
+          {/* LAYER 15 */}
           <Grid.Row centered textAlign='center' style={{ paddingTop: '2%' }}>
             <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
-              
+
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER NINE */}
+          {/* LAYER 16 */}
           <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column width={13}>
               <Grid relaxed>
@@ -399,7 +393,7 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row >
 
-          {/* LAYER TEN */}
+          {/* LAYER 17 */}
           <Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%' }}>
             <Button color='blue' inverted size='huge' content='BACK TO TOP' onClick={this.scrollToTop} />
           </Grid.Row>

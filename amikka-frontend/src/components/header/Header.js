@@ -11,7 +11,7 @@ import Home from '../../pages/home/Home.js'
 import About from '../../pages/about/About.js'
 import Services from '../../pages/services/Services.js'
 import Contact from '../../pages/contact/Contact.js'
-import Logo from '../../images/logo4.svg'
+import Logo from '../../images/amikka/logo4.svg'
 
 const menuStyles = {
   fontFamily: 'raleway',

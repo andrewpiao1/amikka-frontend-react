@@ -3,12 +3,8 @@ import { Grid, Header, Button, Icon, Card } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { Parallax } from 'react-parallax'
 
-import Amikka1 from '../../images/amikka_1.jpeg'
-// import Amikka2 from '../../images/amikka_2.jpg'
-import Amikka3 from '../../images/amikka_3.png'
-import Amikka4 from '../../images/amikka_4.png'
-import Amikka5 from '../../images/amikka_5.png'
-import Tutor1 from '../../images/tutor_4.jpg'
+import Amikka1 from '../../images/amikka/amikka_student_2.jpeg'
+import Tutor1 from '../../images/misc/tutor_4.jpg'
 
 const headerStyles = {
 	fontFamily: 'raleway',
@@ -133,13 +129,11 @@ export default class Services extends Component {
 								<div style={{ height: 450, background: 'rgba(0, 0, 0, 0.4)' }}>
 									<div style={insideStyles}>
 										<Grid stackable divided relaxed>
-
 											<Grid.Row centered>
 												<div style={headerStyles}>
 													DEVELOPMENT COURSES
-                        						</div>
+                        </div>
 											</Grid.Row>
-
 											<Grid.Row centered style={{ paddingTop: '3%' }} columns={6}>
 												<Grid.Column textAlign='center'>
 													<div style={cardHeaderStyles}>
@@ -182,7 +176,7 @@ export default class Services extends Component {
 					{/* LAYER THREE */}
 					<Grid.Row centered style={{ paddingBottom: '5%' }}>
 						<div style={{ paddingTop: '5%' }}>
-							<Button inverted color='blue' size='huge' content='LEARN MORE' as={Link} to='/contact'/>
+							<Button inverted color='blue' size='huge' content='LEARN MORE' as={Link} to='/contact' />
 						</div>
 					</Grid.Row>
 

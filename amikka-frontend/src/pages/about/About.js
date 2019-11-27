@@ -1,17 +1,31 @@
 import React, { Component } from 'react'
-import { Grid, Header, Button, Icon, Card } from 'semantic-ui-react'
+import { Grid, Image, Button, Icon, Card } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { Parallax } from 'react-parallax'
-
-import Company1 from '../../images/company_1.jpg'
-import Company2 from '../../images/company_2.jpg'
-import Company3 from '../../images/company_3.jpg'
+// Image imports
+import Company1 from '../../images/misc/company_1.jpg'
+import Company2 from '../../images/misc/company_2.jpg'
+import Company3 from '../../images/misc/company_3.jpg'
+// Amikka image imports
+import Method1 from '../../images/amikka/amikka_method_1.png'
+import Method2 from '../../images/amikka/amikka_method_2.png'
+import Method3 from '../../images/amikka/amikka_method_3.png'
+import Method4 from '../../images/amikka/amikka_method_4.png'
+import Method5 from '../../images/amikka/amikka_method_5.png'
 
 import './about.css'
 
 const headerStyles = {
   fontFamily: 'raleway',
   fontSize: '30px',
+  fontWeight: 'bold',
+}
+
+const headerStyles2 = {
+  fontFamily: 'raleway',
+  fontSize: '30px',
+  color: 'white',
+  paddingBottom: '3%',
   fontWeight: 'bold',
 }
 
@@ -32,6 +46,15 @@ const desccriptionHeaderStyles = {
 const descriptionStyles = {
   fontFamily: 'raleway',
   fontSize: '15px',
+}
+
+const descriptionStyles2 = {
+  fontFamily: 'raleway',
+  fontSize: '16px',
+  paddingTop: '3%',
+  lineHeight: 1.8,
+  color: 'white',
+  fontWeight: 'bold',
 }
 
 const cardStyles = {
@@ -84,7 +107,7 @@ export default class About extends Component {
       <div>
         <Grid centered relaxed stackable>
 
-          {/* LAYER ONE */}
+          {/* LAYER 1 */}
           <Grid.Row>
             <Grid.Column>
               <Parallax bgImage={Company1} strength={450} blur={3}>
@@ -103,7 +126,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER TWO */}
+          {/* LAYER 2 */}
           <Grid.Row textAlign='center'>
             <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
               <div style={headerStyles}>
@@ -112,7 +135,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER TWO */}
+          {/* LAYER 3 */}
           <Grid.Row centered>
             <Grid.Column width={11} textAlign='center' style={{ paddingTop: '1%' }}>
               <div style={descriptionStyles}>
@@ -121,7 +144,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER THREE */}
+          {/* LAYER 4 */}
           <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column width={16}>
               <Parallax bgImage={Company2} strength={450} blue={2}>
@@ -150,123 +173,115 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          <Grid.Row centered style={{ paddingTop: '5%' }}>
-            <div style={headerStyles}>
-              THE AMIKKA METHOD
-            </div>
-          </Grid.Row>
-
-          <Grid.Row centered style={{ paddingTop: '2%' }}>
-            <Grid.Column textAlign='center' width={3}>
-              <Grid padded relaxed stackable>
-                <Grid.Row centered>
-                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
-                    <Card.Content>
-                      <div style={cardHeaderStyles}>
-                        EDUCATION
-                      </div>
-                    </Card.Content>
-                    <Card.Description style={cardStyles}>
-                      The Amikka Program focuses on progress through the lens of time management, content, and strategy to maximize the rate of improvement for students on the SAT/ACT exam.
-                    </Card.Description>
-                  </Card>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-
-            <Grid.Column textAlign='center' width={3}>
-              <Grid centered padded stackable>
-                <Grid.Row centered>
-                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
-                    <Card.Content>
-                      <div style={cardHeaderStyles}>
-                        TIME MANAGEMENT
-                      </div>
-                    </Card.Content>
-                    <Card.Description style={cardStyles}>
-                      We slowly increase time constraints to force our students to work outside of their comfort zone to become quicker at problem solving.
-                    </Card.Description>
-                    <Card.Description style={cardStyles}>
-                      We give our students a strong problem solving foundation and teach them multiple ways to approach the same question to the get the correct answer.
-                    </Card.Description>
-                  </Card>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-
-            <Grid.Column textAlign='center' width={3}>
-              <Grid centered padded stackable>
-                <Grid.Row centered>
-                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
-                    <Card.Content>
-                      <div style={cardHeaderStyles}>
-                        STRATEGY
-                      </div>
-                    </Card.Content>
-                    <Card.Description style={cardStyles}>
-                      We help our students build a mid-course and post-course study guide with mistake patterns, important formulas, and main topics.
-                    </Card.Description>
-                    <Card.Description style={cardStyles}>
-                      We assess our students thought process and show them multiple strategies that would work for them.
-                    </Card.Description>
-                    <Card.Description style={cardStyles}>
-                      We teach our students to build context for every problem before attempting to find a solution to minimize mistakes.
-                    </Card.Description>
-                  </Card>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-
-            <Grid.Column textAlign='center' width={3}>
-              <Grid centered padded stackable>
-                <Grid.Row centered>
-                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
-                    <Card.Content>
-                      <div style={cardHeaderStyles}>
-                        CONTENT
-                      </div>
-                    </Card.Content>
-                    <Card.Description style={cardStyles}>
-                      We break topics apart into smaller sections to make it more digestible for all of our students.
-                    </Card.Description>
-                    <Card.Description style={cardStyles}>
-                      We help our students find an efficient way to study to make their process more fun and efficient.
-                    </Card.Description>
-                    <Card.Description style={cardStyles}>
-                      We encourage our students to have flashcards with main topics and mistake patterns for maximum improvement.
-                    </Card.Description>
-                  </Card>
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-
-            <Grid.Column textAlign='center' width={3}>
-              <Grid centered padded stackable>
-                <Grid.Row centered>
-                  <Card link style={{ background: 'rgba(23, 120, 186, 0.6)' }}>
-                    <Card.Content>
-                      <div style={cardHeaderStyles}>
-                        THEORY
-                      </div>
-                    </Card.Content>
-                    <Card.Description style={cardStyles}>
-                      The area of the triangle is the students potential
-                    </Card.Description>
-                    <Card.Description style={cardStyles}>
-                      There are synergies between each of the side lengths
-                    </Card.Description>
-                    <Card.Description style={cardStyles}>
-                      Working on all three sides leads to greatest expansion
-                    </Card.Description>
-                  </Card>
-                </Grid.Row>
-              </Grid>
+          {/* LAYER 5 : THE AMIKKA METHOD */}
+          <Grid.Row style={{ paddingTop: '7%' }}>
+            <Grid.Column textAlign='center' width={16}>
+              <div style={headerStyles}>
+                THE AMIKKA METHOD
+              </div>
             </Grid.Column>
           </Grid.Row>
 
+          {/* LAYER 4 : EDUCATION */}
+          <Grid.Row centered style={{ paddingTop: '5%' }} verticalAlign='middle'>
+            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.3)' }}>
+              <div style={headerStyles2}>
+                EDUCATION
+              </div>
+              <div style={descriptionStyles2}>
+                The Amikka Program focuses on progress through the lens of time management, content, and strategy to maximize the rate of improvement for students on the SAT/ACT exam.
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Image src={Method1} centered size='small' />
+            </Grid.Column>
+          </Grid.Row>
+
+          {/* LAYER 4 : TIME MANAGEMENT */}
+          <Grid.Row centered verticalAlign='middle'>
+            <Grid.Column width={4} textAlign='center'>
+              <Image src={Method2} centered size='small' />
+            </Grid.Column>
+            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.4)' }}>
+              <div style={headerStyles2}>
+                TIME MANAGEMENT
+              </div>
+              <div style={descriptionStyles2}>
+                We slowly increase time constraints to force our students to work outside of their comfort zone to become quicker at problem solving.
+              </div>
+              <div style={descriptionStyles2}>
+                We give our students a strong problem solving foundation and teach them multiple ways to approach the same question to the get the correct answer.
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          {/* LAYER 4 : STRATEGY */}
+          <Grid.Row centered verticalAlign='middle'>
+            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.6)' }}>
+              <div style={headerStyles2}>
+                STRATEGY
+              </div>
+              <div style={descriptionStyles2}>
+                We help our students build a mid-course and post-course study guide with mistake patterns, important formulas, and main topics.
+              </div>
+              <div style={descriptionStyles2}>
+                We assess our students thought process and show them multiple strategies that would work for them.
+              </div>
+              <div style={descriptionStyles2}>
+                We teach our students to build context for every problem before attempting to find a solution to minimize mistakes.
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4} textAlign='center'>
+              <Image src={Method3} centered size='small' />
+            </Grid.Column>
+          </Grid.Row>
+
+          {/* LAYER 4 : CONTENT */}
+          <Grid.Row centered verticalAlign='middle'>
+            <Grid.Column width={4} textAlign='center'>
+              <Image src={Method4} centered size='small' />
+            </Grid.Column>
+            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.8)' }}>
+              <div style={headerStyles2}>
+                CONTENT
+              </div>
+              <div style={descriptionStyles2}>
+                We break topics apart into smaller sections to make it more digestible for all of our students.
+              </div>
+              <div style={descriptionStyles2}>
+                We help our students find an efficient way to study to make their process more fun and efficient.
+              </div>
+              <div style={descriptionStyles2}>
+                We encourage our students to have flashcards with main topics and mistake patterns for maximum improvement.
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          {/* LAYER 4 : THEORY */}
+          <Grid.Row centered verticalAlign='middle'>
+            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186)' }}>
+              <div style={headerStyles2}>
+                THEORY
+              </div>
+              <div style={descriptionStyles2}>
+                The area of the triangle is the students potential
+              </div>
+              <div style={descriptionStyles2}>
+                There are synergies between each of the side lengths
+              </div>
+              <div style={descriptionStyles2}>
+                Working on all three sides leads to greatest expansion
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4} textAlign='center'>
+              <Image src={Method5} centered size='small' />
+            </Grid.Column>
+          </Grid.Row>
+
+          {/* LAYER 4 : BUTTON - LEARN MORE */}
           <Grid.Row centered>
-            <div style={{ paddingTop: '2%' }}>
-              <Button inverted color='blue' size='large' content='LEARN MORE' as={Link} to='/contact'/>
+            <div style={{ paddingTop: '5%' }}>
+              <Button inverted color='blue' size='huge' content='LEARN MORE' as={Link} to='/contact' />
             </div>
           </Grid.Row>
 
@@ -336,11 +351,11 @@ export default class About extends Component {
 
           <Grid.Row centered>
             <div style={{ paddingTop: '7%', paddingBottom: '5%' }}>
-              <Button color='blue' size='huge' content='LEARN MORE' as={Link} to='/contact'/>
+              <Button color='blue' size='huge' content='LEARN MORE' as={Link} to='/contact' />
             </div>
           </Grid.Row>
         </Grid>
-      </div>
+      </div >
     )
   }
 }
