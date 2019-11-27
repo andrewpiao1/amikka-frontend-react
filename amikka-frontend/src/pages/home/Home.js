@@ -43,14 +43,6 @@ const headerStyles2 = {
   fontWeight: 'bold',
 }
 
-const cardHeaderStyles = {
-  fontFamily: 'raleway',
-  fontSize: '25px',
-  color: 'white',
-  lineHeight: 1.3,
-  fontWeight: 'bold',
-}
-
 const descriptionHeaderStyles = {
   fontFamily: 'raleway',
   fontSize: '18px',
@@ -86,23 +78,6 @@ const descriptionStyles4 = {
   fontWeight: 'bold',
 }
 
-const parallaxStyles = {
-  fontFamily: 'raleway',
-  fontSize: '20px',
-  color: 'white',
-  lineHeight: 1.3,
-}
-
-
-const cardStyles = {
-  fontFamily: 'raleway',
-  fontSize: '13px',
-  paddingBottom: '8%',
-  paddingLeft: '5%',
-  paddingRight: '5%',
-  color: 'white'
-}
-
 const insideStyles = {
   color: 'white',
   fontFamily: 'raleway',
@@ -115,18 +90,6 @@ const insideStyles = {
   lineHeight: 1.3,
 }
 
-const insideStyles2 = {
-  color: 'white',
-  textAlign: 'center',
-  fontFamily: 'raleway',
-  fontSize: '15px',
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%,-50%)",
-  paddingTop: '5%'
-}
-
 const insideStyles3 = {
   color: 'white',
   fontFamily: 'raleway',
@@ -136,7 +99,6 @@ const insideStyles3 = {
   top: '50%',
   left: "50%",
   transform: 'translate(-50%, -50%)',
-
 }
 
 const youtubeOpts = {
@@ -147,7 +109,6 @@ const youtubeOpts = {
   }
 }
 
-
 export default class Home extends Component {
 
   onReady = (event) => event.target.pauseVideo();
@@ -155,6 +116,7 @@ export default class Home extends Component {
   scrollToTop = () => scroll.scrollToTop();
 
   render() {
+
 
     return (
       <div>
@@ -190,29 +152,8 @@ export default class Home extends Component {
           </Grid.Row>
 
           {/* LAYER FIVE */}
-          <Grid.Row style={{ paddingTop: '5%' }}>
+          <Grid.Row style={{ paddingTop: '5%', paddingBottom: '6%' }}>
             <YouTube videoId='2dYCCfhiiHg' opts={youtubeOpts} onReady={this.onReady} />
-          </Grid.Row>
-
-          {/* LAYER SIX */}
-          <Grid.Row style={{ paddingTop: '3%' }}>
-            <div style={{ width: 1000 }}>
-              <Grid padded relaxed stackable>
-                <Grid.Row centered>
-                  <Header as='h4'>
-                    TESTIMONIALS
-                  </Header>
-                </Grid.Row>
-                <Grid.Row centered>
-                  <Grid.Column width={12} textAlign='center'>
-                    <div>
-                      <Header as='h5' color='grey'>"Through Amikka Tutoring I was able to increase my SAT score from 1380 to 1480 and got into Cornell University. Definitely recommend!"</Header>
-                      <Header as='h5' color='grey'>- Kyle C</Header>
-                    </div>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
-            </div>
           </Grid.Row>
 
           {/* LAYER THREE */}
@@ -417,6 +358,13 @@ export default class Home extends Component {
               <div style={headerStyles}>
                 TESTIMONIALS
               </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          {/* LAYER EIGHT */}
+          <Grid.Row centered textAlign='center' style={{ paddingTop: '2%' }}>
+            <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
+              
             </Grid.Column>
           </Grid.Row>
 
