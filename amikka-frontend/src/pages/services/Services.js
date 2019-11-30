@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Header, Button, Icon, Card } from 'semantic-ui-react'
+import { Grid, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { Parallax } from 'react-parallax'
 

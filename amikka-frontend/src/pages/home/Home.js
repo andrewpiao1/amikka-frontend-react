@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { animateScroll as scroll } from 'react-scroll'
 import { Parallax } from 'react-parallax'
 import YouTube from 'react-youtube'
+import Testimonials from '../../components/testimonials/Testimonials'
 // Image imports
 import Study3Img from '../../images/misc/chalkboard.jpg'
 import Chicago from '../../images/colleges/chicago.jpg'
@@ -324,7 +325,7 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 12 */}
+          {/* LAYER 12 : SUPPORT */}
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186)' }}>
               <div style={headerStyles2}>
@@ -339,30 +340,30 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 13 */}
+          {/* LAYER 13 : BUTTON - Book an appointment*/}
           <Grid.Row centered>
             <div style={{ paddingTop: '4%' }}>
               <Button inverted color='blue' size='huge' content='BOOK AN APPOINTMENT' as={Link} to='/contact' />
             </div>
           </Grid.Row>
 
-          {/* LAYER 14 */}
+          {/* LAYER 14 : TESTIMONIALS */}
           <Grid.Row centered textAlign='center' style={{ paddingTop: '2%' }}>
             <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
               <div style={headerStyles}>
-                TESTIMONIALS
+                WHERE OUR STUDENTS GOT INTO
               </div>
             </Grid.Column>
           </Grid.Row>
 
           {/* LAYER 15 */}
-          <Grid.Row centered textAlign='center' style={{ paddingTop: '2%' }}>
-            <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
-
+          <Grid.Row style={{ paddingTop: '2%' }}>
+            <Grid.Column style={{ paddingTop: '3%' }}>
+              <Testimonials />
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 16 */}
+          {/* LAYER 16 : RELATED UNIVERSITIES */}
           <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column width={13}>
               <Grid relaxed>
@@ -393,7 +394,7 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row >
 
-          {/* LAYER 17 */}
+          {/* LAYER 17 : BUTTON - BACK TO TOP */}
           <Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%' }}>
             <Button color='blue' inverted size='huge' content='BACK TO TOP' onClick={this.scrollToTop} />
           </Grid.Row>

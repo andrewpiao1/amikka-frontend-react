@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Image, Button, Icon, Card } from 'semantic-ui-react'
+import { Grid, Image, Button, Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { Parallax } from 'react-parallax'
 // Image imports
@@ -29,14 +29,6 @@ const headerStyles2 = {
   fontWeight: 'bold',
 }
 
-const cardHeaderStyles = {
-  fontFamily: 'raleway',
-  fontSize: '25px',
-  color: 'white',
-  paddingTop: '3%',
-  fontWeight: 'bold',
-}
-
 const desccriptionHeaderStyles = {
   fontFamily: 'raleway',
   fontSize: '20px',
@@ -57,16 +49,6 @@ const descriptionStyles2 = {
   fontWeight: 'bold',
 }
 
-const cardStyles = {
-  fontFamily: 'raleway',
-  fontSize: '13px',
-  paddingTop: '3%',
-  paddingBottom: '8%',
-  paddingLeft: '5%',
-  paddingRight: '5%',
-  color: 'white',
-}
-
 const insideStyles = {
   background: 'rgba(black, 0.8)',
   color: 'white',
@@ -77,16 +59,6 @@ const insideStyles = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%,-50%)"
-}
-
-const insideStyles2 = {
-  textAlign: 'center',
-  fontFamily: 'raleway',
-  fontSize: '15px',
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%,-50%)",
 }
 
 const insideStyles3 = {
@@ -107,7 +79,7 @@ export default class About extends Component {
       <div>
         <Grid centered relaxed stackable>
 
-          {/* LAYER 1 */}
+          {/* LAYER 1 : OUR STORY */}
           <Grid.Row>
             <Grid.Column>
               <Parallax bgImage={Company1} strength={450} blur={3}>
@@ -126,7 +98,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 2 */}
+          {/* LAYER 2 : THE COMPANY */}
           <Grid.Row textAlign='center'>
             <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
               <div style={headerStyles}>
@@ -135,7 +107,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 3 */}
+          {/* LAYER 3 : THE COMPANY - Description */}
           <Grid.Row centered>
             <Grid.Column width={11} textAlign='center' style={{ paddingTop: '1%' }}>
               <div style={descriptionStyles}>
@@ -144,7 +116,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 4 */}
+          {/* LAYER 4 : THE FOUNDER */}
           <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column width={16}>
               <Parallax bgImage={Company2} strength={450} blue={2}>
@@ -182,7 +154,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 4 : EDUCATION */}
+          {/* LAYER 6 : EDUCATION */}
           <Grid.Row centered style={{ paddingTop: '5%' }} verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.3)' }}>
               <div style={headerStyles2}>
@@ -197,7 +169,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 4 : TIME MANAGEMENT */}
+          {/* LAYER 7 : TIME MANAGEMENT */}
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={4} textAlign='center'>
               <Image src={Method2} centered size='small' />
@@ -215,7 +187,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 4 : STRATEGY */}
+          {/* LAYER 8 : STRATEGY */}
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.6)' }}>
               <div style={headerStyles2}>
@@ -236,7 +208,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 4 : CONTENT */}
+          {/* LAYER 9 : CONTENT */}
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={4} textAlign='center'>
               <Image src={Method4} centered size='small' />
@@ -257,7 +229,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 4 : THEORY */}
+          {/* LAYER 10 : THEORY */}
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186)' }}>
               <div style={headerStyles2}>
@@ -278,14 +250,14 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 4 : BUTTON - LEARN MORE */}
+          {/* LAYER 11 : BUTTON - LEARN MORE */}
           <Grid.Row centered>
             <div style={{ paddingTop: '5%' }}>
               <Button inverted color='blue' size='huge' content='LEARN MORE' as={Link} to='/contact' />
             </div>
           </Grid.Row>
 
-          {/* LAYER SIX */}
+          {/* LAYER 12 : THE ENVIRONMENT */}
           <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column>
               <Parallax bgImage={Company3} strength={450} blur={3}>
@@ -349,11 +321,13 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
+          {/* LAYER 13 : BUTTON - LEARN MORE */}
           <Grid.Row centered>
             <div style={{ paddingTop: '7%', paddingBottom: '5%' }}>
               <Button color='blue' size='huge' content='LEARN MORE' as={Link} to='/contact' />
             </div>
           </Grid.Row>
+
         </Grid>
       </div >
     )

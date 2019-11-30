@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Header, Form, Grid, Button, Card, Transition } from 'semantic-ui-react';
+import { Form, Grid, Button, Transition } from 'semantic-ui-react';
 import * as emailjs from 'emailjs-com';
-import toastr from 'toastr';
 
 const headerStyles = {
 	fontFamily: 'raleway',
@@ -17,13 +16,6 @@ const headerStyles2 = {
 const headerStyles3 = {
 	fontFamily: 'raleway',
 	fontSize: '15px',
-}
-
-const descriptionStyles3 = {
-	fontFamily: 'raleway',
-	fontSize: '15px',
-	paddingTop: '3%',
-	color: 'white',
 }
 
 export default class Contact extends Component {
@@ -56,16 +48,6 @@ export default class Contact extends Component {
 	handleMessageChange = (e, { value }) => this.setState({ message: value });
 
 
-	// handleInputChange = (e, firstName, lastName, phoneNumber) => {
-	// 	event.preventDefault();
-	// 	const target = e.target
-	// 	const firstName = target.firstName
-	// 	const lastName = target.lastName
-	// 	const phoneNumber = target.phoneNumber
-	// 	const value = target.value
-	// 	this.setState({ [firstName]: value })
-	// }
-
 	sendMessage = (event) => {
 		const { firstName, lastName, phoneNumber, email, message, } = this.state
 
@@ -80,15 +62,6 @@ export default class Contact extends Component {
 
 		emailjs.send(service_id, template_id, template_params, 'user_Xy6ZBBg6ox7fzwqRfI5lN');
 
-		// emailjs.send('gmail', 'template_xO4nDxoK', template_params, 'user_Xy6ZBBg6ox7fzwqRfI5lN')
-		// 	.then(function (response) {
-		// 		toastr.success('Message sent successfully')
-		// 		console.log('SUCCESS!', response.status, response.text)
-		// 	}, function (err) {
-		// 		toastr.error(err)
-		// 		console.log(err)
-		// 	})
-
 		this.setState({
 			firstName: '',
 			lastName: '',
@@ -100,7 +73,7 @@ export default class Contact extends Component {
 	}
 
 	render() {
-		const { firstName, lastName, email, phoneNumber, message, animation, duration } = this.state
+		const { firstName, lastName, email, phoneNumber, message } = this.state
 		return (
 			<div>
 				<div className='Contact'>

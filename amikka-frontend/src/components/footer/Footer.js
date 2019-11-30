@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Header, Grid, Icon, Label, Image } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 export default class Footer extends Component {
 
     render() {
         return (
             <footer style={{ paddingTop: '4%'}}>
-                <Grid centered relaxed fluid >
+                <Grid relaxed>
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>

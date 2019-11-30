@@ -28,8 +28,6 @@ export default class Header2 extends Component {
   }
 
   render() {
-    const { activeItem } = this.state;
-
     return (
       <div className='Header'>
         <Router>
@@ -97,7 +95,7 @@ export default class Header2 extends Component {
 
 
             <Grid.Row centered>
-              <Grid.Column centered textAlign='center'>
+              <Grid.Column textAlign='center'>
                 <Switch>
                   <Route exact path='/'>
                     <Home />
