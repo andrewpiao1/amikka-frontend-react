@@ -1,0 +1,28 @@
+[debug] [2019-11-27T00:15:50.225Z] ----------------------------------------------------------------------
+[debug] [2019-11-27T00:15:50.227Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\12159\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-11-27T00:15:50.227Z] CLI Version:   7.8.1
+[debug] [2019-11-27T00:15:50.227Z] Platform:      win32
+[debug] [2019-11-27T00:15:50.227Z] Node Version:  v12.2.0
+[debug] [2019-11-27T00:15:50.228Z] Time:          Tue Nov 26 2019 19:15:50 GMT-0500 (Eastern Standard Time)
+[debug] [2019-11-27T00:15:50.228Z] ----------------------------------------------------------------------
+[debug] [2019-11-27T00:15:50.228Z] 
+[debug] [2019-11-27T00:15:50.234Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-27T00:15:50.234Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\12159\Projects\amikka\amikka-frontend-react
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
