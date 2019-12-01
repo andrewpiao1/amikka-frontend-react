@@ -481,54 +481,6 @@ export default class Services extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER TWO
-          <Grid.Row textAlign='center'>
-            <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
-              <div style={headerStyles}>
-                PRIVATE SESSIONS (SAT/ACT)
-              </div>
-            </Grid.Column>
-          </Grid.Row>
-
-          {/* LAYER THREE */}
-          {/* <Grid.Row centered style={{ paddingBottom: '5%' }}>
-            <Grid.Column width={10} textAlign='center' style={{ paddingTop: '1%' }}>
-              <div style={descriptionStyles}>
-                After each student takes our diagnostic, we create a personalized plan to help them achieve their desired score. Each plan includes multiple review sections, full-timed practice tests, and supplemental study guides.
-							</div>
-            </Grid.Column>
-          </Grid.Row> */}
-
-          {/* LAYER THREE */}
-          {/* <Grid.Row centered style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186)' }}>
-            <Grid.Column width={10} textAlign='center' >
-              <div style={headerStyles2}>
-                GROUP SESSIONS (SAT/ACT)
-              				</div>
-              <div style={descriptionStyles3}>
-                After each student takes the diagnostic, we create a personalized plan to help them achieve their desired score and place them in a group with student starting at a similar level. Each plan includes multiple review sections, full-timed practice tests, and supplemental study guides.
-							</div>
-            </Grid.Column>
-          </Grid.Row> */}
-
-          {/* LAYER TWO */}
-          {/* <Grid.Row textAlign='center'>
-            <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
-              <div style={headerStyles}>
-                K-12 tutoring
-              				</div>
-            </Grid.Column>
-          </Grid.Row> */}
-
-          {/* LAYER THREE */}
-          {/* <Grid.Row centered style={{ paddingBottom: '5%' }}>
-            <Grid.Column width={10} textAlign='center' style={{ paddingTop: '1%' }}>
-              <div style={descriptionStyles}>
-                This option offers prep for k-12 academic courses as well as AP exams. We offer practice exams, quizzes, and weekly Q&A sessions to ensure maximum improvement.
-							</div>
-            </Grid.Column>
-          </Grid.Row> */}
-
           {/* LAYER ONE */}
           <Grid.Row stretched style={{ paddingTop: '7%' }}>
             <Grid.Column>
