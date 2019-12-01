@@ -10,6 +10,7 @@ import {
 import Home from '../../pages/home/Home.js'
 import About from '../../pages/about/About.js'
 import Services from '../../pages/services/Services.js'
+import Method from '../../pages/method/Method.js'
 import Contact from '../../pages/contact/Contact.js'
 import Logo from '../../images/amikka/logo4.svg'
 
@@ -111,9 +112,12 @@ export default class Header2 extends Component {
                   <Route exact path='/about'>
                     <About />
                   </Route>
-                  {/* <Route exact path='/services'>
+                  <Route exact path='/amikka_method'>
+                    <Method />
+                  </Route>
+                  <Route exact path='/services'>
                     <Services />
-                  </Route> */}
+                  </Route>
                   <Route exact path='/contact'>
                     <Contact />
                   </Route>

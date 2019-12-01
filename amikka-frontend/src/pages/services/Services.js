@@ -77,76 +77,39 @@ export default class Services extends Component {
     super(props);
     this.state = {
       activeItem: 'SAT',
-      isSATPrivateCardFlipped: false,
-      isSATGroupCardFlipped: false,
-      isSATQbankCardFlipped: false,
-      isACTPrivateCardFlipped: false,
-      isACTGroupCardFlipped: false,
-      isACTQbankCardFlipped: false,
-      isComboPrivateCardFlipped: false,
-      isComboGroupCardFlipped: false,
-      isComboQbankCardFlipped: false,
     }
-    this.handleSATPrivateClick = this.handleSatPrivateClick.bind(this);
-    this.handleSatGroupClick = this.handleSatPrivateClick.bind(this);
-    this.handleSatGroupClick = this.handleSatPrivateClick.bind(this);
   }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-  handleSatPrivateClick = (e) => {
-    e.preventDefault();
-    this.setState(prevState => ({ isSATPrivateCardFlipped: !prevState.isSATPrivateCardFlipped }))
-  }
-
-  handleSatGroupClick = (e) => {
-    e.preventDefault();
-    this.setState(prevState => ({ isSATGroupCardFlipped: !prevState.isSATGroupCardFlipped }))
-  }
-
-  handleSatGroupClick = (e) => {
-    e.preventDefault();
-    this.setState(prevState => ({ isSATQbankCardFlipped: !prevState.isSATQbankCardFlipped }))
-  }
-
   returnMenuItem = () => {
     const {
       activeItem,
-      isSATPrivateCardFlipped,
-      isSATGroupCardFlipped,
-      isSATQbankCardFlipped
     } = this.state
 
     if (activeItem === 'SAT') {
-
       return (
-
         <Grid >
-          <Grid.Row textAlign='center' columns={4} style={{ paddingTop: '3%' }}>
-            <Grid.Column width={4} textAlign='center'>
+          <Grid.Row textAlign='center' columns={3} style={{ paddingTop: '3%' }}>
+            <Grid.Column textAlign='center'>
               <div style={headerStyles3}>
                 Sample
               </div>
             </Grid.Column>
-            <Grid.Column width={4} textAlign='center'>
+            <Grid.Column textAlign='center'>
               <div style={headerStyles3}>
                 One-on-One
               </div>
             </Grid.Column>
-            <Grid.Column width={4} textAlign='center'>
+            <Grid.Column textAlign='center'>
               <div style={headerStyles3}>
                 Group
               </div>
             </Grid.Column>
-            <Grid.Column width={4} textAlign='center'>
-              <div style={headerStyles3}>
-                QBank
-              </div>
-            </Grid.Column>
           </Grid.Row>
 
-          <Grid.Row textAlign='center' columns={4}>
-            <Grid.Column width={4} textAlign='center'>
+          <Grid.Row textAlign='center' columns={3}>
+            <Grid.Column textAlign='center'>
               <div>
                 <div style={cardHeaderStyles2}>
                   Free
@@ -164,7 +127,7 @@ export default class Services extends Component {
                 </div>
               </div>
             </Grid.Column>
-            <Grid.Column width={4} textAlign='center'>
+            <Grid.Column textAlign='center'>
               <div>
                 <div style={cardHeaderStyles2}>
                   $75
@@ -189,7 +152,7 @@ export default class Services extends Component {
               </div>
             </Grid.Column>
 
-            <Grid.Column width={4} textAlign='center'>
+            <Grid.Column textAlign='center'>
               <div>
                 <div style={cardHeaderStyles2}>
                   $50
@@ -213,31 +176,9 @@ export default class Services extends Component {
                 </div>
               </div>
             </Grid.Column>
-
-            <Grid.Column width={4} textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  $19.99
-                </div>
-                <div style={cardDescriptionStyles}>
-                  <div>
-                    1 Diagnostic Assessment
-                  </div>
-                  <div>
-                    Choice of Math, English, Grammar
-                  </div>
-                  <div>
-                    Unlimited Timed Practice Exams
-                  </div>
-                  <div>
-                    Real Time Course Diagnostics
-                  </div>
-                </div>
-              </div>
-            </Grid.Column>
           </Grid.Row>
 
-          <Grid.Row textAlign='center' columns={4}>
+          <Grid.Row textAlign='center' columns={3}>
             <Grid.Column textAlign='center'>
               <Button circular inverted color='blue' >Sign Up</Button>
             </Grid.Column>
@@ -246,9 +187,6 @@ export default class Services extends Component {
             </Grid.Column>
             <Grid.Column textAlign='center'>
               <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue'>Buy</Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -258,6 +196,111 @@ export default class Services extends Component {
     if (activeItem === 'ACT') {
       return (
         <Grid >
+          <Grid.Row textAlign='center' columns={3} style={{ paddingTop: '3%' }}>
+            <Grid.Column textAlign='center'>
+              <div style={headerStyles3}>
+                Sample
+              </div>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <div style={headerStyles3}>
+                One-on-One
+              </div>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <div style={headerStyles3}>
+                Group
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row textAlign='center' columns={3}>
+            <Grid.Column textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  Free
+                </div>
+                <div style={cardDescriptionStyles}>
+                  <div>
+                    33 SAT questions
+                  </div>
+                  <div>
+                    7-day access
+                  </div>
+                  <div>
+                    No credit card required
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  $75
+                  </div>
+                <div style={cardDescriptionStyles}>
+                  <div>
+                    1 Diagnostic Assessment
+                  </div>
+                  <div>
+                    Personalized Plan
+                  </div>
+                  <div>
+                    Unlimited Timed Practice Exams
+                  </div>
+                  <div>
+                    Multiple Review Sections
+                  </div>
+                  <div>
+                    Supplemental Study Guides
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+
+            <Grid.Column textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  $50
+                </div>
+                <div style={cardDescriptionStyles}>
+                  <div>
+                    1 Diagnostic Assessment
+                  </div>
+                  <div>
+                    Personalized Plan
+                  </div>
+                  <div>
+                    Unlimited Timed Practice Exams
+                  </div>
+                  <div>
+                    Multiple Review Sections
+                  </div>
+                  <div>
+                    Supplemental Study Guides
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row textAlign='center' columns={3}>
+            <Grid.Column textAlign='center'>
+              <Button circular inverted color='blue' >Sign Up</Button>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      )
+    }
+    if (activeItem === 'QBank') {
+      return (
+        <Grid >
           <Grid.Row textAlign='center' columns={4} style={{ paddingTop: '3%' }}>
             <Grid.Column width={4} textAlign='center'>
               <div style={headerStyles3}>
@@ -266,17 +309,17 @@ export default class Services extends Component {
             </Grid.Column>
             <Grid.Column width={4} textAlign='center'>
               <div style={headerStyles3}>
-                One-on-One
+                Math
               </div>
             </Grid.Column>
             <Grid.Column width={4} textAlign='center'>
               <div style={headerStyles3}>
-                Group
+                English
               </div>
             </Grid.Column>
             <Grid.Column width={4} textAlign='center'>
               <div style={headerStyles3}>
-                QBank
+                Grammar
               </div>
             </Grid.Column>
           </Grid.Row>
@@ -303,40 +346,9 @@ export default class Services extends Component {
             <Grid.Column width={4} textAlign='center'>
               <div>
                 <div style={cardHeaderStyles2}>
-                  $75
-                  </div>
-                <div style={cardDescriptionStyles}>
-                  <div>
-                    1 Diagnostic Assessment
-                  </div>
-                  <div>
-                    Personalized Plan
-                  </div>
-                  <div>
-                    Unlimited Timed Practice Exams
-                  </div>
-                  <div>
-                    Multiple Review Sections
-                  </div>
-                  <div>
-                    Supplemental Study Guides
-                  </div>
-                </div>
-              </div>
-            </Grid.Column>
-
-            <Grid.Column width={4} textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  $50
+                  $19.99
                 </div>
                 <div style={cardDescriptionStyles}>
-                  <div>
-                    1 Diagnostic Assessment
-                  </div>
-                  <div>
-                    Personalized Plan
-                  </div>
                   <div>
                     Unlimited Timed Practice Exams
                   </div>
@@ -357,16 +369,32 @@ export default class Services extends Component {
                 </div>
                 <div style={cardDescriptionStyles}>
                   <div>
-                    1 Diagnostic Assessment
+                    Unlimited Timed Practice Exams
                   </div>
                   <div>
-                    Choice of Math, English, Grammar
+                    Multiple Review Sections
                   </div>
+                  <div>
+                    Supplemental Study Guides
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+
+            <Grid.Column width={4} textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  $19.99
+                </div>
+                <div style={cardDescriptionStyles}>
                   <div>
                     Unlimited Timed Practice Exams
                   </div>
                   <div>
-                    Real Time Course Diagnostics
+                    Multiple Review Sections
+                  </div>
+                  <div>
+                    Supplemental Study Guides
                   </div>
                 </div>
               </div>
@@ -378,24 +406,13 @@ export default class Services extends Component {
               <Button circular inverted color='blue' >Sign Up</Button>
             </Grid.Column>
             <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
+              <Button circular inverted color='blue'>Buy</Button>
             </Grid.Column>
             <Grid.Column textAlign='center'>
               <Button circular inverted color='blue'>Buy</Button>
             </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      )
-    }
-    if (activeItem === 'COMBO') {
-      return (
-        <Grid>
-          <Grid.Row>
             <Grid.Column textAlign='center'>
-              COMBO
+              <Button circular inverted color='blue'>Buy</Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -430,7 +447,7 @@ export default class Services extends Component {
           </Grid.Row>
 
           {/* LAYER TWO */}
-          <Grid.Row textAlign='center'>
+          <Grid.Row textAlign='center' style={{ paddingTop: '5%' }}>
             <Grid.Column width={4}>
               <Grid >
                 <Grid.Row textAlign='center'>
@@ -447,8 +464,8 @@ export default class Services extends Component {
                         onClick={this.handleItemClick}
                       />
                       <Menu.Item
-                        name='COMBO'
-                        active={activeItem === 'COMBO'}
+                        name='QBank'
+                        active={activeItem === 'QBank'}
                         onClick={this.handleItemClick}
                       />
                     </Menu>
@@ -458,7 +475,7 @@ export default class Services extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          <Grid.Row textAlign='center'>
+          <Grid.Row textAlign='center' >
             <Grid.Column width={12}>
               {this.returnMenuItem()}
             </Grid.Column>
@@ -513,7 +530,7 @@ export default class Services extends Component {
           </Grid.Row> */}
 
           {/* LAYER ONE */}
-          <Grid.Row stretched>
+          <Grid.Row stretched style={{ paddingTop: '7%' }}>
             <Grid.Column>
               <Parallax bgImage={Amikka1} strength={500}>
                 <div style={{ height: 450, background: 'rgba(0, 0, 0, 0.4)' }}>

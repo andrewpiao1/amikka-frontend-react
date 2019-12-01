@@ -38,6 +38,8 @@ const desccriptionHeaderStyles = {
 const descriptionStyles = {
   fontFamily: 'raleway',
   fontSize: '15px',
+  fontWeight: 'bold',
+  lineHeight: 1.8,
 }
 
 const descriptionStyles2 = {
@@ -88,7 +90,7 @@ export default class About extends Component {
                     <Grid stackable>
                       <Grid.Row centered>
                         <div style={{ paddingTop: '5%' }}>
-                          OUR STORY
+                          THE COMPANY
 												</div>
                       </Grid.Row>
                     </Grid>
@@ -99,17 +101,17 @@ export default class About extends Component {
           </Grid.Row>
 
           {/* LAYER 2 : THE COMPANY */}
-          <Grid.Row textAlign='center'>
+          {/* <Grid.Row textAlign='center'>
             <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
               <div style={headerStyles}>
                 THE COMPANY
               </div>
             </Grid.Column>
-          </Grid.Row>
+          </Grid.Row> */}
 
           {/* LAYER 3 : THE COMPANY - Description */}
           <Grid.Row centered>
-            <Grid.Column width={11} textAlign='center' style={{ paddingTop: '1%' }}>
+            <Grid.Column width={9} textAlign='center' style={{ paddingTop: '5%' }}>
               <div style={descriptionStyles}>
                 Amikka Tutoring is run by a small group of young professionals from Upenn and Cornell that are passionate about education. With the help of our program, we have been able to help guide hundreds of students to achieve their academic goals. Most of our tutors have attended-or currently attend-ivy league schools and have 30+ years of cumulative experience. Our instructors choose to work with us over other places because they believe in the effectiveness of our problem solving approach.
               </div>
@@ -120,7 +122,7 @@ export default class About extends Component {
           <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column width={16}>
               <Parallax bgImage={Company2} strength={450} blue={2}>
-                <div style={{ height: 500, background: 'rgba(0, 0, 0, 0.3)' }}>
+                <div style={{ height: 350, background: 'rgba(0, 0, 0, 0.3)' }}>
                   <div style={insideStyles3}>
                     <Grid stackable>
                       <Grid.Row>
@@ -131,13 +133,13 @@ export default class About extends Component {
                         </Grid.Column>
                       </Grid.Row>
 
-                      <Grid.Row centered>
+                      {/* <Grid.Row centered>
                         <Grid.Column width={11} textAlign='center'>
                           <div style={descriptionStyles}>
                             The founder of Amikka, Christopher Hernandez, began tutoring math close to 10 years ago. When his time to take the SAT came around, his initial scores left him unhappy. They weren’t high enough to get him into the University of Pennsylvania which was his dream school. He also couldn’t afford tutors that were 150+ per hour so he decided to teach himself. Through the process of prepping for the exam he not only learned a lot about how to break down the exam, but also about himself. He loved education. He was able to improve close to 300 points and got into the University of Pennsylvania. His mission became to build a test prep program that could yield higher results in less time to help more students like himself. Fast forward a couple years, and now the Amikka Test Prep program has become a proven formula for test prep and problem solving success.
                           </div>
                         </Grid.Column>
-                      </Grid.Row>
+                      </Grid.Row> */}
                     </Grid>
                   </div>
                 </div>
@@ -145,7 +147,16 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 5 : THE AMIKKA METHOD */}
+          {/* LAYER 3 : THE COMPANY - Description */}
+          <Grid.Row centered>
+            <Grid.Column width={9} textAlign='center' style={{ paddingTop: '5%' }}>
+              <div style={descriptionStyles}>
+                The founder of Amikka, Christopher Hernandez, began tutoring math close to 10 years ago. When his time to take the SAT came around, his initial scores left him unhappy. They weren’t high enough to get him into the University of Pennsylvania which was his dream school. He also couldn’t afford tutors that were 150+ per hour so he decided to teach himself. Through the process of prepping for the exam he not only learned a lot about how to break down the exam, but also about himself. He loved education. He was able to improve close to 300 points and got into the University of Pennsylvania. His mission became to build a test prep program that could yield higher results in less time to help more students like himself. Fast forward a couple years, and now the Amikka Test Prep program has become a proven formula for test prep and problem solving success.
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+{/*     
           <Grid.Row style={{ paddingTop: '7%' }}>
             <Grid.Column textAlign='center' width={16}>
               <div style={headerStyles}>
@@ -154,7 +165,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 6 : EDUCATION */}
+
           <Grid.Row centered style={{ paddingTop: '5%' }} verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.3)' }}>
               <div style={headerStyles2}>
@@ -169,7 +180,6 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 7 : TIME MANAGEMENT */}
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={4} textAlign='center'>
               <Image src={Method2} centered size='small' />
@@ -187,7 +197,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 8 : STRATEGY */}
+
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.6)' }}>
               <div style={headerStyles2}>
@@ -208,7 +218,6 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 9 : CONTENT */}
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={4} textAlign='center'>
               <Image src={Method4} centered size='small' />
@@ -229,7 +238,7 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 10 : THEORY */}
+
           <Grid.Row centered verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186)' }}>
               <div style={headerStyles2}>
@@ -248,11 +257,11 @@ export default class About extends Component {
             <Grid.Column width={4} textAlign='center'>
               <Image src={Method5} centered size='small' />
             </Grid.Column>
-          </Grid.Row>
+          </Grid.Row> */}
 
           {/* LAYER 11 : BUTTON - LEARN MORE */}
           <Grid.Row centered>
-            <div style={{ paddingTop: '5%' }}>
+            <div style={{ paddingTop: '3%' }}>
               <Button inverted color='blue' size='huge' content='LEARN MORE' as={Link} to='/contact' />
             </div>
           </Grid.Row>
