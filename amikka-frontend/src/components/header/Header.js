@@ -35,19 +35,19 @@ export default class Header2 extends Component {
 
             <Grid.Row textAlign='center' >
               <Grid.Column width={4}>
-                  <Image src={Logo} />
+                <Image src={Logo} />
               </Grid.Column>
             </Grid.Row>
 
 
-            <Grid.Row style={{ height: '70px' }} columns={5}>
+            <Grid.Row style={{ height: '70px' }} columns={6}>
               <Menu text>
                 <Grid.Column width={16} textAlign='center'>
 
                   <Grid centered relaxed>
-                    <Grid.Row columns={5} centered>
+                    <Grid.Row columns={6} centered>
 
-                      <Grid.Column textAlign='center' width={3}>
+                      <Grid.Column textAlign='center'>
                         <Menu.Item as={Link} to='/' >
                           <div style={menuStyles}>
                             HOME
@@ -55,7 +55,7 @@ export default class Header2 extends Component {
                         </Menu.Item>
                       </Grid.Column>
 
-                      <Grid.Column textAlign='center' width={3}>
+                      <Grid.Column textAlign='center' >
                         <Menu.Item as={Link} to='/about'>
                           <div style={menuStyles}>
                             ABOUT
@@ -63,7 +63,15 @@ export default class Header2 extends Component {
                         </Menu.Item>
                       </Grid.Column>
 
-                      <Grid.Column textAlign='center' width={3} style={{ paddingRight: '18%' }}>
+                      <Grid.Column textAlign='center' >
+                        <Menu.Item as={Link} to='/amikka_method'>
+                          <div style={menuStyles}>
+                            METHOD
+                          </div>
+                        </Menu.Item>
+                      </Grid.Column>
+
+                      <Grid.Column textAlign='center'>
                         <Menu.Item as={Link} to='/services'>
                           <div style={menuStyles}>
                             SERVICES
@@ -71,7 +79,7 @@ export default class Header2 extends Component {
                         </Menu.Item>
                       </Grid.Column>
 
-                      <Grid.Column textAlign='center' width={3} style={{ paddingRight: '18%' }}>
+                      <Grid.Column textAlign='center' >
                         <Menu.Item as={Link} to='/contact'>
                           <div style={menuStyles}>
                             CONTACT
@@ -79,7 +87,7 @@ export default class Header2 extends Component {
                         </Menu.Item>
                       </Grid.Column>
 
-                      <Grid.Column textAlign='center' width={3}>
+                      <Grid.Column textAlign='center'>
                         <Menu.Item as={Link} to='portal'>
                           <div style={menuStyles}>
                             PORTAL
@@ -103,9 +111,9 @@ export default class Header2 extends Component {
                   <Route exact path='/about'>
                     <About />
                   </Route>
-                  <Route exact path='/services'>
+                  {/* <Route exact path='/services'>
                     <Services />
-                  </Route>
+                  </Route> */}
                   <Route exact path='/contact'>
                     <Contact />
                   </Route>

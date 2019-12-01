@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Grid, Button, Icon, Image } from 'semantic-ui-react'
+import { Grid, Button, Icon, Image, Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { animateScroll as scroll } from 'react-scroll'
 import { Parallax } from 'react-parallax'
+import { Spring, Transition } from 'react-spring/renderprops'
+import CountUp from 'react-countup';
 import YouTube from 'react-youtube'
 import Testimonials from '../../components/testimonials/Testimonials'
 // Image imports
@@ -17,6 +19,8 @@ import Penn from '../../images/colleges/penn.jpg'
 import Diagram from '../../images/amikka/triangle.png'
 // Amikka image imports
 import Amikka from '../../images/amikka/amikka_tutor_1.png'
+import Thinking from '../../images/amikka/amikka_method_6.png'
+import Student from '../../images/amikka/amikka_student_1.jpg'
 // Icon imports
 import Checklist from '../../images/icons/check-list.svg'
 import Tutor from '../../images/icons/tutor.svg'
@@ -36,6 +40,27 @@ const headerStyles2 = {
   color: 'white',
   paddingBottom: '3%',
   fontWeight: 'bold',
+}
+
+const headerStyles3 = {
+  fontFamily: 'raleway',
+  fontSize: '45px',
+  fontWeight: 900,
+}
+
+const headerStyles4 = {
+  fontFamily: 'raleway',
+  fontSize: '25px',
+  fontWeight: 'bold',
+  lineHeight: 1.5,
+  paddingTop: '5%'
+}
+
+const headerStyles5 = {
+  fontFamily: 'raleway',
+  fontSize: '38px',
+  fontWeight: 'bold',
+  color: 'rgba(23, 120, 186)'
 }
 
 const descriptionHeaderStyles = {
@@ -104,13 +129,338 @@ const youtubeOpts = {
   }
 }
 
+
+const cardHeaderStyles2 = {
+  paddingTop: '5%',
+  fontFamily: 'raleway',
+  fontSize: '40px',
+  fontWeight: 'bold',
+  color: 'rgba(23, 120, 186, 0.8)',
+}
+
+const cardDescriptionStyles = {
+  paddingTop: '12%',
+  color: 'grey',
+  fontFamily: 'raleway',
+  fontSize: '12px',
+  fontWeight: 'bold',
+  lineHeight: 1.8,
+}
+
+const headerStyles6 = {
+  fontFamily: 'raleway',
+  fontSize: '20px',
+  fontWeight: 'bold'
+}
+
 export default class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: 'SAT',
+    }
+  }
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   onReady = (event) => event.target.pauseVideo();
 
   scrollToTop = () => scroll.scrollToTop();
 
+  returnMenuItem = () => {
+    const {
+      activeItem,
+      isSATPrivateCardFlipped,
+      isSATGroupCardFlipped,
+      isSATQbankCardFlipped
+    } = this.state
+
+    if (activeItem === 'SAT') {
+      return (
+        <Grid >
+          <Grid.Row textAlign='center' columns={4} style={{ paddingTop: '3%' }}>
+            <Grid.Column width={4} textAlign='center'>
+              <div style={headerStyles6}>
+                Sample
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4} textAlign='center'>
+              <div style={headerStyles6}>
+                One-on-One
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4} textAlign='center'>
+              <div style={headerStyles6}>
+                Group
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4} textAlign='center'>
+              <div style={headerStyles6}>
+                QBank
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row textAlign='center' columns={4}>
+            <Grid.Column width={4} textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  Free
+                </div>
+                <div style={cardDescriptionStyles}>
+                  <div>
+                    33 SAT questions
+                  </div>
+                  <div>
+                    7-day access
+                  </div>
+                  <div>
+                    No credit card required
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4} textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  $75
+                  </div>
+                <div style={cardDescriptionStyles}>
+                  <div>
+                    1 Diagnostic Assessment
+                  </div>
+                  <div>
+                    Personalized Plan
+                  </div>
+                  <div>
+                    Unlimited Timed Practice Exams
+                  </div>
+                  <div>
+                    Multiple Review Sections
+                  </div>
+                  <div>
+                    Supplemental Study Guides
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+
+            <Grid.Column width={4} textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  $50
+                </div>
+                <div style={cardDescriptionStyles}>
+                  <div>
+                    1 Diagnostic Assessment
+                  </div>
+                  <div>
+                    Personalized Plan
+                  </div>
+                  <div>
+                    Unlimited Timed Practice Exams
+                  </div>
+                  <div>
+                    Multiple Review Sections
+                  </div>
+                  <div>
+                    Supplemental Study Guides
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+
+            <Grid.Column width={4} textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  $19.99
+                </div>
+                <div style={cardDescriptionStyles}>
+                  <div>
+                    1 Diagnostic Assessment
+                  </div>
+                  <div>
+                    Choice of Math, English, Grammar
+                  </div>
+                  <div>
+                    Unlimited Timed Practice Exams
+                  </div>
+                  <div>
+                    Real Time Course Diagnostics
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row textAlign='center' columns={4}>
+            <Grid.Column textAlign='center'>
+              <Button circular inverted color='blue' >Sign Up</Button>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <Button circular inverted color='blue'>Buy</Button>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+
+      )
+    }
+    if (activeItem === 'ACT') {
+      return (
+        <Grid >
+          <Grid.Row textAlign='center' columns={4} style={{ paddingTop: '3%' }}>
+            <Grid.Column width={4} textAlign='center'>
+              <div style={headerStyles6}>
+                Sample
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4} textAlign='center'>
+              <div style={headerStyles6}>
+                One-on-One
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4} textAlign='center'>
+              <div style={headerStyles6}>
+                Group
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4} textAlign='center'>
+              <div style={headerStyles6}>
+                QBank
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row textAlign='center' columns={4}>
+            <Grid.Column width={4} textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  Free
+                </div>
+                <div style={cardDescriptionStyles}>
+                  <div>
+                    33 SAT questions
+                  </div>
+                  <div>
+                    7-day access
+                  </div>
+                  <div>
+                    No credit card required
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+            <Grid.Column width={4} textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  $75
+                  </div>
+                <div style={cardDescriptionStyles}>
+                  <div>
+                    1 Diagnostic Assessment
+                  </div>
+                  <div>
+                    Personalized Plan
+                  </div>
+                  <div>
+                    Unlimited Timed Practice Exams
+                  </div>
+                  <div>
+                    Multiple Review Sections
+                  </div>
+                  <div>
+                    Supplemental Study Guides
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+
+            <Grid.Column width={4} textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  $50
+                </div>
+                <div style={cardDescriptionStyles}>
+                  <div>
+                    1 Diagnostic Assessment
+                  </div>
+                  <div>
+                    Personalized Plan
+                  </div>
+                  <div>
+                    Unlimited Timed Practice Exams
+                  </div>
+                  <div>
+                    Multiple Review Sections
+                  </div>
+                  <div>
+                    Supplemental Study Guides
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+
+            <Grid.Column width={4} textAlign='center'>
+              <div>
+                <div style={cardHeaderStyles2}>
+                  $19.99
+                </div>
+                <div style={cardDescriptionStyles}>
+                  <div>
+                    1 Diagnostic Assessment
+                  </div>
+                  <div>
+                    Choice of Math, English, Grammar
+                  </div>
+                  <div>
+                    Unlimited Timed Practice Exams
+                  </div>
+                  <div>
+                    Real Time Course Diagnostics
+                  </div>
+                </div>
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row textAlign='center' columns={4}>
+            <Grid.Column textAlign='center'>
+              <Button circular inverted color='blue' >Sign Up</Button>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+              <Button circular inverted color='blue'>Buy</Button>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      )
+    }
+    if (activeItem === 'COMBO') {
+      return (
+        <Grid>
+          <Grid.Row>
+            <Grid.Column textAlign='center'>
+              COMBO
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      )
+    }
+  }
+
   render() {
+    const { activeItem } = this.state;
     return (
       <div>
         <Grid centered relaxed stackable>
@@ -137,9 +487,56 @@ export default class Home extends Component {
           {/* LAYER 2 */}
           <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column textAlign='center'>
-              <div style={headerStyles}>
+              <div style={headerStyles3}>
                 Join us and become 1 of 500+ success stories
               </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          {/* LAYER 2 */}
+          <Grid.Row style={{ paddingTop: '5%' }}>
+            <Grid.Column textAlign='center' width={12}>
+              <Grid>
+                <Grid.Row columns={3}>
+                  <Grid.Column>
+                    <CountUp
+                      style={headerStyles5}
+                      start={0}
+                      end={200}
+                      duration={3.75}
+                      suffix="+ avg" />
+                    <div style={headerStyles4}>
+                      SAT Improvement
+                    </div>
+                  </Grid.Column>
+
+                  <Grid.Column>
+                    <CountUp
+                      style={headerStyles5}
+                      start={0}
+                      end={5}
+                      duration={6}
+                      suffix="+ avg" />
+                    <div style={headerStyles4}>
+                      ACT Improvement
+                    </div>
+                  </Grid.Column>
+
+                  <Grid.Column>
+                    <CountUp
+                      style={headerStyles5}
+                      start={0}
+                      end={10}
+                      duration={3.75}
+                      decimals={2}
+                      prefix="$"
+                      suffix="M+" />
+                    <div style={headerStyles4}>
+                      in Scholarships
+                    </div>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
             </Grid.Column>
           </Grid.Row>
 
@@ -152,7 +549,7 @@ export default class Home extends Component {
           <Grid.Row centered style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186, 0.6)' }}>
             <Grid.Column width={11} textAlign='center'>
               <div style={headerStyles2}>
-                WHO
+                WHO WE ARE
               </div>
               <div style={descriptionStyles2}>
                 Amikka Tutoring is an online platform that provides students with the tools necessary for success on the SAT/ACT exam through private coaching.
@@ -167,15 +564,15 @@ export default class Home extends Component {
                 Our SAT/ACT programs focus on the synergies between time management, strategy, and content. Students' scores increase on average ~220 points for the SAT and ~5 points on the ACT
               </div>
             </Grid.Column>
-            <Grid.Column width={5} textAlign='center'>
-              <Image src={Diagram} />
+            <Grid.Column width={4} textAlign='center'>
+              <Image src={Thinking} size='huge' />
             </Grid.Column>
           </Grid.Row>
 
           {/* LAYER 6 */}
           <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column width={16}>
-              <Parallax bgImage={Study3Img} strength={450} blue={8}>
+              <Parallax bgImage={Student} strength={300} blue={8}>
                 <div style={{ height: 600, background: 'rgba(0, 0, 0, 0.5)' }}>
                   <div style={insideStyles3}>
                     <Grid stackable>
@@ -183,7 +580,7 @@ export default class Home extends Component {
                       <Grid.Row >
                         <Grid.Column textAlign='center'>
                           <div style={headerStyles}>
-                            WHAT
+                            WHAT WE OFFER
                           </div>
                         </Grid.Column>
                       </Grid.Row>
@@ -255,6 +652,8 @@ export default class Home extends Component {
               </Parallax>
             </Grid.Column>
           </Grid.Row>
+
+
 
           {/* LAYER 7 : OUR PROCESS */}
           <Grid.Row style={{ paddingTop: '7%' }}>
@@ -345,6 +744,50 @@ export default class Home extends Component {
             <div style={{ paddingTop: '4%' }}>
               <Button inverted color='blue' size='huge' content='BOOK AN APPOINTMENT' as={Link} to='/contact' />
             </div>
+          </Grid.Row>
+
+          {/* LAYER 7 : OUR PROCESS */}
+          <Grid.Row style={{ paddingTop: '7%' }}>
+            <Grid.Column textAlign='center' width={16}>
+              <div style={headerStyles}>
+                SERVICES
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+
+          {/* LAYER TWO */}
+          <Grid.Row textAlign='center' style={{ paddingTop: '5%' }}>
+            <Grid.Column width={4}>
+              <Grid >
+                <Grid.Row textAlign='center'>
+                  <Grid.Column width={16} textAlign='center'>
+                    <Menu widths={3} pointing secondary color='blue' defaultActiveIndex={1}>
+                      <Menu.Item
+                        name='SAT'
+                        active={activeItem === 'SAT'}
+                        onClick={this.handleItemClick}
+                      />
+                      <Menu.Item
+                        name='ACT'
+                        active={activeItem === 'ACT'}
+                        onClick={this.handleItemClick}
+                      />
+                      <Menu.Item
+                        name='COMBO'
+                        active={activeItem === 'COMBO'}
+                        onClick={this.handleItemClick}
+                      />
+                    </Menu>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row textAlign='center'>
+            <Grid.Column width={12}>
+              {this.returnMenuItem()}
+            </Grid.Column>
           </Grid.Row>
 
           {/* LAYER 14 : TESTIMONIALS */}
