@@ -77,351 +77,368 @@ export default class Services extends Component {
     super(props);
     this.state = {
       activeItem: 'SAT',
+      visible: true,
     }
   }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  toggleVisibility = (e, { name }) => this.setState(prevState => ({ visible: !prevState.visible, activeItem: name }))
+
+  onStart = () => this.setState(prevState => ({ visible: true }))
+
   returnMenuItem = () => {
     const {
       activeItem,
+      visible,
     } = this.state
 
     if (activeItem === 'SAT') {
       return (
-        <Grid >
-          <Grid.Row textAlign='center' columns={3} style={{ paddingTop: '3%' }}>
-            <Grid.Column textAlign='center'>
-              <div style={headerStyles3}>
-                Sample
+        <Transition visible={visible} animation='zoom' duration={500} unmountOnHide={true} onStart={this.onStart}>
+          <div>
+            <Grid >
+              <Grid.Row textAlign='center' columns={3} style={{ paddingTop: '3%' }}>
+                <Grid.Column textAlign='center'>
+                  <div style={headerStyles3}>
+                    Sample
               </div>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <div style={headerStyles3}>
-                One-on-One
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
+                  <div style={headerStyles3}>
+                    One-on-One
               </div>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <div style={headerStyles3}>
-                Group
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
+                  <div style={headerStyles3}>
+                    Group
               </div>
-            </Grid.Column>
-          </Grid.Row>
+                </Grid.Column>
+              </Grid.Row>
 
-          <Grid.Row textAlign='center' columns={3}>
-            <Grid.Column textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  Free
+              <Grid.Row textAlign='center' columns={3}>
+                <Grid.Column textAlign='center'>
+                  <div>
+                    <div style={cardHeaderStyles2}>
+                      Free
                 </div>
-                <div style={cardDescriptionStyles}>
+                    <div style={cardDescriptionStyles}>
+                      <div>
+                        30 min intro video
+                  </div>
+                      <div>
+                        No credit card required
+                  </div>
+                    </div>
+                  </div>
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
                   <div>
-                    33 SAT questions
+                    <div style={cardHeaderStyles2}>
+                      $75
                   </div>
-                  <div>
-                    7-day access
+                    <div style={cardDescriptionStyles}>
+                      <div>
+                        1 Diagnostic Assessment
                   </div>
-                  <div>
-                    No credit card required
+                      <div>
+                        Personalized Plan
                   </div>
-                </div>
-              </div>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  $75
+                      <div>
+                        Unlimited Timed Practice Exams
                   </div>
-                <div style={cardDescriptionStyles}>
-                  <div>
-                    1 Diagnostic Assessment
+                      <div>
+                        Multiple Review Sections
                   </div>
-                  <div>
-                    Personalized Plan
+                      <div>
+                        Supplemental Study Guides
                   </div>
-                  <div>
-                    Unlimited Timed Practice Exams
+                    </div>
                   </div>
-                  <div>
-                    Multiple Review Sections
-                  </div>
-                  <div>
-                    Supplemental Study Guides
-                  </div>
-                </div>
-              </div>
-            </Grid.Column>
+                </Grid.Column>
 
-            <Grid.Column textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  $50
+                <Grid.Column textAlign='center'>
+                  <div>
+                    <div style={cardHeaderStyles2}>
+                      $50
                 </div>
-                <div style={cardDescriptionStyles}>
-                  <div>
-                    1 Diagnostic Assessment
+                    <div style={cardDescriptionStyles}>
+                      <div>
+                        1 Diagnostic Assessment
                   </div>
-                  <div>
-                    Personalized Plan
+                      <div>
+                        Personalized Plan
                   </div>
-                  <div>
-                    Unlimited Timed Practice Exams
+                      <div>
+                        Unlimited Timed Practice Exams
                   </div>
-                  <div>
-                    Multiple Review Sections
+                      <div>
+                        Multiple Review Sections
                   </div>
-                  <div>
-                    Supplemental Study Guides
+                      <div>
+                        Supplemental Study Guides
                   </div>
-                </div>
-              </div>
-            </Grid.Column>
-          </Grid.Row>
+                    </div>
+                  </div>
+                </Grid.Column>
+              </Grid.Row>
 
-          <Grid.Row textAlign='center' columns={3}>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue' >Sign Up</Button>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-
+              <Grid.Row textAlign='center' columns={3}>
+                <Grid.Column textAlign='center'>
+                  <Button circular inverted color='blue' >Sign Up</Button>
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
+                  <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
+                  <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </div>
+        </Transition>
       )
     }
     if (activeItem === 'ACT') {
       return (
-        <Grid >
-          <Grid.Row textAlign='center' columns={3} style={{ paddingTop: '3%' }}>
-            <Grid.Column textAlign='center'>
-              <div style={headerStyles3}>
-                Sample
+        <Transition visible={visible} animation='zoom' duration={500} unmountOnHide={true} onStart={this.onStart}>
+          <div>
+            <Grid >
+              <Grid.Row textAlign='center' columns={3} style={{ paddingTop: '3%' }}>
+                <Grid.Column textAlign='center'>
+                  <div style={headerStyles3}>
+                    Sample
               </div>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <div style={headerStyles3}>
-                One-on-One
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
+                  <div style={headerStyles3}>
+                    One-on-One
               </div>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <div style={headerStyles3}>
-                Group
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
+                  <div style={headerStyles3}>
+                    Group
               </div>
-            </Grid.Column>
-          </Grid.Row>
+                </Grid.Column>
+              </Grid.Row>
 
-          <Grid.Row textAlign='center' columns={3}>
-            <Grid.Column textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  Free
+              <Grid.Row textAlign='center' columns={3}>
+                <Grid.Column textAlign='center'>
+                  <div>
+                    <div style={cardHeaderStyles2}>
+                      Free
                 </div>
-                <div style={cardDescriptionStyles}>
+                    <div style={cardDescriptionStyles}>
+                      <div>
+                        30 min intro video
+                  </div>
+                      <div>
+                        No credit card required
+                  </div>
+                    </div>
+                  </div>
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
                   <div>
-                    33 SAT questions
+                    <div style={cardHeaderStyles2}>
+                      $75
                   </div>
-                  <div>
-                    7-day access
+                    <div style={cardDescriptionStyles}>
+                      <div>
+                        1 Diagnostic Assessment
                   </div>
-                  <div>
-                    No credit card required
+                      <div>
+                        Personalized Plan
                   </div>
-                </div>
-              </div>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  $75
+                      <div>
+                        Unlimited Timed Practice Exams
                   </div>
-                <div style={cardDescriptionStyles}>
-                  <div>
-                    1 Diagnostic Assessment
+                      <div>
+                        Multiple Review Sections
                   </div>
-                  <div>
-                    Personalized Plan
+                      <div>
+                        Supplemental Study Guides
                   </div>
-                  <div>
-                    Unlimited Timed Practice Exams
+                    </div>
                   </div>
-                  <div>
-                    Multiple Review Sections
-                  </div>
-                  <div>
-                    Supplemental Study Guides
-                  </div>
-                </div>
-              </div>
-            </Grid.Column>
+                </Grid.Column>
 
-            <Grid.Column textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  $50
+                <Grid.Column textAlign='center'>
+                  <div>
+                    <div style={cardHeaderStyles2}>
+                      $50
                 </div>
-                <div style={cardDescriptionStyles}>
-                  <div>
-                    1 Diagnostic Assessment
+                    <div style={cardDescriptionStyles}>
+                      <div>
+                        1 Diagnostic Assessment
                   </div>
-                  <div>
-                    Personalized Plan
+                      <div>
+                        Personalized Plan
                   </div>
-                  <div>
-                    Unlimited Timed Practice Exams
+                      <div>
+                        Unlimited Timed Practice Exams
                   </div>
-                  <div>
-                    Multiple Review Sections
+                      <div>
+                        Multiple Review Sections
                   </div>
-                  <div>
-                    Supplemental Study Guides
+                      <div>
+                        Supplemental Study Guides
                   </div>
-                </div>
-              </div>
-            </Grid.Column>
-          </Grid.Row>
+                    </div>
+                  </div>
+                </Grid.Column>
+              </Grid.Row>
 
-          <Grid.Row textAlign='center' columns={3}>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue' >Sign Up</Button>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+              <Grid.Row textAlign='center' columns={3}>
+                <Grid.Column textAlign='center'>
+                  <Button circular inverted color='blue' >Sign Up</Button>
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
+                  <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
+                  <Button circular inverted color='blue' as={Link} to='/contact'>Learn More</Button>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </div>
+        </Transition>
       )
     }
     if (activeItem === 'QBank') {
       return (
-        <Grid >
-          <Grid.Row textAlign='center' columns={4} style={{ paddingTop: '3%' }}>
-            <Grid.Column width={4} textAlign='center'>
-              <div style={headerStyles3}>
-                Sample
+        <Transition visible={visible} animation='zoom' duration={500} unmountOnHide={true} onStart={this.onStart}>
+          <div>
+            <Grid >
+              <Grid.Row textAlign='center' columns={4} style={{ paddingTop: '3%' }}>
+                <Grid.Column width={4} textAlign='center'>
+                  <div style={headerStyles3}>
+                    Sample
               </div>
-            </Grid.Column>
-            <Grid.Column width={4} textAlign='center'>
-              <div style={headerStyles3}>
-                Math
+                </Grid.Column>
+                <Grid.Column width={4} textAlign='center'>
+                  <div style={headerStyles3}>
+                    Math
               </div>
-            </Grid.Column>
-            <Grid.Column width={4} textAlign='center'>
-              <div style={headerStyles3}>
-                English
+                </Grid.Column>
+                <Grid.Column width={4} textAlign='center'>
+                  <div style={headerStyles3}>
+                    English
               </div>
-            </Grid.Column>
-            <Grid.Column width={4} textAlign='center'>
-              <div style={headerStyles3}>
-                Grammar
+                </Grid.Column>
+                <Grid.Column width={4} textAlign='center'>
+                  <div style={headerStyles3}>
+                    Grammar
               </div>
-            </Grid.Column>
-          </Grid.Row>
+                </Grid.Column>
+              </Grid.Row>
 
-          <Grid.Row textAlign='center' columns={4}>
-            <Grid.Column width={4} textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  Free
+              <Grid.Row textAlign='center' columns={4}>
+                <Grid.Column width={4} textAlign='center'>
+                  <div>
+                    <div style={cardHeaderStyles2}>
+                      Free
                 </div>
-                <div style={cardDescriptionStyles}>
-                  <div>
-                    33 SAT questions
+                    <div style={cardDescriptionStyles}>
+                      <div>
+                        33 SAT questions
                   </div>
-                  <div>
-                    7-day access
+                      <div>
+                        7-day access
                   </div>
-                  <div>
-                    No credit card required
+                      <div>
+                        No credit card required
                   </div>
+                    </div>
+                  </div>
+                </Grid.Column>
+                <Grid.Column width={4} textAlign='center'>
+                  <div>
+                    <div style={cardHeaderStyles2}>
+                      $19.99
                 </div>
-              </div>
-            </Grid.Column>
-            <Grid.Column width={4} textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  $19.99
-                </div>
-                <div style={cardDescriptionStyles}>
-                  <div>
-                    Unlimited Timed Practice Exams
+                    <div style={cardDescriptionStyles}>
+                      <div>
+                        Unlimited Timed Practice Exams
                   </div>
-                  <div>
-                    Multiple Review Sections
+                      <div>
+                        Multiple Review Sections
                   </div>
-                  <div>
-                    Supplemental Study Guides
+                      <div>
+                        Supplemental Study Guides
                   </div>
-                </div>
-              </div>
-            </Grid.Column>
+                    </div>
+                  </div>
+                </Grid.Column>
 
-            <Grid.Column width={4} textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  $19.99
+                <Grid.Column width={4} textAlign='center'>
+                  <div>
+                    <div style={cardHeaderStyles2}>
+                      $19.99
                 </div>
-                <div style={cardDescriptionStyles}>
-                  <div>
-                    Unlimited Timed Practice Exams
+                    <div style={cardDescriptionStyles}>
+                      <div>
+                        Unlimited Timed Practice Exams
                   </div>
-                  <div>
-                    Multiple Review Sections
+                      <div>
+                        Multiple Review Sections
                   </div>
-                  <div>
-                    Supplemental Study Guides
+                      <div>
+                        Supplemental Study Guides
                   </div>
-                </div>
-              </div>
-            </Grid.Column>
+                    </div>
+                  </div>
+                </Grid.Column>
 
-            <Grid.Column width={4} textAlign='center'>
-              <div>
-                <div style={cardHeaderStyles2}>
-                  $19.99
+                <Grid.Column width={4} textAlign='center'>
+                  <div>
+                    <div style={cardHeaderStyles2}>
+                      $19.99
                 </div>
-                <div style={cardDescriptionStyles}>
-                  <div>
-                    Unlimited Timed Practice Exams
+                    <div style={cardDescriptionStyles}>
+                      <div>
+                        Unlimited Timed Practice Exams
                   </div>
-                  <div>
-                    Multiple Review Sections
+                      <div>
+                        Multiple Review Sections
                   </div>
-                  <div>
-                    Supplemental Study Guides
+                      <div>
+                        Supplemental Study Guides
                   </div>
-                </div>
-              </div>
-            </Grid.Column>
-          </Grid.Row>
+                    </div>
+                  </div>
+                </Grid.Column>
+              </Grid.Row>
 
-          <Grid.Row textAlign='center' columns={4}>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue' >Sign Up</Button>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue'>Buy</Button>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue'>Buy</Button>
-            </Grid.Column>
-            <Grid.Column textAlign='center'>
-              <Button circular inverted color='blue'>Buy</Button>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+              <Grid.Row textAlign='center' columns={4}>
+                <Grid.Column textAlign='center'>
+                  <Button circular inverted color='blue' >Sign Up</Button>
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
+                  <Button circular inverted color='blue'>Buy</Button>
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
+                  <Button circular inverted color='blue'>Buy</Button>
+                </Grid.Column>
+                <Grid.Column textAlign='center'>
+                  <Button circular inverted color='blue'>Buy</Button>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </div>
+        </Transition>
+
       )
     }
   }
 
   render() {
-    const { activeItem } = this.state;
+    const {
+      activeItem,
+      isSATVisible,
+      isACTVisible,
+      isQBankVisible
+    } = this.state;
 
     return (
       <div>
@@ -456,17 +473,17 @@ export default class Services extends Component {
                       <Menu.Item
                         name='SAT'
                         active={activeItem === 'SAT'}
-                        onClick={this.handleItemClick}
+                        onClick={this.toggleVisibility}
                       />
                       <Menu.Item
                         name='ACT'
                         active={activeItem === 'ACT'}
-                        onClick={this.handleItemClick}
+                        onClick={this.toggleVisibility}
                       />
                       <Menu.Item
                         name='QBank'
                         active={activeItem === 'QBank'}
-                        onClick={this.handleItemClick}
+                        onClick={this.toggleVisibility}
                       />
                     </Menu>
                   </Grid.Column>

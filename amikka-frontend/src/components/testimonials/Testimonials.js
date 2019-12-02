@@ -1,14 +1,30 @@
 import React, { Component } from 'react'
-import { Button, Grid, Transition, Segment } from 'semantic-ui-react'
+import { Button, Grid, Transition, Image, Container, Icon, Label } from 'semantic-ui-react'
 
 import Statements from './Statements'
+import Quotes from '../../images/misc/quotes.png'
 
 const descriptionStyles = {
   fontFamily: 'raleway',
-  fontSize: '15px',
+  fontSize: '13px',
   lineHeight: 1.8,
   fontWeight: 'bold',
-  color: 'white',
+  fontDisplay: 'block',
+  color: 'black',
+  paddingBottom: '5%',
+  paddingLeft: '5%',
+  paddingRight: '5%'
+}
+
+const imageStyles = {
+  position: 'relative',
+  textAlign: 'center',
+}
+
+const bulletStyles = {
+  paddingLeft: '5px',
+  paddingRight: '5px',
+  display: 'inline-block',
 }
 
 export default class Testimonials extends Component {
@@ -18,73 +34,118 @@ export default class Testimonials extends Component {
       statements: Statements,
       activeIndex: 1,
       time: 0,
+      visible: true,
     }
     this.handleLeftButtonClick.bind(this);
     this.handleRightButtonClick.bind(this);
   }
 
-  handleLeftButtonClick = () => {
+  handleLeftButtonClick = (e) => {
     const { activeIndex, statements } = this.state;
-    if (activeIndex === 1) {
-      this.setState((prevState) => ({ activeIndex: statements.length }))
-    } else {
-      this.setState((prevState) => ({ activeIndex: activeIndex - 1 }))
-    }
+    activeIndex <= 2
+      ?
+      this.setState(prevState => ({ activeIndex: statements.length - 2, visible: !prevState.visible }))
+      :
+      this.setState(prevState => ({ activeIndex: activeIndex - 3, visible: !prevState.visible }))
   }
 
-  handleRightButtonClick = () => {
+  handleRightButtonClick = (e) => {
     const { activeIndex, statements } = this.state;
-    if (activeIndex === statements.length) {
-      this.setState((prevState) => ({ activeIndex: 1 }))
-    } else {
-      this.setState((prevState) => ({ activeIndex: activeIndex + 1 }))
-    }
+    activeIndex >= statements.length - 2
+      ?
+      this.setState(prevState => ({ activeIndex: 1, visible: !prevState.visible }))
+      :
+      this.setState(prevState => ({ activeIndex: activeIndex + 3, visible: !prevState.visible }))
   }
+
+  onStart = () => this.setState(prevState => ({ visible: true }))
+
+  toggleVisibility = (e, { name }) => this.setState(prevState => ({ visible: !prevState.visible, activeItem: name }))
+
+  onStart = () => this.setState(prevState => ({ visible: true }))
 
   render() {
-    const { activeIndex, statements } = this.state;
+    const { activeIndex, statements, visible } = this.state;
     return (
-      <div>
-        <Grid verticalAlign='middle' columns={4} centered>
-          <Grid.Row >
+      <Grid >
+        <Grid.Row verticalAlign='top' columns={3}>
 
-            <Grid.Column textAlign='center'>
-              <Button icon='caret left' inverted color='blue' circular onClick={this.handleLeftButtonClick} />
-            </Grid.Column>
-
-
-            <Grid.Column width={8} textAlign='center'>
-
-              {statements.filter(item => item.id === activeIndex).map(item => (
-                <Transition
-                  duration={1000}
-                  animation='fade'
-                  transitionOnMount
-                >
-                  <Segment raised style={{ background: 'rgba(23, 120, 186, 0.8)' }}>
-                    <div style={{ paddingTop: '5%', paddingBottom: '5%', paddingLeft: '5%', paddingRight: '5%' }}>
-                      <div style={descriptionStyles}>
+          <Grid.Column>
+            {statements.filter(item => item.id === activeIndex).map(item => (
+              <Transition visible={visible} animation='drop' duration={300} unmountOnHide={true} onStart={this.onStart}>
+                <div>
+                  <Container>
+                    <Image src={Quotes} size='mini' />
+                    <div style={descriptionStyles}>
+                      <div>
                         "{item.statement}"
-                      </div>
+                        </div>
                       <br />
-                      <div style={descriptionStyles}>
+                      <div style={{ textAlign: 'center' }}>
                         - {item.name}
                       </div>
                     </div>
-                  </Segment>
-                </Transition>
-              ))}
+                  </Container>
+                </div>
+              </Transition>
+            ))}
+          </Grid.Column>
 
-            </Grid.Column>
+          <Grid.Column>
+            {statements.filter(item => (activeIndex < statements.length - 1) ? (item.id === activeIndex + 1) : (item.id === statements.length - statements.length + 1)).map(item => (
+              <Transition visible={visible} animation='drop' duration={300} unmountOnHide={true} onStart={this.onStart}>
+                <div>
+                  <Container>
+                    <Image src={Quotes} size='mini' />
+                    <div style={descriptionStyles}>
+                      <div>
+                        "{item.statement}"
+                        </div>
+                      <br />
+                      <div style={{ textAlign: 'center' }}>
+                        - {item.name}
+                      </div>
+                    </div>
+                  </Container>
+                </div>
+              </Transition>
+            ))}
+          </Grid.Column>
 
+          <Grid.Column>
+            {statements.filter(item => (activeIndex < statements.length - 2) ? (item.id === activeIndex + 2) : (item.id === statements.length - statements.length + 2)).map(item => (
+              <Transition visible={visible} animation='drop' duration={300} unmountOnHide={true} onStart={this.onStart}>
+                <div>
+                  <Container>
+                    <Image src={Quotes} size='mini' />
+                    <div style={descriptionStyles}>
+                      <div>
+                        "{item.statement}"
+                        </div>
+                      <br />
+                      <div style={{ textAlign: 'center' }}>
+                        - {item.name}
+                      </div>
+                    </div>
+                  </Container>
+                </div>
+              </Transition>
+            ))}
+          </Grid.Column>
+        </Grid.Row>
 
-            <Grid.Column textAlign='center'>
+        <Grid.Row centered columns={1}>
+          <Grid.Column verticalAlign='middle'>
+            <div style={{ paddingRight: '5%', display: 'inline-block' }}>
+              <Button icon='caret left' inverted color='blue' circular onClick={this.handleLeftButtonClick} />
+            </div>
+            <div style={{ paddingLeft: '5%', display: 'inline-block' }}>
               <Button icon='caret right' inverted color='blue' circular onClick={this.handleRightButtonClick} />
-            </Grid.Column>
+            </div>
+          </Grid.Column>
+        </Grid.Row>
 
-          </Grid.Row>
-        </Grid>
-      </div >
+      </Grid>
     )
   }
 }

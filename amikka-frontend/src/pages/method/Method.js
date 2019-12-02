@@ -43,14 +43,37 @@ export default class Method extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeIndex: 0
+      activeIndex: 0,
+      isEducationAccordionOpen: true,
+      isTimeManagementAccordionOpen: true,
+      isStrategyAccordionOpen: true,
+      isContentAccordionOpen: true,
+      isTheoryAccordionOpen: true,
     }
+    this.handleEducationAccordionClick = this.handleEducationAccordionClick.bind(this);
   }
 
+  handleEducationAccordionClick = (e) => (this.setState(prevState => ({ isEducationAccordionOpen: !prevState.isEducationAccordionOpen })))
+
+  handleTimeManagementAccordionClick = () => (this.setState(prevState => ({ isTimeManagementAccordionOpen: !prevState.isTimeManagementAccordionOpen })))
+
+  handleStrategyAccordionClick = () => (this.setState(prevState => ({ isStrategyAccordionOpen: !prevState.isStrategyAccordionOpen })))
+
+  handleEContentAccordionClick = () => (this.setState(prevState => ({ isContentAccordionOpen: !prevState.isContentAccordionOpen })))
+
+  handleTheoryAccordionClick = () => (this.setState(prevState => ({ isTheoryAccordionOpen: !prevState.isTheoryAccordionOpen })))
+
   render() {
+    const { 
+      isEducationAccordionOpen,
+      isTimeManagementAccordionOpen,
+      isStrategyAccordionOpen,
+      isContentAccordionOpen,
+      isTheoryAccordionOpen
+    } = this.state;
     const educationData = [{
       title: <div style={bulletHeaderStyles}>EDUCATION</div>,
-      icon: <List.Icon name='circle outline' size='large' color='blue' />,
+      icon: isEducationAccordionOpen ? <List.Icon name='circle outline' size='large' color='blue' /> : <List.Icon name='chevron circle down' size='large' color='blue' />,
       content:
         <Message floating>
           <List>
@@ -66,7 +89,7 @@ export default class Method extends Component {
     }]
     const timeManagementData = [{
       title: <div style={bulletHeaderStyles}>TIME MANAGEMENT</div>,
-      icon: <List.Icon name='circle outline' size='large' color='blue' />,
+      icon: isTimeManagementAccordionOpen ? <List.Icon name='circle outline' size='large' color='blue' /> : <List.Icon name='chevron circle down' size='large' color='blue' />,
       content:
         <Message floating>
           <List>
@@ -96,7 +119,7 @@ export default class Method extends Component {
     }]
     const strategyData = [{
       title: <div style={bulletHeaderStyles}>STRATEGY</div>,
-      icon: <List.Icon name='circle outline' size='large' color='blue' />,
+      icon: isStrategyAccordionOpen ? <List.Icon name='circle outline' size='large' color='blue' /> : <List.Icon name='chevron circle down' size='large' color='blue' />,
       content:
         <Message floating>
           <List>
@@ -138,7 +161,7 @@ export default class Method extends Component {
     }]
     const contentData = [{
       title: <div style={bulletHeaderStyles}>CONTENT</div>,
-      icon: <List.Icon name='circle outline' size='large' color='blue' />,
+      icon: isContentAccordionOpen ? <List.Icon name='circle outline' size='large' color='blue' /> : <List.Icon name='chevron circle down' size='large' color='blue' />,
       content:
         <Message floating>
           <List>
@@ -180,7 +203,7 @@ export default class Method extends Component {
     }]
     const theoryData = [{
       title: <div style={bulletHeaderStyles}>THEORY</div>,
-      icon: <List.Icon name='circle outline' size='large' color='blue' />,
+      icon: isTheoryAccordionOpen ? <List.Icon name='circle outline' size='large' color='blue' /> : <List.Icon name='chevron circle down' size='large' color='blue' />,
       content:
         <Message floating>
           <List>
@@ -223,7 +246,6 @@ export default class Method extends Component {
     return (
       <Grid verticalAlign='middle' columns={3} centered style={{ paddingTop: '12px' }}>
 
-        {/* LAYER 5 : THE AMIKKA METHOD */}
         <Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186, 0.6)'  }}>
           <Grid.Column textAlign='center' width={16}>
             <div style={headerStyles}>
@@ -232,7 +254,6 @@ export default class Method extends Component {
           </Grid.Column>
         </Grid.Row>
 
-        {/* LAYER 6 : EDUCATION */}
         <Grid.Row centered verticalAlign='middle' style={{ paddingTop: '5%', paddingBottom: '5%' }}>
           <Grid.Column  >
             <Image floated='right' src={MethodLogo} size='large' />
@@ -242,7 +263,7 @@ export default class Method extends Component {
             <Accordion
               fluid
               activeIndex={this.state.activeAccordion}
-              onTitleClick={this.handleAccordionClick}
+              onTitleClick={this.handleEducationAccordionClick}
               exclusive={false}
               panels={educationData.map((data, i) => ({
                 key: i,
@@ -260,7 +281,7 @@ export default class Method extends Component {
             <Accordion
               fluid
               activeIndex={this.state.activeAccordion}
-              onTitleClick={this.handleAccordionClick}
+              onTitleClick={this.handleTimeManagementAccordionClick}
               exclusive={false}
               panels={timeManagementData.map((data, i) => ({
                 key: i,
@@ -278,7 +299,7 @@ export default class Method extends Component {
             <Accordion
               fluid
               activeIndex={this.state.activeAccordion}
-              onTitleClick={this.handleAccordionClick}
+              onTitleClick={this.handleStrategyAccordionClick}
               exclusive={false}
               panels={strategyData.map((data, i) => ({
                 key: i,
@@ -296,7 +317,7 @@ export default class Method extends Component {
             <Accordion
               fluid
               activeIndex={this.state.activeAccordion}
-              onTitleClick={this.handleAccordionClick}
+              onTitleClick={this.handleEContentAccordionClick}
               exclusive={false}
               panels={contentData.map((data, i) => ({
                 key: i,
@@ -314,7 +335,7 @@ export default class Method extends Component {
             <Accordion
               fluid
               activeIndex={this.state.activeAccordion}
-              onTitleClick={this.handleAccordionClick}
+              onTitleClick={this.handleTheoryAccordionClick}
               exclusive={false}
               panels={theoryData.map((data, i) => ({
                 key: i,
