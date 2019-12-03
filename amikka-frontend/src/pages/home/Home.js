@@ -17,9 +17,11 @@ import Michigan from '../../images/colleges/michigan.jpg'
 import Penn from '../../images/colleges/penn.jpg'
 import Diagram from '../../images/amikka/triangle.png'
 // Amikka image imports
-import Amikka from '../../images/amikka/amikka_tutor_1.png'
+import Amikka from '../../images/amikka/amikka_tutor_3.png'
 import Thinking from '../../images/amikka/amikka_method_6.png'
 import Student from '../../images/amikka/amikka_student_1.jpg'
+import AmikkaParallax from '../../images/amikka/thinking.jpg'
+import Colleges from '../../images/amikka/colleges.png'
 // Icon imports
 import Checklist from '../../images/icons/check-list.svg'
 import Tutor from '../../images/icons/tutor.svg'
@@ -110,9 +112,10 @@ const insideStyles = {
 }
 
 const insideStyles3 = {
-  color: 'white',
+  color: 'black',
   fontFamily: 'raleway',
-  fontSize: '28px',
+  fontWeight: 'bold',
+  fontSize: '35px',
   width: '100%',
   position: 'absolute',
   top: '50%',
@@ -532,7 +535,7 @@ export default class Home extends Component {
           {/* LAYER 1 */}
           <Grid.Row>
             <Grid.Column width={16}>
-              <Parallax bgImage={Amikka} strength={300}>
+              <Parallax bgImage={Amikka} strength={200}>
                 <div style={{ height: 550 }}>
                   <div style={insideStyles}>
                     <Grid stackable>
@@ -771,8 +774,8 @@ export default class Home extends Component {
           {/* LAYER 6 */}
           <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column width={16}>
-              <Parallax bgImage={Student} strength={300} blue={8}>
-                <div style={{ height: 600, background: 'rgba(0, 0, 0, 0.5)' }}>
+              <Parallax bgImage={AmikkaParallax} strength={100} >
+                <div style={{ height: 600, background: 'rgba(255, 255, 255, 0.6)' }}>
                   <div style={insideStyles3}>
                     <Grid stackable>
 
@@ -861,6 +864,12 @@ export default class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
+          <Grid.Row centered textAlign='center' style={{ paddingTop: '5%' }}>
+            <Grid.Column textAlign='center' width={10}>
+              <Image src={Colleges} />
+            </Grid.Column>
+          </Grid.Row>
+
           {/* LAYER 15 */}
           <Grid.Row style={{ paddingTop: '2%' }}>
             <Grid.Column width={10} style={{ paddingTop: '3%' }}>
@@ -869,7 +878,7 @@ export default class Home extends Component {
           </Grid.Row>
 
           {/* LAYER 16 : RELATED UNIVERSITIES */}
-          <Grid.Row style={{ paddingTop: '5%' }}>
+          {/* <Grid.Row style={{ paddingTop: '5%' }}>
             <Grid.Column width={13}>
               <Grid relaxed>
                 <Grid.Row centered columns={4}>
@@ -897,7 +906,7 @@ export default class Home extends Component {
                 </Grid.Row>
               </Grid>
             </Grid.Column>
-          </Grid.Row >
+          </Grid.Row > */}
 
           {/* LAYER 17 : BUTTON - BACK TO TOP */}
           <Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%' }}>

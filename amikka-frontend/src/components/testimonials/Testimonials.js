@@ -35,6 +35,7 @@ export default class Testimonials extends Component {
       activeIndex: 1,
       time: 0,
       visible: true,
+      active: true,
     }
     this.handleLeftButtonClick.bind(this);
     this.handleRightButtonClick.bind(this);
@@ -44,18 +45,18 @@ export default class Testimonials extends Component {
     const { activeIndex, statements } = this.state;
     activeIndex <= 2
       ?
-      this.setState(prevState => ({ activeIndex: statements.length - 2, visible: !prevState.visible }))
+      this.setState(prevState => ({ activeIndex: statements.length - 2, visible: !prevState.visible,  }))
       :
-      this.setState(prevState => ({ activeIndex: activeIndex - 3, visible: !prevState.visible }))
+      this.setState(prevState => ({ activeIndex: activeIndex - 3, visible: !prevState.visible,  }))
   }
 
   handleRightButtonClick = (e) => {
     const { activeIndex, statements } = this.state;
     activeIndex >= statements.length - 2
       ?
-      this.setState(prevState => ({ activeIndex: 1, visible: !prevState.visible }))
+      this.setState(prevState => ({ activeIndex: 1, visible: !prevState.visible,  }))
       :
-      this.setState(prevState => ({ activeIndex: activeIndex + 3, visible: !prevState.visible }))
+      this.setState(prevState => ({ activeIndex: activeIndex + 3, visible: !prevState.visible,  }))
   }
 
   onStart = () => this.setState(prevState => ({ visible: true }))
@@ -65,7 +66,7 @@ export default class Testimonials extends Component {
   onStart = () => this.setState(prevState => ({ visible: true }))
 
   render() {
-    const { activeIndex, statements, visible } = this.state;
+    const { activeIndex, statements, visible, active } = this.state;
     return (
       <Grid >
         <Grid.Row verticalAlign='top' columns={3}>
@@ -137,10 +138,10 @@ export default class Testimonials extends Component {
         <Grid.Row centered columns={1}>
           <Grid.Column verticalAlign='middle'>
             <div style={{ paddingRight: '5%', display: 'inline-block' }}>
-              <Button icon='caret left' inverted color='blue' circular onClick={this.handleLeftButtonClick} />
+              <Button active={!active} icon='caret left' basic color='blue' circular onClick={this.handleLeftButtonClick} />
             </div>
             <div style={{ paddingLeft: '5%', display: 'inline-block' }}>
-              <Button icon='caret right' inverted color='blue' circular onClick={this.handleRightButtonClick} />
+              <Button active={!active} icon='caret right' basic color='blue' circular onClick={this.handleRightButtonClick} />
             </div>
           </Grid.Column>
         </Grid.Row>

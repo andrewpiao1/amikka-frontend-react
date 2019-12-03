@@ -64,7 +64,7 @@ export default class Method extends Component {
   handleTheoryAccordionClick = () => (this.setState(prevState => ({ isTheoryAccordionOpen: !prevState.isTheoryAccordionOpen })))
 
   render() {
-    const { 
+    const {
       isEducationAccordionOpen,
       isTimeManagementAccordionOpen,
       isStrategyAccordionOpen,
@@ -244,9 +244,9 @@ export default class Method extends Component {
         </Message>
     }]
     return (
-      <Grid verticalAlign='middle' columns={3} centered style={{ paddingTop: '12px' }}>
+      <Grid verticalAlign='middle' columns={5} centered style={{ paddingTop: '12px' }}>
 
-        <Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186, 0.6)'  }}>
+        <Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186, 0.6)' }}>
           <Grid.Column textAlign='center' width={16}>
             <div style={headerStyles}>
               How do our students perform well on the SAT/ACT exam?
@@ -254,12 +254,8 @@ export default class Method extends Component {
           </Grid.Column>
         </Grid.Row>
 
-        <Grid.Row centered verticalAlign='middle' style={{ paddingTop: '5%', paddingBottom: '5%' }}>
-          <Grid.Column  >
-            <Image floated='right' src={MethodLogo} size='large' />
-          </Grid.Column>
-
-          <Grid.Column width={4} style={{ paddingLeft: '4%' }}>
+        <Grid.Row width={4} style={{ paddingTop: '5%' }}>
+          <Grid.Column textAlign='center' verticalAlign='bottom' >
             <Accordion
               fluid
               activeIndex={this.state.activeAccordion}
@@ -277,7 +273,11 @@ export default class Method extends Component {
                 ),
               }))}
             />
-            <br />
+          </Grid.Column>
+        </Grid.Row>
+
+        <Grid.Row centered verticalAlign='middle'>
+          <Grid.Column textAlign='center' width={4} style={{ paddingLeft: '5%', paddingRight: '2%'}}>
             <Accordion
               fluid
               activeIndex={this.state.activeAccordion}
@@ -313,7 +313,13 @@ export default class Method extends Component {
                 ),
               }))}
             />
-            <br />
+          </Grid.Column>
+
+          <Grid.Column textAlign='center' width={4}>
+            <Image fluid centered src={MethodLogo} size='large' />
+          </Grid.Column>
+
+          <Grid.Column textAlign='center' width={4} style={{ paddingRight: '8%'}}>
             <Accordion
               fluid
               activeIndex={this.state.activeAccordion}
