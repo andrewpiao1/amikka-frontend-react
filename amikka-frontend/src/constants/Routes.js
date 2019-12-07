@@ -1,0 +1,11 @@
+export const HOME = '/';
+export const SIGN_UP = '/signup';
+export const SIGN_IN = '/signin';
+export const ABOUT = '/about';
+export const METHOD = '/amikka_method';
+export const SERVICES = '/services';
+export const CONTACT = '/contact';
+export const PORTAL = '/portal'
+export const ACCOUNT = 'account';
+export const ADMIN = '/admin';
+export const PASSWORD_FORGET = '/pw-forget';

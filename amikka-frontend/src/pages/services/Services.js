@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { Grid, Button, Menu, Transition, Segment, Card } from 'semantic-ui-react'
+import { Grid, Button, Menu, Transition } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { Parallax } from 'react-parallax'
-import ReactCardFlip from 'react-card-flip'
 
 import Amikka1 from '../../images/amikka/amikka_student_2.jpeg'
 import Tutor1 from '../../images/misc/tutor_4.jpg'
@@ -13,11 +12,6 @@ const headerStyles = {
   fontWeight: 'bold',
 }
 
-const headerStyles2 = {
-  fontFamily: 'raleway',
-  fontSize: '30px',
-  color: 'white',
-}
 const headerStyles3 = {
   fontFamily: 'raleway',
   fontSize: '20px',
@@ -46,18 +40,6 @@ const cardDescriptionStyles = {
   fontSize: '12px',
   fontWeight: 'bold',
   lineHeight: 1.8,
-}
-
-const descriptionStyles = {
-  fontFamily: 'raleway',
-  fontSize: '15px',
-}
-
-const descriptionStyles3 = {
-  fontFamily: 'raleway',
-  fontSize: '15px',
-  paddingTop: '3%',
-  color: 'white',
 }
 
 const insideStyles = {
@@ -435,9 +417,6 @@ export default class Services extends Component {
   render() {
     const {
       activeItem,
-      isSATVisible,
-      isACTVisible,
-      isQBankVisible
     } = this.state;
 
     return (

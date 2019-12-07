@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Grid, Transition, Image, Container, Icon, Label } from 'semantic-ui-react'
+import { Button, Grid, Transition, Image, Container } from 'semantic-ui-react'
 
 import Statements from './Statements'
 import Quotes from '../../images/misc/quotes.png'
@@ -16,16 +16,6 @@ const descriptionStyles = {
   paddingRight: '5%'
 }
 
-const imageStyles = {
-  position: 'relative',
-  textAlign: 'center',
-}
-
-const bulletStyles = {
-  paddingLeft: '5px',
-  paddingRight: '5px',
-  display: 'inline-block',
-}
 
 export default class Testimonials extends Component {
   constructor(props) {

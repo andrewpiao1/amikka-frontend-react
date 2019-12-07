@@ -1,31 +1,15 @@
 import React, { Component } from 'react'
-import { Grid, Image, Button, Icon } from 'semantic-ui-react'
+import { Grid, Button, Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { Parallax } from 'react-parallax'
 // Image imports
 import Company1 from '../../images/misc/company_1.jpg'
 import Company2 from '../../images/misc/company_2.jpg'
 import Company3 from '../../images/misc/company_3.jpg'
-// Amikka image imports
-import Method1 from '../../images/amikka/amikka_method_1.png'
-import Method2 from '../../images/amikka/amikka_method_2.png'
-import Method3 from '../../images/amikka/amikka_method_3.png'
-import Method4 from '../../images/amikka/amikka_method_4.png'
-import Method5 from '../../images/amikka/amikka_method_5.png'
-
-import './about.css'
 
 const headerStyles = {
   fontFamily: 'raleway',
   fontSize: '30px',
-  fontWeight: 'bold',
-}
-
-const headerStyles2 = {
-  fontFamily: 'raleway',
-  fontSize: '30px',
-  color: 'white',
-  paddingBottom: '3%',
   fontWeight: 'bold',
 }
 
@@ -40,15 +24,6 @@ const descriptionStyles = {
   fontSize: '15px',
   fontWeight: 'bold',
   lineHeight: 1.8,
-}
-
-const descriptionStyles2 = {
-  fontFamily: 'raleway',
-  fontSize: '16px',
-  paddingTop: '3%',
-  lineHeight: 1.8,
-  color: 'white',
-  fontWeight: 'bold',
 }
 
 const insideStyles = {
@@ -100,15 +75,6 @@ export default class About extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          {/* LAYER 2 : THE COMPANY */}
-          {/* <Grid.Row textAlign='center'>
-            <Grid.Column textAlign='center' style={{ paddingTop: '5%' }}>
-              <div style={headerStyles}>
-                THE COMPANY
-              </div>
-            </Grid.Column>
-          </Grid.Row> */}
-
           {/* LAYER 3 : THE COMPANY - Description */}
           <Grid.Row centered>
             <Grid.Column width={9} textAlign='center' style={{ paddingTop: '5%' }}>
@@ -132,14 +98,6 @@ export default class About extends Component {
                           </div>
                         </Grid.Column>
                       </Grid.Row>
-
-                      {/* <Grid.Row centered>
-                        <Grid.Column width={11} textAlign='center'>
-                          <div style={descriptionStyles}>
-                            The founder of Amikka, Christopher Hernandez, began tutoring math close to 10 years ago. When his time to take the SAT came around, his initial scores left him unhappy. They weren’t high enough to get him into the University of Pennsylvania which was his dream school. He also couldn’t afford tutors that were 150+ per hour so he decided to teach himself. Through the process of prepping for the exam he not only learned a lot about how to break down the exam, but also about himself. He loved education. He was able to improve close to 300 points and got into the University of Pennsylvania. His mission became to build a test prep program that could yield higher results in less time to help more students like himself. Fast forward a couple years, and now the Amikka Test Prep program has become a proven formula for test prep and problem solving success.
-                          </div>
-                        </Grid.Column>
-                      </Grid.Row> */}
                     </Grid>
                   </div>
                 </div>
@@ -155,109 +113,6 @@ export default class About extends Component {
               </div>
             </Grid.Column>
           </Grid.Row>
-
-{/*     
-          <Grid.Row style={{ paddingTop: '7%' }}>
-            <Grid.Column textAlign='center' width={16}>
-              <div style={headerStyles}>
-                THE AMIKKA METHOD
-              </div>
-            </Grid.Column>
-          </Grid.Row>
-
-
-          <Grid.Row centered style={{ paddingTop: '5%' }} verticalAlign='middle'>
-            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.3)' }}>
-              <div style={headerStyles2}>
-                EDUCATION
-              </div>
-              <div style={descriptionStyles2}>
-                The Amikka Program focuses on progress through the lens of time management, content, and strategy to maximize the rate of improvement for students on the SAT/ACT exam.
-              </div>
-            </Grid.Column>
-            <Grid.Column width={4}>
-              <Image src={Method1} centered size='small' />
-            </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row centered verticalAlign='middle'>
-            <Grid.Column width={4} textAlign='center'>
-              <Image src={Method2} centered size='small' />
-            </Grid.Column>
-            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.4)' }}>
-              <div style={headerStyles2}>
-                TIME MANAGEMENT
-              </div>
-              <div style={descriptionStyles2}>
-                We slowly increase time constraints to force our students to work outside of their comfort zone to become quicker at problem solving.
-              </div>
-              <div style={descriptionStyles2}>
-                We give our students a strong problem solving foundation and teach them multiple ways to approach the same question to the get the correct answer.
-              </div>
-            </Grid.Column>
-          </Grid.Row>
-
-
-          <Grid.Row centered verticalAlign='middle'>
-            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.6)' }}>
-              <div style={headerStyles2}>
-                STRATEGY
-              </div>
-              <div style={descriptionStyles2}>
-                We help our students build a mid-course and post-course study guide with mistake patterns, important formulas, and main topics.
-              </div>
-              <div style={descriptionStyles2}>
-                We assess our students thought process and show them multiple strategies that would work for them.
-              </div>
-              <div style={descriptionStyles2}>
-                We teach our students to build context for every problem before attempting to find a solution to minimize mistakes.
-              </div>
-            </Grid.Column>
-            <Grid.Column width={4} textAlign='center'>
-              <Image src={Method3} centered size='small' />
-            </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row centered verticalAlign='middle'>
-            <Grid.Column width={4} textAlign='center'>
-              <Image src={Method4} centered size='small' />
-            </Grid.Column>
-            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.8)' }}>
-              <div style={headerStyles2}>
-                CONTENT
-              </div>
-              <div style={descriptionStyles2}>
-                We break topics apart into smaller sections to make it more digestible for all of our students.
-              </div>
-              <div style={descriptionStyles2}>
-                We help our students find an efficient way to study to make their process more fun and efficient.
-              </div>
-              <div style={descriptionStyles2}>
-                We encourage our students to have flashcards with main topics and mistake patterns for maximum improvement.
-              </div>
-            </Grid.Column>
-          </Grid.Row>
-
-
-          <Grid.Row centered verticalAlign='middle'>
-            <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186)' }}>
-              <div style={headerStyles2}>
-                THEORY
-              </div>
-              <div style={descriptionStyles2}>
-                The area of the triangle is the students potential
-              </div>
-              <div style={descriptionStyles2}>
-                There are synergies between each of the side lengths
-              </div>
-              <div style={descriptionStyles2}>
-                Working on all three sides leads to greatest expansion
-              </div>
-            </Grid.Column>
-            <Grid.Column width={4} textAlign='center'>
-              <Image src={Method5} centered size='small' />
-            </Grid.Column>
-          </Grid.Row> */}
 
           {/* LAYER 11 : BUTTON - LEARN MORE */}
           <Grid.Row centered>
@@ -282,7 +137,7 @@ export default class About extends Component {
                         </Grid.Column>
                       </Grid.Row>
 
-                      <Grid.Row columns={3} divided columns={2} style={{ paddingTop: '5%' }}>
+                      <Grid.Row divided columns={2} style={{ paddingTop: '5%' }}>
                         <Grid.Column textAlign='center'>
                           <Grid padded relaxed stackable>
                             <Grid.Row centered>

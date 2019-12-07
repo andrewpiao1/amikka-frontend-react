@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
-import { Grid, Image, List, Accordion, Message, Transition, Segment, Card } from 'semantic-ui-react'
+import { Grid, Image, List, Accordion, Message } from 'semantic-ui-react'
 import AnimateHeight from 'react-animate-height';
 
-import Logo from '../../images/amikka/logo5.svg'
-import Method1 from '../../images/amikka/amikka_method_1.png'
-import Method2 from '../../images/amikka/amikka_method_2.png'
-import Method3 from '../../images/amikka/amikka_method_3.png'
-import Method4 from '../../images/amikka/amikka_method_4.png'
-import Method5 from '../../images/amikka/amikka_method_5.png'
 import MethodLogo from '../../images/amikka/amikka_method_logo.jpg'
 
 const headerStyles = {

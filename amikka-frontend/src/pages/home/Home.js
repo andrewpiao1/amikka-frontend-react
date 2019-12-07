@@ -6,20 +6,10 @@ import { Parallax } from 'react-parallax'
 import CountUp from 'react-countup';
 import YouTube from 'react-youtube'
 import Testimonials from '../../components/testimonials/Testimonials'
-// Image imports
-import Study3Img from '../../images/misc/chalkboard.jpg'
-import Chicago from '../../images/colleges/chicago.jpg'
-import Columbia from '../../images/colleges/columbia.jpg'
-import Cornell from '../../images/colleges/cornell.jpg'
-import Duke from '../../images/colleges/duke.jpeg'
-import Harvard from '../../images/colleges/harvard.png'
-import Michigan from '../../images/colleges/michigan.jpg'
-import Penn from '../../images/colleges/penn.jpg'
-import Diagram from '../../images/amikka/triangle.png'
+
 // Amikka image imports
 import Amikka from '../../images/amikka/amikka_tutor_3.png'
 import Thinking from '../../images/amikka/amikka_method_6.png'
-import Student from '../../images/amikka/amikka_student_1.jpg'
 import AmikkaParallax from '../../images/amikka/thinking.jpg'
 import Colleges from '../../images/amikka/colleges.png'
 // Icon imports
