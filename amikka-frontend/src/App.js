@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import * as ROUTES from './constants/Routes'
 
 // Authorization component imports
@@ -32,9 +32,9 @@ function App() {
         <Route path={ROUTES.METHOD} component={Method} />
         <Route path={ROUTES.SERVICES} component={Services} />
         <Route path={ROUTES.CONTACT} component={Contact} />
-        {/* <AuthProvider>
+        <AuthProvider>
           <PrivateRoute path={ROUTES.PORTAL} component={Portal} />
-        </AuthProvider> */}
+        </AuthProvider>
         <Footer />
       </div>
     </Router>

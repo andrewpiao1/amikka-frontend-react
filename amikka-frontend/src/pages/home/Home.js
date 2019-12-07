@@ -520,7 +520,7 @@ export default class Home extends Component {
     const { activeItem } = this.state;
     return (
       <div>
-        <Grid centered relaxed stackable>
+        <Grid centered={true} relaxed stackable>
 
           {/* LAYER 1 */}
           <Grid.Row>
@@ -598,12 +598,12 @@ export default class Home extends Component {
           </Grid.Row>
 
           {/* LAYER 3 */}
-          <Grid.Row centered style={{ paddingTop: '5%', paddingBottom: '5%' }} >
+          <Grid.Row centered={true} style={{ paddingTop: '5%', paddingBottom: '5%' }} >
             <Button color='blue' size='huge' content='BOOK AN APPOINTMENT' as={Link} to='/contact' />
           </Grid.Row>
 
           {/* LAYER 4 */}
-          <Grid.Row centered style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186, 0.6)' }}>
+          <Grid.Row centered={true} style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186, 0.6)' }}>
             <Grid.Column width={11} textAlign='center'>
               <div style={headerStyles2}>
                 WHO WE ARE
@@ -615,7 +615,7 @@ export default class Home extends Component {
           </Grid.Row>
 
           {/* LAYER 5 */}
-          <Grid.Row centered columns={2} style={{ paddingTop: '3%' }} verticalAlign='middle' >
+          <Grid.Row centered={true} columns={2} style={{ paddingTop: '3%' }} verticalAlign='middle' >
             <Grid.Column width={6} textAlign='center'>
               <div style={descriptionStyles3}>
                 Our SAT/ACT programs focus on the synergies between time management, strategy, and content. Students' scores increase on average ~220 points for the SAT and ~5 points on the ACT
@@ -636,7 +636,7 @@ export default class Home extends Component {
           </Grid.Row>
 
           {/* LAYER 8 : INITIAL EVALUATION */}
-          <Grid.Row centered style={{ paddingTop: '5%' }} verticalAlign='middle'>
+          <Grid.Row centered={true} style={{ paddingTop: '5%' }} verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.2)' }}>
               <div style={headerStyles2}>
                 INITIAL EVALUATION
@@ -646,14 +646,14 @@ export default class Home extends Component {
               </div>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Image src={Checklist} centered size='tiny' />
+              <Image src={Checklist} centered={true} size='tiny' />
             </Grid.Column>
           </Grid.Row>
 
           {/* LAYER 9 : TUTOR MATCHING */}
-          <Grid.Row centered verticalAlign='middle'>
+          <Grid.Row centered={true} verticalAlign='middle'>
             <Grid.Column width={4} textAlign='center'>
-              <Image src={Tutor} centered size='tiny' />
+              <Image src={Tutor} centered={true} size='tiny' />
             </Grid.Column>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.4)' }}>
               <div style={headerStyles2}>
@@ -666,7 +666,7 @@ export default class Home extends Component {
           </Grid.Row>
 
           {/* LAYER 10 : PERSONALIZED PROGRAM */}
-          <Grid.Row centered verticalAlign='middle'>
+          <Grid.Row centered={true} verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.6)' }}>
               <div style={headerStyles2}>
                 PERSONALIZED PROGRAM
@@ -676,14 +676,14 @@ export default class Home extends Component {
               </div>
             </Grid.Column>
             <Grid.Column width={4} textAlign='center'>
-              <Image src={Report} centered size='tiny' />
+              <Image src={Report} centered={true} size='tiny' />
             </Grid.Column>
           </Grid.Row>
 
           {/* LAYER 11 : TRACKING */}
-          <Grid.Row centered verticalAlign='middle'>
+          <Grid.Row centered={true} verticalAlign='middle'>
             <Grid.Column width={4} textAlign='center'>
-              <Image src={Diagram2} centered size='tiny' />
+              <Image src={Diagram2} centered={true} size='tiny' />
             </Grid.Column>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186, 0.8)' }}>
               <div style={headerStyles2}>
@@ -696,7 +696,7 @@ export default class Home extends Component {
           </Grid.Row>
 
           {/* LAYER 12 : SUPPORT */}
-          <Grid.Row centered verticalAlign='middle'>
+          <Grid.Row centered={true} verticalAlign='middle'>
             <Grid.Column width={7} textAlign='center' style={{ paddingTop: '3%', paddingBottom: '3%', background: 'rgba(23, 120, 186)' }}>
               <div style={headerStyles2}>
                 SUPPORT
@@ -706,12 +706,12 @@ export default class Home extends Component {
               </div>
             </Grid.Column>
             <Grid.Column width={4} textAlign='center'>
-              <Image src={Service} centered size='tiny' />
+              <Image src={Service} centered={true} size='tiny' />
             </Grid.Column>
           </Grid.Row>
 
           {/* LAYER 13 : BUTTON - Book an appointment*/}
-          <Grid.Row centered>
+          <Grid.Row centered={true}>
             <div style={{ paddingTop: '4%' }}>
               <Button inverted color='blue' size='huge' content='BOOK AN APPOINTMENT' as={Link} to='/contact' />
             </div>
@@ -780,15 +780,15 @@ export default class Home extends Component {
                       <Grid.Row style={{ paddingTop: '3%' }} columns={3} divided>
                         <Grid.Column textAlign='center'>
                           <Grid padded relaxed stackable>
-                            <Grid.Row centered>
+                            <Grid.Row centered={true}>
                               <Icon name='book' size='small' color='blue'></Icon>
                             </Grid.Row>
-                            <Grid.Row centered>
+                            <Grid.Row centered={true}>
                               <div style={descriptionHeaderStyles}>
                                 FLEXIBLE, ONLINE, PRIVATE COACHING
                               </div>
                             </Grid.Row>
-                            <Grid.Row centered>
+                            <Grid.Row centered={true}>
                               <Grid.Column width={10} textAlign='center'>
                                 <div style={descriptionStyles}>
                                   Amikka offers a multitude of tutoring options such as interactive whiteboarding, video chat, and instructional videos
@@ -799,16 +799,16 @@ export default class Home extends Component {
                         </Grid.Column>
 
                         <Grid.Column textAlign='center'>
-                          <Grid centered padded stackable>
-                            <Grid.Row centered>
+                          <Grid centered={true} padded stackable>
+                            <Grid.Row centered={true}>
                               <Icon name='tasks' size='small' color='blue'></Icon>
                             </Grid.Row>
-                            <Grid.Row centered>
+                            <Grid.Row centered={true}>
                               <div style={descriptionHeaderStyles}>
                                 CUSTOMIZED SAT/ACT PROGRAMS
                               </div>
                             </Grid.Row>
-                            <Grid.Row centered>
+                            <Grid.Row centered={true}>
                               <Grid.Column width={10} textAlign='center'>
                                 <div style={descriptionStyles}>
                                   Weekly adjustments are made to ensure goals are met on time with personalized study guides based on error patterns
@@ -819,16 +819,16 @@ export default class Home extends Component {
                         </Grid.Column>
 
                         <Grid.Column textAlign='center' >
-                          <Grid centered padded stackable>
-                            <Grid.Row centered>
+                          <Grid centered={true} padded stackable>
+                            <Grid.Row centered={true}>
                               <Icon name='users' size='small' color='blue'></Icon>
                             </Grid.Row>
-                            <Grid.Row centered>
+                            <Grid.Row centered={true}>
                               <div style={descriptionHeaderStyles}>
                                 HIGHLY QUALIFIED INSTRUCTORS
                               </div>
                             </Grid.Row>
-                            <Grid.Row centered>
+                            <Grid.Row centered={true}>
                               <Grid.Column width={10} textAlign='center'>
                                 <div style={descriptionStyles}>
                                   Our instructors go through a rigorous interview process with extensive training to provide a 100% tutor satisfaction guarantee

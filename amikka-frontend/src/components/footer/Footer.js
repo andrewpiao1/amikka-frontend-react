@@ -10,7 +10,7 @@ export default class Footer extends Component {
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
                     <Grid.Row><Grid.Column textAlign='center' color='blue' /></Grid.Row>
-                    <Grid.Row centered color='blue' columns={3} divided>
+                    <Grid.Row centered={true} color='blue' columns={3} divided>
                         <Grid.Column width={16} textAlign='center' color='blue'>
                             Copyright © 2019 Amikka Tutoring
                         </Grid.Column>

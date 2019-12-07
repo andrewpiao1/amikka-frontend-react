@@ -125,7 +125,7 @@ export default class Testimonials extends Component {
           </Grid.Column>
         </Grid.Row>
 
-        <Grid.Row centered columns={1}>
+        <Grid.Row centered={true} columns={1}>
           <Grid.Column verticalAlign='middle'>
             <div style={{ paddingRight: '5%', display: 'inline-block' }}>
               <Button active={!active} icon='caret left' basic color='blue' circular onClick={this.handleLeftButtonClick} />

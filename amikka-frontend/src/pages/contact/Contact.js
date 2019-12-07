@@ -77,9 +77,9 @@ export default class Contact extends Component {
 		return (
 			<div>
 				<div className='Contact'>
-					<Grid centered padded>
+					<Grid centered={true} padded>
 
-						<Grid.Row centered style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186)' }}>
+						<Grid.Row centered={true} style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186)' }}>
 							<Grid.Column width={10} textAlign='center' >
 								<div style={headerStyles}>
 									QUESTIONS?
@@ -87,16 +87,16 @@ export default class Contact extends Component {
 							</Grid.Column>
 						</Grid.Row>
 
-						<Grid.Row centered style={{ paddingTop: '5%' }}>
+						<Grid.Row centered={true} style={{ paddingTop: '5%' }}>
 							<div style={headerStyles2}>
 								CONTACT
 							</div>
 						</Grid.Row>
 
-						<Grid.Row centered style={{ paddingTop: '1%' }}>
-							<Grid.Column centered textAlign='right' width={16}>
+						<Grid.Row centered={true} style={{ paddingTop: '1%' }}>
+							<Grid.Column centered={true} textAlign='right' width={16}>
 								<Grid stackable divided relaxed>
-									<Grid.Row centered columns={2}>
+									<Grid.Row centered={true} columns={2}>
 										<Grid.Column textAlign='right' width={8}>
 											<div style={headerStyles3}>
 												(305) 746 - 5982
@@ -113,7 +113,7 @@ export default class Contact extends Component {
 						</Grid.Row>
 
 						<Transition animation='fade up' duration='700' transitionOnMount>
-							<Grid.Row centered style={{ paddingTop: '2%' }}>
+							<Grid.Row centered={true} style={{ paddingTop: '2%' }}>
 								<Grid.Column width={6}>
 
 									<Form size='big'>
@@ -133,7 +133,7 @@ export default class Contact extends Component {
 								</Grid.Column>
 							</Grid.Row>
 						</Transition>
-						<Grid.Row centered style={{ paddingTop: '2%' }}>
+						<Grid.Row centered={true} style={{ paddingTop: '2%' }}>
 							<Button inverted size='huge' color='blue' floated='right' onClick={this.sendMessage.bind(this)}>SUBMIT</Button>
 						</Grid.Row>
 					</Grid>

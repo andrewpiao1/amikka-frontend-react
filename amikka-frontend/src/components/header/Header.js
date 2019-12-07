@@ -21,7 +21,7 @@ export default class Header2 extends Component {
   render() {
     return (
       <div className='Header'>
-        <Grid centered>
+        <Grid centered={true}>
           <Grid.Row textAlign='center' >
             <Grid.Column width={4}>
               <Image src={Logo} />
@@ -33,8 +33,8 @@ export default class Header2 extends Component {
             <Menu text>
               <Grid.Column width={16} textAlign='center'>
 
-                <Grid centered relaxed>
-                  <Grid.Row columns={6} centered>
+                <Grid centered={true} relaxed>
+                  <Grid.Row columns={6} centered={true}>
 
                     <Grid.Column textAlign='center'>
                       <Menu.Item as={Link} to={ROUTES.HOME} >
