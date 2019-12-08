@@ -77,9 +77,9 @@ export default class Contact extends Component {
 		return (
 			<div>
 				<div className='Contact'>
-					<Grid centered={true} padded>
+					<Grid centered padded style={{ paddingTop: '1%' }}>
 
-						<Grid.Row centered={true} style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186)' }}>
+						<Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186)' }}>
 							<Grid.Column width={10} textAlign='center' >
 								<div style={headerStyles}>
 									QUESTIONS?

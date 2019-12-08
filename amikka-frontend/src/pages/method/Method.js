@@ -238,7 +238,7 @@ export default class Method extends Component {
         </Message>
     }]
     return (
-      <Grid verticalAlign='middle' columns={5} centcentered={true}ered style={{ paddingTop: '12px' }}>
+      <Grid verticalAlign='middle' columns={5} centered={true} style={{ paddingTop: '12px' }}>
 
         <Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186, 0.6)' }}>
           <Grid.Column textAlign='center' width={16}>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu, Grid, Image } from 'semantic-ui-react'
+import { Menu, Grid, Image, Dropdown } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 import * as ROUTES from '../../constants/Routes';
 import Logo from '../../images/amikka/logo4.svg'
@@ -77,6 +77,12 @@ export default class Header2 extends Component {
                     </Grid.Column>
 
                     <Grid.Column textAlign='center'>
+                      {/* <Dropdown simple item text='PORTAL' icon={null} style={menuStyles}>
+                        <Dropdown.Menu>
+                          <Dropdown.Item as={Link} to={ROUTES.SIGN_IN}>Sign In</Dropdown.Item>
+                          <Dropdown.Item as={Link} to={ROUTES.SIGN_UP}>Register</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown> */}
                       <Menu.Item as={Link} to={ROUTES.PORTAL}>
                         <div style={menuStyles}>
                           PORTAL
