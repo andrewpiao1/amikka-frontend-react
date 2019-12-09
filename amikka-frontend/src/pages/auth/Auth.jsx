@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Route, Switch } from 'react-router-dom'
 
-import PortalRoutes from '../../constants/PortalRoutes.js'
+import PortalRoutes from '../../constants/PortalRoutes'
 
 class Auth extends React.Component {
   getRoutes = routes => {

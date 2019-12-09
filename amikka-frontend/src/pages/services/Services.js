@@ -5,6 +5,7 @@ import { Parallax } from 'react-parallax'
 
 import Amikka1 from '../../images/amikka/amikka_student_2.jpeg'
 import Tutor1 from '../../images/misc/tutor_4.jpg'
+import Header from '../../components/header/Header'
 
 const headerStyles = {
   fontFamily: 'raleway',
@@ -421,6 +422,7 @@ export default class Services extends Component {
 
     return (
       <div>
+        <Header />
         <Grid centered relaxed stackable>
 
           {/* LAYER ONE */}

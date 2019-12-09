@@ -42,7 +42,7 @@ class Login extends React.Component {
 	render() {
 		return (
 			<div>
-				<Grid centered padded style={{ paddingTop: '1%' }}>
+				<Grid centered padded>
 
 					<Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%' }} color='blue'>
 						<Grid.Column textAlign='center'>

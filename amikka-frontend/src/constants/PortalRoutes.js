@@ -1,6 +1,5 @@
 import Login from '../components/login/Login'
 import SignUp from '../components/signup/SignUp'
-import UserPortal from '../pages/portal/Portal'
 import Dashboard from '../components/dashboard/Dashboard'
 import UserProfile from '../components/profile/UserProfile'
 import CourseCatalog from '../components/course-catalog/CourseCatalog'
@@ -15,7 +14,7 @@ var PortalRoutes = [
     },
     {
         path: '/user-profile',
-        name: 'User Profile',
+        name: 'Profile',
         icon: 'user',
         component: UserProfile,
         layout: '/user'

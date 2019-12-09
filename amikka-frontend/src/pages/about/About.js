@@ -7,6 +7,8 @@ import Company1 from '../../images/misc/company_1.jpg'
 import Company2 from '../../images/misc/company_2.jpg'
 import Company3 from '../../images/misc/company_3.jpg'
 
+import Header from '../../components/header/Header'
+
 const headerStyles = {
   fontFamily: 'raleway',
   fontSize: '30px',
@@ -54,6 +56,7 @@ export default class About extends Component {
   render() {
     return (
       <div>
+        <Header />
         <Grid centered={true} relaxed stackable>
 
           {/* LAYER 1 : OUR STORY */}

@@ -1,0 +1,6 @@
+.navbar-list a.chosen,
+.navbar-list a:hover {
+    font-weight: bold;
+    color: rgb(100, 149, 237);
+    border-right: 20px solid rgb(100, 149, 237);
+}

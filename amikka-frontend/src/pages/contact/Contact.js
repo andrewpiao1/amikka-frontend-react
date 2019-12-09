@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Form, Grid, Button, Transition } from 'semantic-ui-react';
 import * as emailjs from 'emailjs-com';
 
+import Header from '../../components/header/Header'
+
 const headerStyles = {
 	fontFamily: 'raleway',
 	fontSize: '30px',
@@ -76,6 +78,7 @@ export default class Contact extends Component {
 		const { firstName, lastName, email, phoneNumber, message } = this.state
 		return (
 			<div>
+				<Header />
 				<div className='Contact'>
 					<Grid centered padded style={{ paddingTop: '1%' }}>
 

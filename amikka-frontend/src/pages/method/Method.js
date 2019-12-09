@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Image, List, Accordion, Message } from 'semantic-ui-react'
 import AnimateHeight from 'react-animate-height';
-
+import Header from '../../components/header/Header'
 import MethodLogo from '../../images/amikka/amikka_method_logo.jpg'
 
 const headerStyles = {
@@ -238,121 +238,125 @@ export default class Method extends Component {
         </Message>
     }]
     return (
-      <Grid verticalAlign='middle' columns={5} centered={true} style={{ paddingTop: '12px' }}>
+      <div>
+        <Header />
 
-        <Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186, 0.6)' }}>
-          <Grid.Column textAlign='center' width={16}>
-            <div style={headerStyles}>
-              How do our students perform well on the SAT/ACT exam?
+        <Grid verticalAlign='middle' columns={5} centered={true} style={{ paddingTop: '12px' }}>
+
+          <Grid.Row style={{ paddingTop: '5%', paddingBottom: '5%', background: 'rgba(23, 120, 186, 0.6)' }}>
+            <Grid.Column textAlign='center' width={16}>
+              <div style={headerStyles}>
+                How do our students perform well on the SAT/ACT exam?
             </div>
-          </Grid.Column>
-        </Grid.Row>
+            </Grid.Column>
+          </Grid.Row>
 
-        <Grid.Row width={4} style={{ paddingTop: '5%' }}>
-          <Grid.Column textAlign='center' verticalAlign='bottom' >
-            <Accordion
-              fluid
-              activeIndex={this.state.activeAccordion}
-              onTitleClick={this.handleEducationAccordionClick}
-              exclusive={false}
-              panels={educationData.map((data, i) => ({
-                key: i,
-                title: { content: data.title, icon: data.icon },
-                content: (AccordionContent, { key, active }) => (
-                  <div key={key} style={{ paddingLeft: '8%' }}>
-                    <AnimateHeight animateOpacity duration={300} height={active ? 'auto' : 0}>
-                      {data.content}
-                    </AnimateHeight>
-                  </div>
-                ),
-              }))}
-            />
-          </Grid.Column>
-        </Grid.Row>
+          <Grid.Row width={4} style={{ paddingTop: '5%' }}>
+            <Grid.Column textAlign='center' verticalAlign='bottom' >
+              <Accordion
+                fluid
+                activeIndex={this.state.activeAccordion}
+                onTitleClick={this.handleEducationAccordionClick}
+                exclusive={false}
+                panels={educationData.map((data, i) => ({
+                  key: i,
+                  title: { content: data.title, icon: data.icon },
+                  content: (AccordionContent, { key, active }) => (
+                    <div key={key} style={{ paddingLeft: '8%' }}>
+                      <AnimateHeight animateOpacity duration={300} height={active ? 'auto' : 0}>
+                        {data.content}
+                      </AnimateHeight>
+                    </div>
+                  ),
+                }))}
+              />
+            </Grid.Column>
+          </Grid.Row>
 
-        <Grid.Row centered={true} verticalAlign='middle'>
-          <Grid.Column textAlign='center' width={4} style={{ paddingLeft: '5%', paddingRight: '2%'}}>
-            <Accordion
-              fluid
-              activeIndex={this.state.activeAccordion}
-              onTitleClick={this.handleTimeManagementAccordionClick}
-              exclusive={false}
-              panels={timeManagementData.map((data, i) => ({
-                key: i,
-                title: { content: data.title, icon: data.icon },
-                content: (AccordionContent, { key, active }) => (
-                  <div key={key} style={{ paddingLeft: '8%' }}>
-                    <AnimateHeight animateOpacity duration={300} height={active ? 'auto' : 0}>
-                      {data.content}
-                    </AnimateHeight>
-                  </div>
-                ),
-              }))}
-            />
-            <br />
-            <Accordion
-              fluid
-              activeIndex={this.state.activeAccordion}
-              onTitleClick={this.handleStrategyAccordionClick}
-              exclusive={false}
-              panels={strategyData.map((data, i) => ({
-                key: i,
-                title: { content: data.title, icon: data.icon },
-                content: (AccordionContent, { key, active }) => (
-                  <div key={key} style={{ paddingLeft: '8%' }}>
-                    <AnimateHeight animateOpacity duration={300} height={active ? 'auto' : 0}>
-                      {data.content}
-                    </AnimateHeight>
-                  </div>
-                ),
-              }))}
-            />
-          </Grid.Column>
+          <Grid.Row centered={true} verticalAlign='middle'>
+            <Grid.Column textAlign='center' width={4} style={{ paddingLeft: '5%', paddingRight: '2%' }}>
+              <Accordion
+                fluid
+                activeIndex={this.state.activeAccordion}
+                onTitleClick={this.handleTimeManagementAccordionClick}
+                exclusive={false}
+                panels={timeManagementData.map((data, i) => ({
+                  key: i,
+                  title: { content: data.title, icon: data.icon },
+                  content: (AccordionContent, { key, active }) => (
+                    <div key={key} style={{ paddingLeft: '8%' }}>
+                      <AnimateHeight animateOpacity duration={300} height={active ? 'auto' : 0}>
+                        {data.content}
+                      </AnimateHeight>
+                    </div>
+                  ),
+                }))}
+              />
+              <br />
+              <Accordion
+                fluid
+                activeIndex={this.state.activeAccordion}
+                onTitleClick={this.handleStrategyAccordionClick}
+                exclusive={false}
+                panels={strategyData.map((data, i) => ({
+                  key: i,
+                  title: { content: data.title, icon: data.icon },
+                  content: (AccordionContent, { key, active }) => (
+                    <div key={key} style={{ paddingLeft: '8%' }}>
+                      <AnimateHeight animateOpacity duration={300} height={active ? 'auto' : 0}>
+                        {data.content}
+                      </AnimateHeight>
+                    </div>
+                  ),
+                }))}
+              />
+            </Grid.Column>
 
-          <Grid.Column textAlign='center' width={4}>
-            <Image fluid centered={true} src={MethodLogo} size='large' />
-          </Grid.Column>
+            <Grid.Column textAlign='center' width={4}>
+              <Image fluid centered={true} src={MethodLogo} size='large' />
+            </Grid.Column>
 
-          <Grid.Column textAlign='center' width={4} style={{ paddingRight: '8%'}}>
-            <Accordion
-              fluid
-              activeIndex={this.state.activeAccordion}
-              onTitleClick={this.handleEContentAccordionClick}
-              exclusive={false}
-              panels={contentData.map((data, i) => ({
-                key: i,
-                title: { content: data.title, icon: data.icon },
-                content: (AccordionContent, { key, active }) => (
-                  <div key={key} style={{ paddingLeft: '8%' }}>
-                    <AnimateHeight animateOpacity duration={300} height={active ? 'auto' : 0}>
-                      {data.content}
-                    </AnimateHeight>
-                  </div>
-                ),
-              }))}
-            />
-            <br />
-            <Accordion
-              fluid
-              activeIndex={this.state.activeAccordion}
-              onTitleClick={this.handleTheoryAccordionClick}
-              exclusive={false}
-              panels={theoryData.map((data, i) => ({
-                key: i,
-                title: { content: data.title, icon: data.icon },
-                content: (AccordionContent, { key, active }) => (
-                  <div key={key} style={{ paddingLeft: '8%' }}>
-                    <AnimateHeight animateOpacity duration={300} height={active ? 'auto' : 0}>
-                      {data.content}
-                    </AnimateHeight>
-                  </div>
-                ),
-              }))}
-            />
-            <br />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+            <Grid.Column textAlign='center' width={4} style={{ paddingRight: '8%' }}>
+              <Accordion
+                fluid
+                activeIndex={this.state.activeAccordion}
+                onTitleClick={this.handleEContentAccordionClick}
+                exclusive={false}
+                panels={contentData.map((data, i) => ({
+                  key: i,
+                  title: { content: data.title, icon: data.icon },
+                  content: (AccordionContent, { key, active }) => (
+                    <div key={key} style={{ paddingLeft: '8%' }}>
+                      <AnimateHeight animateOpacity duration={300} height={active ? 'auto' : 0}>
+                        {data.content}
+                      </AnimateHeight>
+                    </div>
+                  ),
+                }))}
+              />
+              <br />
+              <Accordion
+                fluid
+                activeIndex={this.state.activeAccordion}
+                onTitleClick={this.handleTheoryAccordionClick}
+                exclusive={false}
+                panels={theoryData.map((data, i) => ({
+                  key: i,
+                  title: { content: data.title, icon: data.icon },
+                  content: (AccordionContent, { key, active }) => (
+                    <div key={key} style={{ paddingLeft: '8%' }}>
+                      <AnimateHeight animateOpacity duration={300} height={active ? 'auto' : 0}>
+                        {data.content}
+                      </AnimateHeight>
+                    </div>
+                  ),
+                }))}
+              />
+              <br />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </div>
     )
   }
 }

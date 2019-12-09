@@ -19,6 +19,8 @@ import Report from '../../images/icons/report.svg'
 import Diagram2 from '../../images/icons/diagram.svg'
 import Service from '../../images/icons/customer-service.svg'
 
+import Header from '../../components/header/Header'
+
 const headerStyles = {
   fontFamily: 'raleway',
   fontSize: '38px',
@@ -120,7 +122,6 @@ const youtubeOpts = {
     autoplay: 1
   }
 }
-
 
 const cardHeaderStyles2 = {
   paddingTop: '5%',
@@ -520,6 +521,7 @@ export default class Home extends Component {
     const { activeItem } = this.state;
     return (
       <div>
+        <Header />
         <Grid centered={true} relaxed stackable>
 
           {/* LAYER 1 */}
