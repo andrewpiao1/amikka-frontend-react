@@ -290,7 +290,7 @@ export default compose(
 		mapStateToProps,
 		mapDispatchToProps,
 		firestoreConnect([
-			{ collection: 'users' }
+			{ collection: 'users', orderBy: ['createdAt', 'desc']}
 		])
 	)
 )(Dashboard)
