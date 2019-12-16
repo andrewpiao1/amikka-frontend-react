@@ -87,7 +87,7 @@ class Login extends React.Component {
                             <Form.Input fluid placeholder='Email' onChange={e => this.onChange('email', e.target.value)} />
                           </Form.Group>
                           <Form.Group widths='equal'>
-                            <Form.Input fluid placeholder='Password' onChange={e => this.onChange('password', e.target.value)} />
+                            <Form.Input fluid placeholder='Password' type='password' onChange={e => this.onChange('password', e.target.value)} />
                           </Form.Group>
                         </Form>
                       </Grid.Column>
