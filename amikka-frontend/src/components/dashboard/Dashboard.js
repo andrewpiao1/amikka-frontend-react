@@ -1,5 +1,12 @@
 import React from 'react'
 import { Grid, Segment, Image, Table, Header, Icon, Progress, Transition } from 'semantic-ui-react'
+import { PropTypes } from 'prop-types'
+import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
+
+// import redux actions
+import { getUsername } from '../../redux/actions/UserAction'
 
 //Image imports
 import BlueBackground from '../../images/backgrounds/blue-trianglify.png'
@@ -46,15 +53,33 @@ const mainHeaderStyles = {
 }
 
 class Dashboard extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			username: 'jdotc2'
+		}
+	}
+
+	componentDidMount = () => {
+		const { getUsername } = this.props;
+		getUsername(this.state.username);
+	}
+
+	renderDashboardHeader = (username) => {
+		return (
+			<div style={mainHeaderStyles}>
+				Welcome to your dashboard, {username}!
+			</div>
+		)
+	}
+
 	render() {
 		return (
 			<div style={backgroundStyles}>
 				<Grid centered padded relaxed width={15}>
 					<Grid.Row column={1}>
 						<Grid.Column textAlign='left'>
-							<div style={mainHeaderStyles}>
-								Welcome to your dashboard, Josh!
-							</div>
+							{this.renderDashboardHeader(this.state.username)}
 						</Grid.Column>
 					</Grid.Row>
 
@@ -202,7 +227,7 @@ class Dashboard extends React.Component {
 														<Table.Cell>100</Table.Cell>
 														<Table.Cell>
 															<Transition animation='pulse' duration={10000000000} visible={true}>
-																<Icon name='circle' size='large' color='blue' />
+																<Icon name='circle' size='large' color='yellow' />
 															</Transition>
 														</Table.Cell>
 														<Table.Cell verticalAlign='middle'>
@@ -246,4 +271,26 @@ class Dashboard extends React.Component {
 	}
 }
 
-export default Dashboard
+const mapStateToProps = state => {
+	console.log(state)
+	return {
+		user: state.firestore.ordered.users,
+		auth: state.firebase.auth,
+	}
+}
+
+const mapDispatchToProps = dispatch => {
+	return {
+		getUsername: (creds) => dispatch(getUsername(creds))
+	}
+  }
+
+export default compose(
+	connect(
+		mapStateToProps,
+		mapDispatchToProps,
+		firestoreConnect([
+			{ collection: 'users' }
+		])
+	)
+)(Dashboard)

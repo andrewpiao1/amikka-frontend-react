@@ -24,7 +24,7 @@ class Auth extends React.Component {
   };
 
   render() {
-    if (this.props.authState.loggedIn) {
+    if (this.props.loggedIn) {
       return <Redirect to='/user/dashboard' />
     }
     return (
@@ -37,9 +37,11 @@ class Auth extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  ...state
-});
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.auth.loggedIn
+  }
+}
 export default connect(
   mapStateToProps,
   {}

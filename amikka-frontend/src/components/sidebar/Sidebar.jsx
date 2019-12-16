@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Menu, Icon } from 'semantic-ui-react'
 import { PropTypes } from 'prop-types'
+import { connect } from 'react-redux'
 
 import './sidebar.css'
 
@@ -74,4 +75,10 @@ Sidebar.propTypes = {
   PortalRoutes: PropTypes.arrayOf(PropTypes.object)
 };
 
-export default Sidebar;
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
+export default connect(mapStateToProps)(Sidebar)

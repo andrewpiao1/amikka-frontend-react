@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Grid, Button, Transition, Segment, Icon, Label } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux'
-import registerAction from '../../redux/actions/RegisterAction'
+import { signUp } from '../../redux/actions/AuthActions'
 
 const headerStyles = {
   fontFamily: 'raleway',
@@ -22,7 +22,8 @@ const headerStyles3 = {
 
 class Register extends React.Component {
   state = {
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: ''
   };
@@ -33,15 +34,9 @@ class Register extends React.Component {
     })
   }
 
-  handleSubmit = () => {
-    console.log(this.state.name)
-    console.log(this.state.email)
-    console.log(this.state.password)
-    this.props.registerAction(
-      this.state.name,
-      this.state.email,
-      this.state.password
-    )
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.signUp(this.state)
   }
 
   render() {
@@ -94,7 +89,10 @@ class Register extends React.Component {
                       <Grid.Column>
                         <Form size='big'>
                           <Form.Group widths='equal'>
-                            <Form.Input fluid placeholder='Name' onChange={e => this.onChange('name', e.target.value)} />
+                            <Form.Input fluid placeholder='First Name' onChange={e => this.onChange('firstName', e.target.value)} />
+                          </Form.Group>
+                          <Form.Group widths='equal'>
+                            <Form.Input fluid placeholder='Last Name' onChange={e => this.onChange('lastName', e.target.value)} />
                           </Form.Group>
                           <Form.Group widths='equal'>
                             <Form.Input fluid placeholder='Email' onChange={e => this.onChange('email', e.target.value)} />
@@ -135,11 +133,14 @@ class Register extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  ...state
+  auth: state.firebase.auth,
+  authError: state.auth.authError
 });
+
 const mapDispatchToProps = dispatch => ({
-  registerAction: (name, email, password) => dispatch(registerAction(name, email, password))
-})
+  signUp: (newUser) => dispatch(signUp(newUser))
+});
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps

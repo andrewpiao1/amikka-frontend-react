@@ -10,19 +10,8 @@ import PortalRoutes from '../../constants/PortalRoutes'
 // Image imports
 import Blue from '../../images/backgrounds/blue-trianglify.png'
 
-const backgroundStyles = {
-  backgroundImage: 'url(' + Blue + ')',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center center',
-  backgroundRepeat: 'no-repeat',
-}
 
 class Portal extends React.Component {
-  // componentDidUpdate(e) {
-  //   document.documentElement.scrollTop = 0;
-  //   document.scrollingElement.scrollTop = 0;
-  //   this.refs.mainContent.scrollTop = 0;
-  // }
 
   getRoutes = routes => {
     return routes.map((prop, key) => {
@@ -41,7 +30,8 @@ class Portal extends React.Component {
   };
 
   render() {
-    if (!this.props.authState.loggedIn) {
+    if (!this.props.loggedIn) {
+      console.log(this.props.loggedIn)
       return <Redirect to='/auth/login' />;
     }
     return (
@@ -66,8 +56,9 @@ class Portal extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  ...state
+  loggedIn: state.auth.loggedIn
 });
+
 export default connect(
   mapStateToProps,
   {}

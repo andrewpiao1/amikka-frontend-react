@@ -27,6 +27,13 @@ var PortalRoutes = [
         layout: '/user'
     },
     {
+        path: '/signOut',
+        name: 'Sign Out',
+        icon: 'sign-out',
+        component: Login,
+        layout: '/auth'
+    },
+    {
         path: '/login',
         name: 'Login',
         icon: 'sign-in',
@@ -35,11 +42,11 @@ var PortalRoutes = [
     },
     {
         path: '/register',
-        name: 'Register',
-        icon: 'signup',
+        name: 'Sign Up',
+        icon: 'sign-up',
         component: SignUp,
         layout: '/auth'
-    }
+    },
 ]
 
 export default PortalRoutes;

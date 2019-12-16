@@ -77,16 +77,10 @@ export default class Header2 extends Component {
                     </Grid.Column>
 
                     <Grid.Column textAlign='center'>
-                      {/* <Dropdown simple item text='PORTAL' icon={null} style={menuStyles}>
-                        <Dropdown.Menu>
-                          <Dropdown.Item as={Link} to={ROUTES.SIGN_IN}>Sign In</Dropdown.Item>
-                          <Dropdown.Item as={Link} to={ROUTES.SIGN_UP}>Register</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown> */}
                       <Menu.Item as={Link} to={ROUTES.PORTAL}>
                         <div style={menuStyles}>
                           PORTAL
-                          </div>
+                        </div>
                       </Menu.Item>
                     </Grid.Column>
 
